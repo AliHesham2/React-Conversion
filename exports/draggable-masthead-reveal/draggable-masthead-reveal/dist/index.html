@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Draggable Masthead Reveal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"><link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'><link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <section id="masthead">
+  <div class="view view-dark">
+    <img src="https://picsum.photos/id/666/2000/1000" alt="Dark Image">
+  </div>
+  <div class="view view-light">
+    <img src="https://picsum.photos/id/666/2000/1000?grayscale" alt="Light Image">
+  </div>
+  <div id="drag-me">
+    <span class="icon-drag-diamond d-flex justify-content-center align-items-center">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+        <path d="M6 11v-4l-6 5 6 5v-4h12v4l6-5-6-5v4z" /></svg>
+    </span>
+  </div>
+</section>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/CSSRulePlugin.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/Draggable.min.js'></script><script  src="./script.js"></script>
+
+  </body>
+  
+</html>

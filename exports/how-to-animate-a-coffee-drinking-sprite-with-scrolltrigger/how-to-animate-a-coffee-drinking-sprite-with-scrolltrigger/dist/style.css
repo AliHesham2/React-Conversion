@@ -1,0 +1,53 @@
+@font-face {
+  font-display: block;
+  font-family: Mori;
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://assets.codepen.io/16327/PPMori-Regular.woff) format("woff");
+}
+
+html,
+body {
+  font-family: Mori;
+  font-weight: 300;  
+  height:100%;
+}
+
+body {
+  width:100%;
+}
+
+.header {
+  color: white;
+  font-size: 50px;
+}
+
+.section {
+  height: 50%;
+  background: #293744;
+  color: #899eb5;
+}
+
+.scene {
+  height: 100%;
+  width: 100%;
+  background: #EAEAEA;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.viewer {
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 200px;
+  width: 100%;
+  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/doodle-sprite.png);
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+}

@@ -1,0 +1,11 @@
+body {
+	margin: 0;
+	background: #111;
+	font-family: 'Poppins', sans-serif;
+	color: white;
+	text-align: center;
+	overflow: hidden;
+}
+#webgl {
+	display: block;
+}

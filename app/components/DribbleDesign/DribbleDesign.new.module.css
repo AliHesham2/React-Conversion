@@ -1,0 +1,221 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,700");
+:root {
+  font-size: 10px;
+  font-family: "Roboto", sans-serif;
+  --color1: #E41936;
+  --color2: #E7E31D;
+  --color3: #3BB7CE;
+}
+:root * {
+  outline: none;
+}
+
+.main {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+.heroLeft {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+}
+.heroLeft h1 {
+  text-align: center;
+}
+.buttonLeft, .buttonRight {
+  position: absolute;
+  padding: 10px 15px;
+  margin: 10px;
+  border: none;
+  background-color: black;
+  color: white;
+  font-size: 2.5rem;
+  cursor: pointer;
+  z-index: 2;
+}
+.buttonRight {
+  right: 0;
+}
+.buttonLeft:active, .buttonRight:active {
+  transform: scale(0.9);
+}
+.layers {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.heroRight {
+  grid-column: 2;
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+}
+
+/* Original class names (not CSS modules) */
+.layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.layer-displayed {
+  transform: translateX(0) !important;
+  opacity: 1 !important;
+  z-index: 1 !important;
+}
+.layer-displayed-exit {
+  transform: translateX(-100%) !important;
+  opacity: 0 !important;
+  z-index: 1 !important;
+}
+.layer__image {
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-position: center center;
+}
+.layer__info {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  column-gap: 2rem;
+  font-size: 1.5rem;
+}
+.layer__info div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.layer__info div:first-child {
+  align-items: flex-end;
+  color: gray;
+}
+.layer__info div:last-child {
+  font-weight: bold;
+}
+.layers .layer {
+  display: grid;
+  grid-template-rows: 6rem 3fr 1fr;
+  background-color: white;
+  transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+  transition-delay: 0.5s;
+  transform: translateX(100%);
+  opacity: 0;
+}
+.layers .layer > span {
+  text-align: center;
+  font-size: 4rem;
+  font-weight: bold;
+}
+.layers .layer:nth-child(1) > span {
+  color: var(--color1);
+}
+.layers .layer:nth-child(2) > span {
+  color: var(--color2);
+}
+.layers .layer:nth-child(3) > span {
+  color: var(--color3);
+}
+.hero-right > .layer {
+  background-color: #E41936;
+  transform: translateX(100%);
+  transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+  transition-delay: 0.5s;
+}
+.hero-right > .layer:nth-child(1) {
+  background-color: var(--color1);
+}
+.hero-right > .layer:nth-child(2) {
+  background-color: var(--color2);
+}
+.hero-right > .layer:nth-child(3) {
+  background-color: var(--color3);
+}
+.photo-name {
+  position: absolute;
+  top: 33%;
+  left: 50%;
+  width: 20%;
+  font-size: 1.5rem;
+  z-index: 2;
+}
+.photo-name span {
+  display: block;
+}
+.photo-name__wrapper {
+  position: relative;
+}
+.photo-name__title {
+  font-weight: bold;
+}
+.photo-name .layer {
+  padding: 10px;
+  transform: translateX(-100%);
+  transition: transform 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+}
+.photo-name .layer-displayed {
+  transform: translateX(0);
+  transition-delay: 0.5s;
+}
+.photo-frame {
+  position: absolute;
+  overflow: hidden;
+  animation-play-state: paused;
+  animation: cover 1s ease-in-out;
+}
+.hero-right .photo-frame:nth-child(4) {
+  top: 10%;
+  left: 10%;
+  width: 40%;
+  height: 40%;
+  z-index: 3;
+}
+.hero-right .photo-frame:nth-child(4) .cover {
+  background-color: black;
+}
+.hero-right .photo-frame:last-child {
+  top: 40%;
+  left: 20%;
+  width: 65%;
+  height: 50%;
+  z-index: 2;
+}
+.cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: white;
+  transition: width 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+}
+.photo-frame .layer {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition-delay: 0.5s;
+}
+.photo-frame .layer-displayed {
+  opacity: 1;
+}
+
+@keyframes cover {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 100%;
+  }
+  95% {
+    width: 0;
+  }
+  100% {
+    width: 0;
+  }
+}

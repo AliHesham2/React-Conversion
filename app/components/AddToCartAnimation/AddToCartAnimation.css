@@ -1,0 +1,109 @@
+.product__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-black: hsla(0, 0%, 12%, 100%);
+  --color-white: hsla(0, 0%, 100%, 100%);
+  --color-purple: hsla(278, 100%, 75%, 100%);
+}
+
+body {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+}
+
+.heading {
+  font-size: clamp(3.125rem, 3.464vw + 2.229rem, 5rem);
+  line-height: clamp(4.688rem, 3.349vw + 3.821rem, 6.5rem);
+  margin: 6.25rem 0;
+  text-align: center;
+}
+
+.product {
+  --border-radius: 0.75rem;
+  margin: 0 auto;
+  max-width: 62.5rem;
+}
+
+.product__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.product__item {
+  background-color: var(--color-white);
+  border-radius: var(--border-radius);
+  color: var(--color-black);
+}
+
+.product__img {
+  aspect-ratio: 5/4;
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+}
+
+.product__content {
+  padding: 1.25rem;
+}
+
+.product__title {
+  margin: 0;
+  padding: 0;
+}
+
+.product__price {
+  font-size: 1.25rem;
+  margin: 0.75rem 0 1rem;
+}
+
+.product__button {
+  background-color: var(--color-black);
+  border: none;
+  border-radius: 1.875rem;
+  color: var(--color-white);
+  padding: 1rem;
+  width: 100%;
+}
+
+.cart {
+  --cart-postion: 2rem;
+  background-color: var(--color-purple);
+  border: none;
+  border-radius: 0.375rem;
+  padding: 1rem 1.25rem 1rem 1.125rem;
+  position: fixed;
+  right: var(--cart-postion);
+  bottom: var(--cart-postion);
+  z-index: 9999;
+}
+
+.cart__count {
+  --cart-count-size: 1rem;
+  --cart-position: -1rem;
+  align-items: center;
+  background: var(--color-white);
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  height: var(--cart-count-size);
+  line-height: 0;
+  padding: 1rem;
+  position: absolute;
+  right: var(--cart-position);
+  top: var(--cart-position);
+  width: var(--cart-count-size);
+}
+
+.cart__svg {
+  fill: var(--color-white);
+  width: 2rem;
+}

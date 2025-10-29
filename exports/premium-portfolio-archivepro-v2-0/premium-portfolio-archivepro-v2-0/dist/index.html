@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Premium Portfolio Archive - Pro v2.0</title>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Portfolio Archive - Pro v2.0</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="portfolio-container">
+      
+        <div class="bg-gradient"></div>
+        <div class="bg-pattern"></div>
+        
+        
+        <header class="portfolio-header">
+            <div class="header-content">
+                <div class="title-section">
+                    <h1 class="main-title">
+                        <span class="title-highlight">Premium</span> Portfolio
+                    </h1>
+                    <p class="subtitle">Showcasing excellence in digital craftsmanship</p>
+                </div>
+                
+                <div class="header-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Projects</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">15+</span>
+                        <span class="stat-label">Clients</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">5</span>
+                        <span class="stat-label">Years</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section class="controls-section">
+            <div class="controls-wrapper">
+                <div class="filter-controls">
+                    <div class="control-group">
+                        <label>Filter by Category</label>
+                        <div class="custom-select filter-select">
+                            <button class="select-trigger">
+                                <span class="select-value">All Categories</span>
+                                <svg class="select-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="6,9 12,15 18,9"></polyline>
+                                </svg>
+                            </button>
+                            <div class="select-dropdown">
+                                <div class="select-option active" data-value="all">All Categories</div>
+                                <div class="select-option" data-value="design">UI/UX Design</div>
+                                <div class="select-option" data-value="marketing">Digital Marketing</div>
+                                <div class="select-option" data-value="film">Film Production</div>
+                                <div class="select-option" data-value="content">Content Creation</div>
+                                <div class="select-option" data-value="art">Art Direction</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label>Sort Projects</label>
+                        <div class="custom-select sort-select">
+                            <button class="select-trigger">
+                                <span class="select-value">Newest First</span>
+                                <svg class="select-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="6,9 12,15 18,9"></polyline>
+                                </svg>
+                            </button>
+                            <div class="select-dropdown">
+                                <div class="select-option active" data-value="newest">Newest First</div>
+                                <div class="select-option" data-value="oldest">Oldest First</div>
+                                <div class="select-option" data-value="popular">Most Popular</div>
+                                <div class="select-option" data-value="alphabetical">A-Z</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="view-controls">
+                    <button class="view-btn active" data-view="grid">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="7" height="7"></rect>
+                            <rect x="14" y="3" width="7" height="7"></rect>
+                            <rect x="14" y="14" width="7" height="7"></rect>
+                            <rect x="3" y="14" width="7" height="7"></rect>
+                        </svg>
+                    </button>
+                    <button class="view-btn" data-view="list">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="8" y1="6" x2="21" y2="6"></line>
+                            <line x1="8" y1="12" x2="21" y2="12"></line>
+                            <line x1="8" y1="18" x2="21" y2="18"></line>
+                            <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                            <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                            <line x1="3" y1="18" x2="3.01" y2="18"></line>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="projects-section">
+            <div class="projects-grid" id="projectsGrid">
+                <article class="project-card" data-category="design">
+                    <div class="project-image">
+                        <img src="https://cdn-front.freepik.com/home/anon-rvmp/professionals/designers.webp" alt="Design System Revamp">
+                        <div class="project-overlay">
+                            <div class="project-badges">
+                                <span class="badge badge-primary">UI/UX Design</span>
+                                <span class="badge badge-secondary">System</span>
+                            </div>
+                            <button class="view-project-btn">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                                View Project
+                            </button>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3>Design System Revamp</h3>
+                            <div class="project-status">
+                                <span class="status-dot completed"></span>
+                                <span>Completed</span>
+                            </div>
+                        </div>
+                        <p>Complete redesign of corporate design system with comprehensive components library and design tokens</p>
+                        <div class="project-meta">
+                            <div class="meta-item">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                                </svg>
+                                <span>June 2025</span>
+                            </div>
+                            <div class="meta-item">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12,6 12,12 16,14"></polyline>
+                                </svg>
+                                <span>2 months</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card" data-category="marketing">
+                    <div class="project-image">
+                        <img src="https://cdn-front.freepik.com/home/anon-rvmp/professionals/marketers.webp" alt="Marketing Campaign">
+                        <div class="project-overlay">
+                            <div class="project-badges">
+                                <span class="badge badge-success">Digital Marketing</span>
+                                <span class="badge badge-secondary">Campaign</span>
+                            </div>
+                            <button class="view-project-btn">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                                View Project
+                            </button>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3>Product Launch Campaign</h3>
+                            <div class="project-status">
+                                <span class="status-dot completed"></span>
+                                <span>Completed</span>
+                            </div>
+                        </div>
+                        <p>360° marketing campaign for innovative tech product reaching over 2M+ impressions across all platforms</p>
+                        <div class="project-meta">
+                            <div class="meta-item">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                                </svg>
+                                <span>May 2025</span>
+                            </div>
+                            <div class="meta-item">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12,6 12,12 16,14"></polyline>
+                                </svg>
+                                <span>6 weeks</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card" data-category="film">
+                    <div class="project-image">
+                        <img src="https://cdn-front.freepik.com/home/anon-rvmp/professionals/filmmakers.webp" alt="Film Production">
+                        <div class="project-overlay">
+                            <div class="project-badges">
+                                <span class="badge badge-warning">Film Production</span>
+                                <span class="badge badge-secondary">VFX</span>
+                            </div>
+                            <button class="view-project-btn">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                                View Project
+                            </button>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3>Cinematic Short Film</h3>
+                            <div class="project-status">
+                                <span class="status-dot completed"></span>
+                                <span>Completed</span>
+                            </div>
+                        </div>
+                        <p>Award-winning cinematic short film featuring advanced VFX and cutting-edge motion capture technology</p>
+                        <div class="project-meta">
+                            <div class="meta-item">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                                </svg>
+                                <span>April 2025</span>
+                            </div>
+                            <div class="meta-item">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12,6 12,12 16,14"></polyline>
+                                </svg>
+                                <span>3 months</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card" data-category="content">
+                    <div class="project-image">
+                        <img src="https://cdn-front.freepik.com/home/anon-rvmp/professionals/content-creators.webp" alt="Content Creation">
+                        <div class="project-overlay">
+                            <div class="project-badges">
+                                <span class="badge badge-info">Content Creation</span>
+                                <span class="badge badge-secondary">Social</span>
+                            </div>
+                            <button class="view-project-btn">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                                View Project
+                            </button>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3>Social Media Series</h3>
+                            <div class="project-status">
+                                <span class="status-dot ongoing"></span>
+                                <span>Ongoing</span>
+                            </div>
+                        </div>
+                        <p>Strategic daily content series that achieved 150% audience growth within 3 months across all platforms</p>
+                        <div class="project-meta">
+                            <div class="meta-item">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                                </svg>
+                                <span>March 2025</span>
+                            </div>
+                            <div class="meta-item">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12,6 12,12 16,14"></polyline>
+                                </svg>
+                                <span>Ongoing</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card" data-category="art">
+                    <div class="project-image">
+                        <img src="https://cdn-front.freepik.com/home/anon-rvmp/professionals/art-directors.webp" alt="Art Direction">
+                        <div class="project-overlay">
+                            <div class="project-badges">
+                                <span class="badge badge-purple">Art Direction</span>
+                                <span class="badge badge-secondary">Luxury</span>
+                            </div>
+                            <button class="view-project-btn">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                                View Project
+                            </button>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3>Luxury Brand Identity</h3>
+                            <div class="project-status">
+                                <span class="status-dot completed"></span>
+                                <span>Completed</span>
+                            </div>
+                        </div>
+                        <p>Comprehensive visual identity system for premium fashion brand including brand guidelines and assets</p>
+                        <div class="project-meta">
+                            <div class="meta-item">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                                </svg>
+                                <span>February 2025</span>
+                            </div>
+                            <div class="meta-item">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12,6 12,12 16,14"></polyline>
+                                </svg>
+                                <span>4 months</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card" data-category="design">
+                    <div class="project-image">
+                        <img src="https://cdn-front.freepik.com/home/anon-rvmp/professionals/designers.webp" alt="Mobile App Design">
+                        <div class="project-overlay">
+                            <div class="project-badges">
+                                <span class="badge badge-primary">UI/UX Design</span>
+                                <span class="badge badge-secondary">Mobile</span>
+                            </div>
+                            <button class="view-project-btn">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                                View Project
+                            </button>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3>Mobile App Redesign</h3>
+                            <div class="project-status">
+                                <span class="status-dot completed"></span>
+                                <span>Completed</span>
+                            </div>
+                        </div>
+                        <p>Complete overhaul of financial mobile application increasing user engagement by 75% and retention</p>
+                        <div class="project-meta">
+                            <div class="meta-item">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                                </svg>
+                                <span>January 2025</span>
+                            </div>
+                            <div class="meta-item">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12,6 12,12 16,14"></polyline>
+                                </svg>
+                                <span>8 weeks</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="pagination-section">
+            <div class="pagination-wrapper">
+                <div class="pagination-info">
+                    <span>Showing <strong>1-6</strong> of <strong>24</strong> projects</span>
+                </div>
+                <div class="pagination-controls">
+                    <button class="pagination-btn prev-btn" disabled>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="15,18 9,12 15,6"></polyline>
+                        </svg>
+                        Previous
+                    </button>
+                    <div class="pagination-numbers">
+                        <button class="page-btn active">1</button>
+                        <button class="page-btn">2</button>
+                        <button class="page-btn">3</button>
+                        <span class="pagination-dots">...</span>
+                        <button class="page-btn">8</button>
+                    </div>
+                    <button class="pagination-btn next-btn">
+                        Next
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="9,18 15,12 9,6"></polyline>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+    <script  src="./script.js"></script>
+
+  </body>
+  
+</html>

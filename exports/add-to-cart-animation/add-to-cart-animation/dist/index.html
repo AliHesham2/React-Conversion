@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Add to Cart Animation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+<script>
+  !function(a){var b=/iPhone/i,c=/iPod/i,d=/iPad/i,e=/(?=.*\bAndroid\b)(?=.*\bMobile\b)/i,f=/Android/i,g=/(?=.*\bAndroid\b)(?=.*\bSD4930UR\b)/i,h=/(?=.*\bAndroid\b)(?=.*\b(?:KFOT|KFTT|KFJWI|KFJWA|KFSOWI|KFTHWI|KFTHWA|KFAPWI|KFAPWA|KFARWI|KFASWI|KFSAWI|KFSAWA)\b)/i,i=/Windows Phone/i,j=/(?=.*\bWindows\b)(?=.*\bARM\b)/i,k=/BlackBerry/i,l=/BB10/i,m=/Opera Mini/i,n=/(CriOS|Chrome)(?=.*\bMobile\b)/i,o=/(?=.*\bFirefox\b)(?=.*\bMobile\b)/i,p=new RegExp("(?:Nexus 7|BNTV250|Kindle Fire|Silk|GT-P1000)","i"),q=function(a,b){return a.test(b)},r=function(a){var r=a||navigator.userAgent,s=r.split("[FBAN");if("undefined"!=typeof s[1]&&(r=s[0]),s=r.split("Twitter"),"undefined"!=typeof s[1]&&(r=s[0]),this.apple={phone:q(b,r),ipod:q(c,r),tablet:!q(b,r)&&q(d,r),device:q(b,r)||q(c,r)||q(d,r)},this.amazon={phone:q(g,r),tablet:!q(g,r)&&q(h,r),device:q(g,r)||q(h,r)},this.android={phone:q(g,r)||q(e,r),tablet:!q(g,r)&&!q(e,r)&&(q(h,r)||q(f,r)),device:q(g,r)||q(h,r)||q(e,r)||q(f,r)},this.windows={phone:q(i,r),tablet:q(j,r),device:q(i,r)||q(j,r)},this.other={blackberry:q(k,r),blackberry10:q(l,r),opera:q(m,r),firefox:q(o,r),chrome:q(n,r),device:q(k,r)||q(l,r)||q(m,r)||q(o,r)||q(n,r)},this.seven_inch=q(p,r),this.any=this.apple.device||this.android.device||this.windows.device||this.other.device||this.seven_inch,this.phone=this.apple.phone||this.android.phone||this.windows.phone,this.tablet=this.apple.tablet||this.android.tablet||this.windows.tablet,"undefined"==typeof window)return this},s=function(){var a=new r;return a.Class=r,a};"undefined"!=typeof module&&module.exports&&"undefined"==typeof window?module.exports=r:"undefined"!=typeof module&&module.exports&&"undefined"!=typeof window?module.exports=s():"function"==typeof define&&define.amd?define("isMobile",[],a.isMobile=s()):a.isMobile=s()}(this);
+    isMobile.any||document.querySelector('html').classList.add('is-desktop');
+</script><link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.min.css'><link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <main>
+  <h1 class="heading">Add to Cart Animation</h1>
+
+  <div class="product">
+    <ul class="product__list">
+      <li class="product__item">
+        <div>
+          <div><img class="product__img" src="https://assets.codepen.io/204808/yoann-siloine-beYOfeTV5Zo-unsplash.jpg" alt="" /></div>
+          <div class="product__content">
+            <h2 class="product__title">Polariod</h2>
+            <div class="product__price">$300</div>
+            <button class="product__button add-to-cart" data-image="https://assets.codepen.io/204808/yoann-siloine-beYOfeTV5Zo-unsplash.jpg">Add to Cart</button>
+          </div>
+        </div>
+      </li>
+      <li class="product__item">
+        <div>
+          <div><img class="product__img" src="https://assets.codepen.io/204808/ryan-plomp-jvoZ-Aux9aw-unsplash.jpg" alt="" /></div>
+          <div class="product__content">
+            <h2 class="product__title">NIKE</h2>
+            <div class="product__price">$300</div>
+            <button class="product__button add-to-cart" data-image="https://assets.codepen.io/204808/ryan-plomp-jvoZ-Aux9aw-unsplash.jpg">Add to Cart</button>
+          </div>
+        </div>
+      </li>
+      <li class="product__item">
+        <div>
+          <div><img class="product__img" src="https://assets.codepen.io/204808/mike-meyers-v8XaVfyo41Q-unsplash.jpg" alt="" /></div>
+          <div class="product__content">
+            <h2 class="product__title">Game Boy</h2>
+            <div class="product__price">$300</div>
+            <button class="product__button add-to-cart" data-image="https://assets.codepen.io/204808/mike-meyers-v8XaVfyo41Q-unsplash.jpg">Add to Cart</button>
+          </div>
+        </div>
+      </li>
+      <li class="product__item">
+        <div>
+          <div><img class="product__img" src="https://assets.codepen.io/204808/lokesh-paduchuri-CsvF30-9bX8-unsplash.jpg" alt="" /></div>
+          <div class="product__content">
+            <h2 class="product__title">Camera</h2>
+            <div class="product__price">$300</div>
+            <button class="product__button add-to-cart" data-image="https://assets.codepen.io/204808/lokesh-paduchuri-CsvF30-9bX8-unsplash.jpg">Add to Cart</button>
+          </div>
+        </div>
+      </li>
+      <li class="product__item">
+        <div>
+          <div><img class="product__img" src="https://assets.codepen.io/204808/irene-kredenets-dwKiHoqqxk8-unsplash.jpg" alt="" /></div>
+          <div class="product__content">
+            <h2 class="product__title">Shoes</h2>
+            <div class="product__price">$300</div>
+            <button class="product__button add-to-cart" data-image="https://assets.codepen.io/204808/irene-kredenets-dwKiHoqqxk8-unsplash.jpg">Add to Cart</button>
+          </div>
+        </div>
+      </li>
+      <li class="product__item">
+        <div>
+          <div><img class="product__img" src="https://assets.codepen.io/204808/gaurav-kumar-HRjOdB1bf_Y-unsplash.jpg" alt="" /></div>
+          <div class="product__content">
+            <h2 class="product__title">Marshall Earbuds</h2>
+            <div class="product__price">$300</div>
+            <button class="product__button add-to-cart" data-image="https://assets.codepen.io/204808/gaurav-kumar-HRjOdB1bf_Y-unsplash.jpg">Add to Cart</button>
+          </div>
+        </div>
+      </li>
+      <li class="product__item">
+        <div>
+          <div><img class="product__img" src="https://assets.codepen.io/204808/fernando-andrade-potCPE_Cw8A-unsplash.jpg" alt="" /></div>
+          <div class="product__content">
+            <h2 class="product__title">Chanel N°5</h2>
+            <div class="product__price">$300</div>
+            <button class="product__button add-to-cart" data-image="https://assets.codepen.io/204808/fernando-andrade-potCPE_Cw8A-unsplash.jpg">Add to Cart</button>
+          </div>
+        </div>
+      </li>
+      <li class="product__item">
+        <div>
+          <div><img class="product__img" src="https://assets.codepen.io/204808/david-svihovec-v8BDEj9bfcs-unsplash.jpg" alt="" data-image="https://assets.codepen.io/204808/david-svihovec-v8BDEj9bfcs-unsplash.jpg" /></div>
+          <div class="product__content">
+            <h2 class="product__title">Apple Watch</h2>
+            <div class="product__price">$300</div>
+            <button class="product__button add-to-cart" data-image="https://assets.codepen.io/204808/david-svihovec-v8BDEj9bfcs-unsplash.jpg">Add to Cart</button>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <button class="cart">
+    <div class="cart__count"><span id="cart-count">0</span></div>
+    <svg class="cart__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="m10.62 14-1 2H19a1 1 0 0 1 0 2H9.62a2 2 0 0 1-1.79-2.89L8.9 13 5.32 4H3a1 1 0 0 1 0-2h2.32a2 2 0 0 1 1.86 1.26L7.88 5h13.01a1 1 0 0 1 .48.05 1 1 0 0 1 .56 1.3l-2.8 7a1 1 0 0 1-.93.63Zm-.12 5a1.5 1.5 0 1 0 1.5 1.5 1.5 1.5 0 0 0-1.5-1.5Zm6 0a1.5 1.5 0 1 0 1.5 1.5 1.5 1.5 0 0 0-1.5-1.5Z" />
+    </svg>
+  </button>
+</main>
+    <script src='https://unpkg.com/gsap@3/dist/gsap.min.js'></script><script  src="./script.js"></script>
+
+  </body>
+  
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Image slider ripple effect</title>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.1.2/tailwind.min.css'><link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <div class="relative w-screen h-screen">
+  <div class="absolute inset-0" id="slide-a" style="opacity:1">
+    <svg id="svg-a" class="relative w-full h-full">
+      <defs>
+        <filter id="ripple-filter">
+          <feImage width="0%" height="0%" result="rippleImage" id="fimg-a" />
+
+          <feDisplacementMap
+            id="displacement-map-a"
+            xChannelSelector="R"
+            yChannelSelector="G"
+            in="SourceGraphic"
+            in2="rippleImage"
+            result="displacementMap"
+            color-interpolation-filters="sRGB"
+            scale="0"
+          />
+          <feComposite operator="in" in2="rippleImage"></feComposite>
+        </filter>
+      </defs>
+      <g id="logo">
+        <image
+          id="logo-image-a"
+          xlink:href="https://images.unsplash.com/photo-1521804906057-1df8fdb718b7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
+          preserveAspectRatio="xMinYMin slice"
+          class="w-full h-full"
+        />
+        <image
+          id="logo-overlay-a"
+          xlink:href="https://images.unsplash.com/photo-1521804906057-1df8fdb718b7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
+          filter="url(#ripple-filter)"
+          preserveAspectRatio="xMinYMin slice"
+          class="w-full h-full"
+        />
+      </g>
+    </svg>
+    <div class="absolute inset-0 flex items-center h-full w-full" id="title-a">
+      <div class="w-1/2 lg:w-1/4 ml-10 lg:ml-64">
+        <h1 class="text-3xl uppercase">deserunt mollit</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+        </p>
+        <button class="bg-gray-800 text-white font-bold py-2 px-4 rounded mt-4">
+          Explore
+        </button>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="absolute inset-0" id="slide-b" style="opacity:0">
+    <svg id="svg-b" class="relative w-full h-full">
+      <defs>
+        <filter id="ripple-filter">
+          <feImage width="0%" height="0%" result="rippleImage" id="fimg-b" />
+
+          <feDisplacementMap
+            id="displacement-map-b"
+            xChannelSelector="R"
+            yChannelSelector="G"
+            in="SourceGraphic"
+            in2="rippleImage"
+            result="displacementMap"
+            color-interpolation-filters="sRGB"
+            scale="0"
+          />
+          <feComposite operator="in" in2="rippleImage"></feComposite>
+        </filter>
+      </defs>
+      <g id="logo">
+        <image
+          id="logo-image-b"
+          xlink:href="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1349&q=80"
+          preserveAspectRatio="xMinYMin slice"
+          class="w-full h-full"
+        />
+        <image
+          id="logo-overlay-b"
+          xlink:href="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1349&q=80"
+          filter="url(#ripple-filter)"
+          preserveAspectRatio="xMinYMin slice"
+          class="w-full h-full"
+        />
+      </g>
+    </svg>
+    <div class="absolute inset-0 flex items-center h-full w-full" id="title-b">
+      <div class="w-1/2 lg:w-1/4 ml-10 lg:ml-64">
+        <h1 class="text-3xl uppercase">occaecat cupidatat</h1>
+        <p>
+          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </p>
+        <button class="bg-gray-800 text-white font-bold py-2 px-4 rounded mt-4">
+          Explore
+        </button>
+      </div>
+    </div>
+  </div>
+  <header class="fixed inset-x-0 top-0 px-6" style="z-index:10">
+    <div class="flex h-16 justify-between border-b border-white items-center px-8">
+      <button class="w-12 h-12 flex items-center justify-center rounded-full">
+    
+        <svg viewBox="0 0 500.03 500.03" xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white" fill="currentColor"><path d="M252.581 395.053c15.688 15.708 15.591 40.979 0 56.57l-35.28 35.28c-15.461 15.5-40.874 15.696-56.57 0l-147.61-147.61c-15.59-15.6-15.59-40.98 0-56.57l35.28-35.28c15.591-15.592 40.862-15.688 56.57 0zM19.068 377.737c-3.609-3.609-9.609-2.946-12.395 1.331-11.067 16.986-7.654 37.463 5.028 50.146l59.11 59.11c12.572 12.572 33.034 16.189 50.14 5.034 4.278-2.79 4.949-8.788 1.338-12.4zm257.773-209.024c-6.25-6.24-16.38-6.24-22.63 0l-85.5 85.5c-6.25 6.25-6.25 16.38 0 22.63l54.47 54.47c6.229 6.229 16.359 6.251 22.63 0l85.5-85.5c6.25-6.25 6.25-16.38 0-22.63zm204.132-46.442c3.612 3.612 9.613 2.939 12.402-1.341 11.146-17.11 7.485-37.577-5.054-50.117l-59.11-59.11C416.56-.939 396.096-4.423 379.088 6.654c-4.278 2.786-4.944 8.787-1.334 12.397zM339.291 13.123c-15.6-15.59-40.98-15.6-56.57 0l-35.28 35.28c-15.591 15.59-15.688 40.861 0 56.57l147.61 147.61c15.723 15.703 40.996 15.575 56.57 0l35.28-35.28c15.59-15.59 15.59-40.97 0-56.57z"/></svg>
+      </button>
+      <ul class="flex">
+        <li class="mr-10">
+          <a href="">Home</a>
+        </li>
+        <li class="mr-10">
+          <a href="">Services</a>
+        </li>
+        <li class="mr-10">
+          <a href="">Equipment</a>
+        </li>
+      </ul>
+    </div>
+  </header>
+</div>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js'></script><script  src="./script.js"></script>
+
+  </body>
+  
+</html>

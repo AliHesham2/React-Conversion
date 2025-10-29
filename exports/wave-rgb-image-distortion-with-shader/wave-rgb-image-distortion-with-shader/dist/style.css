@@ -1,0 +1,68 @@
+html,
+body {
+  height: 100vh;
+  -ms-scroll-chaining: none;
+      overscroll-behavior: none;
+  width: 100%;
+}
+
+body {
+  background-color: #1f1f1f;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+}
+
+.heading {
+  font-size: 10rem;
+  left: 50%;
+  opacity: 0.5;
+  position: absolute;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+.scrollable {
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  will-change: transform;
+  z-index: 1;
+}
+
+.image-container {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  top: 30vh;
+  width: 100%;
+}
+.image-container:last-child {
+  margin-bottom: 30vh;
+}
+
+.image-container h1 {
+  color: #ffffff;
+  font-size: 6.25rem;
+  left: 0;
+  mix-blend-mode: difference;
+  position: absolute;
+  top: 60%;
+  z-index: 10;
+}
+
+img {
+  height: 60%;
+  position: absolute;
+  visibility: hidden;
+}
+
+canvas {
+  left: 0;
+  position: fixed;
+  top: 0;
+}

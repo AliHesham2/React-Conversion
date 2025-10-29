@@ -34,3 +34,7 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+Alright every thing is good now lets move to the 6 .. read the files carfeully and i want exactly convert the html and the css and js to the react component !! exactly !! also add comments and apply to the home page also dont foregt to change status after finishing ..
+
+Everything works, I just want to improve the code quality
