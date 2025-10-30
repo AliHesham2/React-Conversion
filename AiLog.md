@@ -7,6 +7,8 @@
 * ✅ Conversion is **HTML/CSS/JS → React (JavaScript only)**.
 * ✅ Each component must be **fully responsive** (same responsive behavior as the original, or improved only if needed to fix layout issues).
 * Your goal is to **replicate the original design and behavior exactly** — no changes or simplifications.
+* Always convert or replace any jQuery code with pure JavaScript or React-based solutions; jQuery is not allowed in React   
+  projects.
 
 ---
 
@@ -79,9 +81,9 @@
 ## �📊 Progress Tracker
 
 ### Total Folders: 132
-### Completed: 10
+### Completed: 15
 ### In Progress: 0
-### Pending: 122
+### Pending: 117
 
 ---
 
@@ -98,11 +100,11 @@
 | 7 | animated-continuous-sections-with-gsap-observer | ✅ | Done |
 | 8 | animated-image-slider-html-css-javascript | ✅ | Done |
 | 9 | animated-slider-webpage | ✅ | Done |
-| 10 | anime-js-v3-logo-animation | ❌ | Pending |
-| 11 | asian-food-website | ❌ | Pending |
-| 12 | autoplay-slider-pause-control-swiper-js | ❌ | Pending |
-| 13 | blob-carousel-for-the-planet | ❌ | Pending |
-| 14 | card-carousel | ❌ | Pending |
+| 10 | anime-js-v3-logo-animation | ✅ | Done |
+| 11 | asian-food-website | ✅ | Done |
+| 12 | autoplay-slider-pause-control-swiper-js | ✅ | Done | issue !!
+| 13 | blob-carousel-for-the-planet | ✅ | Done | ms7tha !!
+| 14 | card-carousel | ✅ | Done |
 | 15 | cards-with-inverted-border-radius-scss | ❌ | Pending |
 | 16 | carousel-with-hover-effect | ❌ | Pending |
 | 17 | center-mode-productivity-slider-pro-v5 | ❌ | Pending |
