@@ -11,6 +11,7 @@ import {
     CardCarousel,
     CardsWithInvertedBorderRadius,
     CarouselWithHoverEffect,
+    CenterModeProductivitySliderProV5,
   CardSlider3D,
   DribbleDesign,
   SimpleFoodCard,
@@ -56,6 +57,7 @@ export default function Home() {
     {/* <CardCarousel /> */}
      {/* <CardsWithInvertedBorderRadius />
       <CarouselWithHoverEffect /> */}
+    <CenterModeProductivitySliderProV5 />
   </div>
 
 

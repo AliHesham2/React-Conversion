@@ -11,3 +11,4 @@ export { default as AutoplaySliderPauseControl } from './AutoplaySliderPauseCont
 export { default as CardCarousel } from './CardCarousel/CardCarousel';
 export { default as CardsWithInvertedBorderRadius } from './CardsWithInvertedBorderRadius/CardsWithInvertedBorderRadius';
 export { default as CarouselWithHoverEffect } from './CarouselWithHoverEffect/CarouselWithHoverEffect';
+export { default as CenterModeProductivitySliderProV5 } from './CenterModeProductivitySliderProV5/CenterModeProductivitySliderProV5';

@@ -2,6 +2,9 @@
    <span class="material-symbols-outlined">name</span> render icons, not text. */
 @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=swap');
 
+/* Load Inter to match original exports (weights 400 and 700 used by demos) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -26,10 +29,13 @@ body {
      ScrollTrigger and normal scrolling work correctly */
 }
 
+/* Ensure 1rem == 16px to match original export sizing (many exports use rem units) */
+html { font-size: 16px; }
+
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
