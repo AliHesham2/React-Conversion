@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef } from 'react';
-import './AnimatedContinuousSections.module.css';
+import styles from './AnimatedContinuousSections.module.css';
 import { gsap } from 'gsap';
 import { Observer } from 'gsap/Observer';
 
@@ -201,7 +201,7 @@ const AnimatedContinuousSections = ({ data }) => {
   }, [data]);
 
   return (
-    <div ref={containerRef}>
+    <div ref={containerRef} className={styles.root}>
       <header>
         <div>Animated Sections</div>
         <div><a href="https://codepen.io/BrianCross/pen/PoWapLP">Original Inspiration</a></div>

@@ -7,6 +7,9 @@ import {
   AnimatedImageSlider,
     AnimatedSliderWebpage,
     AnimeJsV3LogoAnimation,
+    AutoplaySliderPauseControl,
+    CardCarousel,
+    CardsWithInvertedBorderRadius,
   CardSlider3D,
   DribbleDesign,
   SimpleFoodCard,
@@ -15,6 +18,7 @@ import {
 import { animatedContinuousSectionsData } from './data/animatedContinuousSectionsData';
 import { animatedImageSliderData } from './data/animatedImageSliderData';
 import { animatedSliderWebpageData } from './data/animatedSliderWebpageData';
+import autoplaySliderPauseControlData from './data/autoplaySliderPauseControlData';
 
 export default function Home() {
   return (
@@ -41,10 +45,19 @@ export default function Home() {
     {/* <AnimatedImageSlider data={animatedImageSliderData} /> */}
 
   {/* Anime.js logo animation (converted from exports) */}
-  
-  <AnimeJsV3LogoAnimation />
 
+  {/* <AnimeJsV3LogoAnimation /> */}
 
+  {/* <AutoplaySliderPauseControl slides={autoplaySliderPauseControlData} /> */}
+    
+
+  {/* <div className="page-centered"> */}
+    {/* <CardCarousel /> */}
+  {/* </div> */}
+
+    <div className="site-container">
+      <CardsWithInvertedBorderRadius />
+    </div>
     </main>
   );
 }

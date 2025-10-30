@@ -1,3 +1,11 @@
+/* Load Material Symbols (outlined) so components using
+   <span class="material-symbols-outlined">name</span> render icons, not text. */
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=swap');
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -41,4 +49,24 @@ a {
   html {
     color-scheme: dark;
   }
+}
+
+/* Page-scoped helper to center a single-page demo without touching body globals.
+   Use this on the homepage wrapper to emulate the original export's centered body
+   layout in a safe, reversible way. */
+.page-centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+  width: 100vw;;
+}
+
+/* Site container used to constrain and center content similarly to the original exports */
+.site-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-block: 4rem;
 }

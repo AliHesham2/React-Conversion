@@ -7,3 +7,6 @@ export { default as AddToCartAnimation } from './AddToCartAnimation/AddToCartAni
 export { default as AnimatedImageSlider } from './AnimatedImageSlider/AnimatedImageSlider';
 export { default as AnimatedSliderWebpage } from './AnimatedSliderWebpage/AnimatedSliderWebpage';
 export { default as AnimeJsV3LogoAnimation } from './AnimeJsV3LogoAnimation/AnimeJsV3LogoAnimation';
+export { default as AutoplaySliderPauseControl } from './AutoplaySliderPauseControl/AutoplaySliderPauseControl';
+export { default as CardCarousel } from './CardCarousel/CardCarousel';
+export { default as CardsWithInvertedBorderRadius } from './CardsWithInvertedBorderRadius/CardsWithInvertedBorderRadius';
