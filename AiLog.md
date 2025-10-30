@@ -81,9 +81,9 @@
 ## �📊 Progress Tracker
 
 ### Total Folders: 132
-### Completed: 15
+### Completed: 16
 ### In Progress: 0
-### Pending: 117
+### Pending: 116
 
 ---
 
@@ -105,7 +105,7 @@
 | 12 | autoplay-slider-pause-control-swiper-js | ✅ | Done | issue !!
 | 13 | blob-carousel-for-the-planet | ✅ | Done | ms7tha !!
 | 14 | card-carousel | ✅ | Done |
-| 15 | cards-with-inverted-border-radius-scss | ❌ | Pending |
+| 15 | cards-with-inverted-border-radius-scss | ✅ | Done - converted and scoped; responsive fixes applied |
 | 16 | carousel-with-hover-effect | ❌ | Pending |
 | 17 | center-mode-productivity-slider-pro-v5 | ❌ | Pending |
 | 18 | circle-square-triangle-dolphin | ❌ | Pending |

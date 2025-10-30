@@ -62,11 +62,3 @@ a {
   flex-direction: column;
   width: 100vw;;
 }
-
-/* Site container used to constrain and center content similarly to the original exports */
-.site-container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding-block: 4rem;
-}

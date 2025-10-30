@@ -10,6 +10,7 @@ import {
     AutoplaySliderPauseControl,
     CardCarousel,
     CardsWithInvertedBorderRadius,
+    CarouselWithHoverEffect,
   CardSlider3D,
   DribbleDesign,
   SimpleFoodCard,
@@ -51,13 +52,15 @@ export default function Home() {
   {/* <AutoplaySliderPauseControl slides={autoplaySliderPauseControlData} /> */}
     
 
-  {/* <div className="page-centered"> */}
+  <div className="page-centered">
     {/* <CardCarousel /> */}
-  {/* </div> */}
+     {/* <CardsWithInvertedBorderRadius />
+      <CarouselWithHoverEffect /> */}
+  </div>
 
-    <div className="site-container">
-      <CardsWithInvertedBorderRadius />
-    </div>
+
+
+
     </main>
   );
 }

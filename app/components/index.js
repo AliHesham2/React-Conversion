@@ -10,3 +10,4 @@ export { default as AnimeJsV3LogoAnimation } from './AnimeJsV3LogoAnimation/Anim
 export { default as AutoplaySliderPauseControl } from './AutoplaySliderPauseControl/AutoplaySliderPauseControl';
 export { default as CardCarousel } from './CardCarousel/CardCarousel';
 export { default as CardsWithInvertedBorderRadius } from './CardsWithInvertedBorderRadius/CardsWithInvertedBorderRadius';
+export { default as CarouselWithHoverEffect } from './CarouselWithHoverEffect/CarouselWithHoverEffect';
