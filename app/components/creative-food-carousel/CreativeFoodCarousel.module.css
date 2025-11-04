@@ -1,0 +1,515 @@
+.food-slider {
+	/* Scoped variables so globals don't collide with the app */
+	--food-slider-font-family: sans-serif;
+	--food-slider-button-side-offset: 32px;
+	--food-slider-button-mobile-side-offset: 24px;
+	--food-slider-button-mobile-bottom-offset: 16px;
+	--food-slider-title-font-size: 5rem; /* default, overridden by media query */
+	--food-slider-title-line-height: 1.2;
+
+	/* Layout: make the component size nicely inside the homepage wrapper
+		 - max-width caps the visual width
+		 - height uses viewport space but won't overflow small screens
+		 - position: relative so absolutely-positioned children (images, buttons)
+			 are positioned correctly inside this container */
+		/* full-viewport layout requested by user */
+		width: 100vw;
+		max-width: none;
+		height: 100vh;
+		min-height: 100vh;
+	position: relative;
+	font-family: var(--food-slider-font-family);
+	/* allow title and lifted elements to overflow the main viewport box */
+	overflow: visible;
+}
+
+/* ensure the main swiper element doesn't clip children when transforms are used */
+.food-slider .swiper {
+	overflow: visible;
+}
+.food-slider-no-transition {
+	transition-duration: 0ms !important;
+	transition-delay: 0ms !important;
+	transition-property: none !important;
+}
+.food-slider-no-transition *:not(.swiper-wrapper) {
+	transition-duration: 0ms !important;
+	transition-delay: 0ms !important;
+	transition-property: none !important;
+}
+.food-slider-no-transition .swiper-wrapper {
+	transition-delay: 0ms !important;
+}
+.food-slider .swiper {
+	width: 100%;
+	height: 100%;
+	transition: 1s background-color 1.3s;
+	/* leave room at the bottom so the pagination row doesn't overlap slides */
+	padding-bottom: 140px;
+}
+.food-slider .swiper-wrapper {
+	transition-delay: 1s;
+	transition-timing-function: cubic-bezier(0.5, 0, 0, 1);
+}
+.food-slider .swiper-slide {
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/* use full height so title doesn't get clipped by an artificial subtraction */
+	height: 100%;
+}
+.food-slider-title {
+	transition-delay: 1s;
+	/* make sure title sits above the scaled image layer */
+	position: relative;
+	/* place title above transformed image and pagination */
+	z-index: 999;
+	padding-top: 12vh;
+}
+
+/* keep the scaled image layer behind the title */
+.food-slider-scale {
+    z-index: 1;
+}
+
+/* pagination should sit above images but below the title */
+.food-slider-pagination {
+	z-index: 60;
+}
+.food-slider-title-text {
+	font-weight: 700;
+	font-size: var(--food-slider-title-font-size);
+	line-height: var(--food-slider-title-line-height);
+	letter-spacing: -1px;
+	color: #fff0;
+	-webkit-text-stroke: 2px #fff;
+}
+.food-slider-scale {
+	position: absolute;
+	inset: 0; /* fill the parent */
+	width: 100%;
+	height: 100%;
+	transform: scale(0.6);
+	transition-duration: 1s;
+	transition-property: transform;
+	transition-timing-function: cubic-bezier(0.5, 0, 0, 1);
+	opacity: 0.9;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.food-slider-scale img {
+	width: auto;
+	max-width: 100%;
+	max-height: 100%;
+	height: auto;
+	object-fit: contain;
+	transform: scale(1) translate(50%);
+	transition-timing-function: cubic-bezier(0.5, 0, 0, 1);
+	transition-property: transform;
+	/* avoid the image layer stealing pointer events from the pagination */
+	pointer-events: none;
+}
+.food-slider-button {
+	transition: 0.5s;
+	outline: none;
+	position: absolute;
+	width: 140px;
+	z-index: 30; /* above slides */
+	top: 50%;
+	transform: translateY(-50%);
+	cursor: pointer;
+}
+.food-slider-button svg {
+	display: block;
+	transition: 0.5s;
+}
+.food-slider-button .food-slider-svg-circle-wrap {
+	transition: 0.5s;
+	transform-origin: -20px 40px;
+	opacity: 1;
+}
+.food-slider-button circle {
+	transition: 0.5s;
+	stroke-width: 2px;
+	stroke: #fff;
+	fill: none;
+	stroke-dasharray: 1;
+	stroke-dashoffset: 1;
+	opacity: 1;
+	transform-origin: 0px 0px 0px;
+}
+.food-slider-button .food-slider-svg-arrow {
+	transition: 0.5s;
+	fill: #fff;
+	transform: rotateY(180deg) translate(-55px, 36.1px) scale(1.75);
+}
+.food-slider-button-prev {
+	left: var(--food-slider-button-side-offset);
+}
+.food-slider-button-next {
+	right: var(--food-slider-button-side-offset);
+}
+.food-slider-pagination {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding-bottom: 20px;
+	/* match original: bottom centered pagination row */
+	position: absolute;
+	left: 50%;
+	bottom: 28px;
+	transform: translateX(-50%);
+	z-index: 999;
+	pointer-events: auto;
+}
+/* Explicitly style the React-rendered button elements that use the
+   runtime class `swiper-pagination-bullet`. We use :global so the
+   literal class matches the DOM output (CSS Modules would otherwise
+   mangle class names). This makes the pagination visible even if
+   Swiper's own pagination isn't used. */
+.food-slider-pagination :global(button.swiper-pagination-bullet) {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	/* use original export's pagination bullet footprint so spacing matches */
+	width: 150px;
+	height: 80px;
+	background: none;
+	border: 0;
+	padding: 0 6px;
+	box-sizing: border-box;
+	cursor: pointer;
+}
+
+.food-slider-pagination :global(button.swiper-pagination-bullet) img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	/* original used circular thumbnails visually — keep rounded crop */
+	border-radius: 50%;
+}
+.food-slider-pagination :global(.swiper-pagination-bullet) {
+	/* match original export: rectangular footprint per bullet (image + label)
+	   but visually we keep a centered circular plate inside it. */
+	overflow: visible;
+	background: none;
+	display: flex;
+	flex-direction: column;
+	width: 64px;
+	height: 64px;
+	object-fit: contain;
+	height: 80px;
+	padding: 0 10px;
+	box-sizing: border-box;
+	margin: 0 18px;
+	position: relative;
+}
+.food-slider-pagination
+	.swiper-pagination-bullet:not(.swiper-pagination-bullet-active):hover {
+	opacity: 0.5;
+}
+.food-slider-pagination .swiper-pagination-bullet img {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+	border-radius: 50%;
+}
+.food-slider-pagination .swiper-pagination-bullet span {
+	display: block;
+	font-size: 11px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	color: rgba(255,255,255,0.85);
+	width: 140px;
+	text-align: center;
+	margin-top: 10px; /* ensure label sits below the plate */
+	position: static;
+}
+
+/* Target Swiper-injected pagination bullets inside this module's pagination
+ 	 element. We keep Swiper runtime classnames global but scope the rules to the
+ 	 module's `.food-slider-pagination` ancestor so they apply only here. */
+.food-slider-pagination :global(.swiper-pagination-bullet) {
+	overflow: visible; /* allow the plate + halo pseudo-element to extend outside */
+	background: none;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 140px; /* more room for plate + label */
+	height: 140px;
+	border-radius: 50%;
+	padding: 6px;
+	box-sizing: border-box;
+	margin: 0 22px;
+	background: transparent;
+	border: 0;
+	cursor: pointer;
+	position: relative;
+}
+
+.food-slider-pagination :global(.swiper-pagination-bullet img) {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 50%;
+}
+
+/* Plate wrapper inserted by renderBullet: create a white plate behind the thumbnail */
+.food-slider-pagination :global(.swiper-pagination-bullet .bullet-plate) {
+	/* circular white plate that contains the small thumbnail */
+	width: 56px;
+	height: 56px;
+	border-radius: 50%;
+	background: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: none; /* removed drop shadow to match original export */
+	transition: transform 220ms cubic-bezier(.2,.9,.2,1), box-shadow 220ms, filter 220ms;
+	position: relative; /* ensure plate stacks above halo */
+	z-index: 2;
+}
+
+.food-slider-pagination :global(.swiper-pagination-bullet .bullet-plate img) {
+	width: 44px;
+	height: 44px;
+	object-fit: contain;
+	border-radius: 50%;
+}
+
+/* Active bullet styling: make plate pop */
+.food-slider-pagination :global(.swiper-pagination-bullet-active .bullet-plate) {
+	transform: translateY(-18px) scale(1.18);
+	box-shadow: none; /* keep plate flat when active */
+	border: 6px solid rgba(255,255,255,0.95);
+}
+
+/* Slight scale for inactive to emphasize active */
+.food-slider-pagination :global(.swiper-pagination-bullet:not(.swiper-pagination-bullet-active) .bullet-plate) {
+	transform: scale(0.96);
+	filter: grayscale(30%);
+	opacity: 0.85;
+}
+
+/* Make inactive bullets subtly faded but keep the thumbnail visible */
+.food-slider-pagination :global(.swiper-pagination-bullet:not(.swiper-pagination-bullet-active) img) {
+	opacity: 0.45;
+	filter: grayscale(50%);
+}
+
+/* Keep active bullet fully visible */
+.food-slider-pagination :global(.swiper-pagination-bullet-active img) {
+	opacity: 1;
+	filter: none;
+}
+
+/* label styles for the buttons */
+.food-slider-pagination :global(.swiper-pagination-bullet span) {
+	/* keep a single, consistent label style for global selector too */
+	display: block;
+	font-size: 11px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	color: rgba(255,255,255,0.85);
+	width: 140px;
+	text-align: center;
+	margin-top: 10px;
+	position: static;
+}
+.food-slider-pagination :global(.swiper-pagination-bullet-active span) {
+	color: #fff;
+	opacity: 1;
+	font-weight: 700;
+}
+
+/* subtle ghost circle behind each bullet to match original look */
+.food-slider-pagination :global(.swiper-pagination-bullet)::before {
+	content: '';
+	position: absolute;
+	/* reduce overall size so halo isn't huge */
+	width: 82px;
+	height: 82px;
+	border-radius: 50%;
+	background: rgba(255,255,255,0.02);
+	top: 18px; /* nudge down so halo centers behind the plate */
+	left: 50%;
+	transform: translateX(-50%);
+	pointer-events: none;
+	z-index: 0; /* behind the plate which has z-index:2 */
+	transition: opacity 220ms, transform 220ms;
+}
+.food-slider-pagination :global(.swiper-pagination-bullet-active)::before {
+	opacity: 0.12;
+	transform: translateX(-50%) translateY(-6px) scale(1.02);
+}
+
+/* ensure pointer events are enabled */
+.food-slider-pagination :global(.swiper-pagination-bullet) {
+	pointer-events: auto;
+}
+
+.food-slider-button-disabled {
+	opacity: 0.2;
+	cursor: default;
+}
+.food-slider-button .food-slider-svg-wrap {
+	transform: translateY(353px);
+}
+.food-slider-button-next .food-slider-svg-wrap {
+	transform: translateY(353px) rotateY(180deg);
+	transform-origin: 80px 0px 0px;
+}
+.food-slider-button .food-slider-svg-line {
+	transition: 0.5s;
+	stroke: #fff;
+	stroke-width: 2;
+	transform: translate(50px, 42px);
+}
+.food-slider-button-prev:not(.food-slider-button-disabled):hover svg {
+	transform: translate(-16px);
+}
+.food-slider-button-next:not(.food-slider-button-disabled):hover svg {
+	transform: translate(16px);
+}
+.food-slider-button:not(.food-slider-button-disabled):hover
+	.food-slider-svg-circle-wrap {
+	transform: scale(1.1);
+	}
+.food-slider-button:not(.food-slider-button-disabled):hover circle {
+	stroke-dasharray: 4px;
+	stroke-dashoffset: 4px;
+	opacity: 1;
+	}
+.food-slider-button:not(.food-slider-button-disabled):hover
+	.food-slider-svg-arrow {
+	transform: rotateY(180deg) translate(-40px, 36.1px) scale(1.75);
+	}
+.food-slider-button:not(.food-slider-button-disabled):hover
+	.food-slider-svg-line {
+	transform: translate(35px, 42px) scaleX(0.5);
+	}
+.autoplay-progress {
+	position: absolute;
+	right: var(--food-slider-button-side-offset);
+	bottom: 16px;
+	z-index: 30;
+	width: 48px;
+	height: 48px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #fff;
+}
+
+/* When we want the active slide's plate to appear above pagination, we add
+   the `plate-front` class to the slide element (added from JS after the
+   transition). This rule raises the scale layer above the pagination row. */
+.food-slider :global(.plate-front) .food-slider-scale {
+	z-index: 1005;
+}
+
+.autoplay-progress svg {
+	--progress: 0;
+	position: absolute;
+	left: 0;
+	top: 0px;
+	z-index: 10;
+	width: 100%;
+	height: 100%;
+	stroke-width: 1px;
+	stroke: #fff;
+	fill: none;
+	stroke-dashoffset: calc(125.6px * (1 - var(--progress)));
+	stroke-dasharray: 125.6;
+	transform: rotate(-90deg);
+}
+	@media (max-width: 480px) {
+	.food-slider {
+		--food-slider-title-font-size: 3rem;
+		height: min(520px, 60vh);
+	}
+}
+
+@media (max-width: 640px) {
+	.food-slider {
+		height: auto;
+		min-height: 320px;
+	}
+
+	.food-slider-button {
+		top: auto;
+		bottom: var(--food-slider-button-mobile-bottom-offset);
+		transform: none;
+	}
+
+	.food-slider-button-prev {
+		left: var(--food-slider-button-mobile-side-offset);
+	}
+
+	.food-slider-button-next {
+		right: var(--food-slider-button-mobile-side-offset);
+	}
+
+	.food-slider-pagination {
+		padding-top: 20px;
+		bottom: unset !important;
+		top: 0 !important;
+		padding-bottom: 0;
+	}
+
+		/* On small screens pagination sits at top so remove bottom padding */
+		.food-slider .swiper {
+			padding-bottom: 0;
+		}
+
+	.autoplay-progress svg {
+		left: 0;
+		right: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.food-slider-pagination .swiper-pagination-bullet {
+		width: 80px;
+		height: 80px;
+		padding: 4px;
+	}
+
+	.food-slider-pagination .swiper-pagination-bullet span {
+		font-size: 10px;
+		top: -8px;
+	}
+
+	.food-slider-button {
+		width: 80px;
+	}
+
+	.food-slider-title-text {
+		font-size: 30px;
+	}
+
+	.food-slider .swiper-slide {
+		height: 100%;
+	}
+
+	.food-slider-scale {
+		height: 150%;
+		width: 150%;
+	}
+
+	.autoplay-progress {
+		left: 0;
+		margin: 0 auto;
+	}
+}
+
+.youtube-button {
+  top: 50px;
+}

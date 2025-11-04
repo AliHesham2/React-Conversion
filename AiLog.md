@@ -1,48 +1,82 @@
 # 🤖 AI Conversion Guide
 
-## 🧠 Master Rules
+## ⚙️ Standardized Conversion Process (single repeatable flow)
 
-* 🚫 Never edit or touch any code inside the **`exports`** folder.
-* 🚫 Do NOT add new colors, styles, libraries, or extra logic.
-* ✅ Conversion is **HTML/CSS/JS → React (JavaScript only)**.
-* ✅ Each component must be **fully responsive** (same responsive behavior as the original, or improved only if needed to fix layout issues).
-* Your goal is to **replicate the original design and behavior exactly** — no changes or simplifications.
-* Always convert or replace any jQuery code with pure JavaScript or React-based solutions; jQuery is not allowed in React   
-  projects.
+Follow this exact procedure for every export to guarantee consistency and maintainability.
 
----
+Pre-flight checks
+- Verify the target folder in `exports/` exists and contains the original `index.html`/`.html`, `style.css`/`.css`, and `script.js`/`.js` files.
+- Do not edit anything inside `exports/` — treat it as the canonical source.
+- Make sure the next item in the checklist is `Pending` and not already being worked on by someone else.
 
-## ⚙️ Conversion Steps
+Conversion contract (what you must produce)
+- A React component file: `app/components/<export-name>/<ExportName>.js` (JavaScript-only React component; no JSX extension required).
+- A scoped CSS Module in the same folder: `ComponentName.module.css` (use CSS Modules; no global selectors except deliberate, documented exceptions).
+- Optional: a data file in `app/data/<export>-data.js` used only for local testing (never ship static data inside the component itself).
+- No runtime scripts loaded from `exports/` — port behavior into the React component (useEffect + refs).
 
-1. Open the file **`AiLog.md`**.
+Step-by-step conversion
 
-2. Go to the section **“📋 Conversion Checklist”**.
+1) Read and understand the original files
+- Open the original HTML, CSS and JS. Trace selectors used in JS and CSS. Note any external libraries (GSAP, Anime.js, etc.).
+- Identify the root container (the top-level element wrapper) and all interactive elements (nav, dots, arrows, images).
 
-3. Find the **last item marked “✅ Done”**.
+2) Create component folder & files
+- Create `app/components/<export-name>/` (kebab-case folder name matches `exports/<export-name>`).
+- Create the React file: `app/components/<export-name>/<ExportName>.js`.
+  - The component must be data-free: accept a `slides` prop (or appropriate props) and render only from props/state.
+  - Do NOT hardcode images, text arrays, or demo data inside the component.
+  - Keep markup identical to original (class names can be converted to CSS Module keys).
 
-4. Start working on the **next item marked “Pending”**.
+3) Convert HTML → JSX/React (HTML-only pass)
+- Render the original DOM structure using React elements and the `slides` prop.
+- DO NOT add behavior or data in this pass — this file is purely structural.
+- Use plain `<img>` tags if you must match the original markup (suppress lint rule if needed). We can optimize with `next/image` later if desired.
 
-5. Go to the **`exports`** folder and find a subfolder with the same name.
+4) Convert CSS → CSS Module (scoped)
+- Create `ComponentName.module.css` in the same folder.
+- Convert selectors to local class names (remove :global wrappers). Example: `.slide` remains `.slide` in the module, and JS references it as `styles.slide`.
+- Avoid universal selectors (`*`) and global resets inside modules — put global resets only in `app/globals.css` if necessary.
+- Respect Turbopack/Next.js rules: CSS Modules require at least one local class per selector (no pure `*`, no ambiguous selectors).
 
-6. Inside that folder, you’ll find three files:
+5) Wire CSS Module into component
+- Import styles: `import styles from './ComponentName.module.css'`.
+- Replace class strings with module mappings: `className={styles.slide}` or `className={
+  
 
-   * `.html`
-   * `.css`
-   * `.js`
+}` (use template or classnames helper).
 
-7. Read and understand all three files carefully:
+6) Port JavaScript behavior (if required)
+- Move original JS logic into the component using `useEffect`, `useRef`, and `useState` as appropriate.
+- Scope DOM queries to the component: use a `containerRef` and `containerRef.current.querySelectorAll(...)` instead of document-level selectors.
+- Prefer state-driven class application (`setState` → render `className`) rather than manual `classList` toggles when possible. When imperative DOM mutation is necessary (performance/complex animation), use refs and guard accesses with defensive checks.
+- Keep timing logic (intervals/timeouts) in refs so you can clear them on unmount.
 
-   * How the **HTML** structure is built.
-   * How the **CSS** connects to it (classes / IDs).
-   * How the **JavaScript** affects it (animations, logic, events).
+7) Data & testing harness
+- For local testing only, add a small test data file in `app/data/<export>-data.js` and import it into `app/page.js` to render the component during development. Do NOT keep that test data inside the component file.
 
-8. Once you fully understand it:
+8) Accessibility & performance checks
+- Ensure images have alt text, interactive elements are keyboard-accessible, and focus styles are preserved.
+- Avoid blocking the main thread on mount; prefer CSS transitions or requestAnimationFrame for paint-sensitive updates.
 
-   * Create a new folder with the same name inside **`app/components/`**.
-   * Convert everything into a **React component (JavaScript only)**.
-   * Save it as **`ComponentName.js`** (not `.jsx`).
-   * Keep the **CSS in a separate file** with the same name.
-   * The final result must be **100% identical** to the original:
+9) Validation (quality gates)
+- Build: `npm run dev` — must compile without errors.
+- Lint/typecheck: run `npm run lint` (or your project's linter); fix reported issues unless false positives.
+- Quick visual test: open page, inspect `.slide-content` computed styles (verify owner file is the component module file).
+
+10) Cleanup & commit
+- Remove console.logs, debug CSS overrides, or temporary inline style hacks.
+- Ensure the CSS Module contains only rules used by the component.
+- Update `AiLog.md` conversion checklist: mark item `Done`, add notes (what changed, any deviations, libraries used).
+
+Failure policy
+- If the build or visual checks fail, iterate up to 3 quick fixes (CSS scoping, index of affected selectors, or timing adjustments). If unresolved after 3 attempts, create a short issue in the repo and move to the next item.
+
+Commands (dev/test)
+```powershell
+npm run dev
+# open http://localhost:3000
+```
 
      * Same colors
      * Same fonts
@@ -81,9 +115,9 @@
 ## �📊 Progress Tracker
 
 ### Total Folders: 132
-### Completed: 18
-### In Progress: 0
-### Pending: 114
+### Completed: 22
+### In Progress: 2
+### Pending: 108
 
 ---
 
@@ -106,20 +140,22 @@
 | 13 | blob-carousel-for-the-planet | ✅ | Done | ms7tha !!
 | 14 | card-carousel | ✅ | Done |
 | 15 | cards-with-inverted-border-radius-scss | ✅ | Done - converted and scoped; responsive fixes applied |
-| 16 | carousel-with-hover-effect | ✅ | Done - converted and mounted to homepage; scoped CSS and theme fixes; Material Symbols import fixed |
-| 17 | center-mode-productivity-slider-pro-v5 | ✅ | Done - converted, sized to match original (px variables) and mounted to homepage; Inter/font normalization applied |
-| 18 | circle-square-triangle-dolphin | ❌ | Pending |
-| 19 | clean-slider-with-curved-background | ❌ | Pending |
-| 20 | clip-path-hover-effect | ❌ | Pending |
-| 21 | clip-path-revealing-slider | ❌ | Pending |
-| 22 | codepen-challenge-reflection | ❌ | Pending |
-| 23 | codepen-home-logo-to-header-galleryscrollsmoother-by-louis-hoebregts | ❌ | Pending |
-| 24 | codepenchallenge-card-carousel | ❌ | Pending |
-| 25 | contrast-text-color-on-image | ❌ | Pending |
-| 26 | cpchallenge-slideshow-modern-1 | ❌ | Pending |
-| 27 | cpchallenge-slideshow-modern-2 | ❌ | Pending |
-| 28 | creative-food-carousel | ❌ | Pending |
+| 16 | carousel-with-hover-effect | ✅ | Done 
+| 17 | center-mode-productivity-slider-pro-v5 | ✅ | Done 
+| 18 | circle-square-triangle-dolphin | ✅ | Done  | ms7tha !!
+| 19 | clean-slider-with-curved-background | ✅ | issue !!
+| 20 | clip-path-hover-effect | ✅ | Done |
+| 21 | clip-path-revealing-slider | ✅ | Done |
+| 22 | codepen-challenge-reflection | ✅ | Done |
+| 23 | codepen-home-logo-to-header-galleryscrollsmoother-by-louis-hoebregts | ✅ | Done | ms7tha !!
+| 24 | codepenchallenge-card-carousel | ✅ | Done | ms7tha !!
+| 25 | contrast-text-color-on-image | ✅ | Done | ms7tha !!
+| 26 | cpchallenge-slideshow-modern-1 | ✅ | Done | 
+| 27 | cpchallenge-slideshow-modern-2 | ✅ | Done | Converted and JS ported into component |
+| 28 | creative-food-carousel | ✅ | Done | Converted to React component with Swiper.js, parallax effects, and CSS Module |
 | 29 | css-3d-carousel-room | ❌ | Pending |
+
+
 | 30 | css-block-revealing-effect | ❌ | Pending |
 | 31 | css-carousel | ❌ | Pending |
 | 32 | css-carousel-with-keyboard-controls | ❌ | Pending |
@@ -130,6 +166,8 @@
 | 37 | css-only-ink-splash-video-manipulation-css-effect | ❌ | Pending |
 | 38 | css-only-marquee-with-slow-on-hover | ❌ | Pending |
 | 39 | css-sliderpure-css10 | ❌ | Pending |
+
+
 | 40 | cyber-scrollgsap | ❌ | Pending |
 | 41 | draggable-masthead-reveal | ❌ | Pending |
 | 42 | dynamic-carousel-slider-with-infinite-scoll | ❌ | Pending |
@@ -140,6 +178,8 @@
 | 47 | fancy-slider | ❌ | Pending |
 | 48 | food-card-grid-layout | ❌ | Pending |
 | 49 | full-screen-slider-gsap-timeline-1 | ❌ | Pending |
+
+
 | 50 | full-slider-prototype | ❌ | Pending |
 | 51 | gallery-3dcssinfinitehover | ❌ | Pending |
 | 52 | getting-familiar-with-anime-js-line-drawing | ❌ | Pending |

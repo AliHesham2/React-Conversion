@@ -114,6 +114,35 @@ export default function CardCarousel() {
     root.addEventListener('touchmove', onTouchMove);
     root.addEventListener('touchend', onTouchEnd);
 
+    // Wheel / mouse scroll handling
+    // Use a lock to prevent rapid-fire wheel events from skipping multiple slides
+    const wheelLock = { locked: false };
+    const WHEEL_THRESHOLD = 10; // minimum delta to consider
+
+    function onWheel(e) {
+      // only handle vertical wheel
+      const dy = e.deltaY;
+      if (Math.abs(dy) < WHEEL_THRESHOLD) return;
+
+      // prevent the page from scrolling while interacting with the carousel
+      try { e.preventDefault(); } catch (err) {}
+
+      if (wheelLock.locked) return;
+      wheelLock.locked = true;
+
+      if (dy > 0) {
+        next();
+      } else {
+        prev();
+      }
+
+      // release lock after a short timeout
+      setTimeout(() => { wheelLock.locked = false; }, 250);
+    }
+
+    // Use non-passive, capture listener so we can preventDefault()
+    root.addEventListener('wheel', onWheel, { passive: false, capture: true });
+
     // cleanup
     return () => {
       leftBtn && leftBtn.removeEventListener('click', prev);
@@ -123,6 +152,7 @@ export default function CardCarousel() {
       root.removeEventListener('touchstart', onTouchStart);
       root.removeEventListener('touchmove', onTouchMove);
       root.removeEventListener('touchend', onTouchEnd);
+      root.removeEventListener('wheel', onWheel, { passive: false, capture: true });
     };
   }, [active]);
 

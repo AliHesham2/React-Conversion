@@ -17,14 +17,31 @@ import {
   SimpleFoodCard,
   AddToCartAnimation
 } from './components';
+// Import the CleanSlider component and its data directly to ensure the
+// homepage mounts the recreated export regardless of the barrel index state.
+import CleanSliderWithCurvedBackground from './components/CleanSliderWithCurvedBackground/CleanSliderWithCurvedBackground';
+import cleanSliderWithCurvedBackgroundData from './data/cleanSliderWithCurvedBackgroundData';
+import ClipPathHoverEffect from './components/ClipPathHoverEffect/ClipPathHoverEffect';
+import clipPathHoverEffectData from './data/clipPathHoverEffectData';
+import ClipPathRevealingSlider from './components/ClipPathRevealingSlider/ClipPathRevealingSlider';
+import clipPathRevealingSliderData from './data/clipPathRevealingSliderData';
+import CodepenChallengeReflection from './components/CodepenChallengeReflection/CodepenChallengeReflection';
+import codepenChallengeReflectionData from './data/codepenChallengeReflectionData';
 import { animatedContinuousSectionsData } from './data/animatedContinuousSectionsData';
 import { animatedImageSliderData } from './data/animatedImageSliderData';
 import { animatedSliderWebpageData } from './data/animatedSliderWebpageData';
 import autoplaySliderPauseControlData from './data/autoplaySliderPauseControlData';
+import CpchallengeSlideshowModern1 from './components/cpchallenge-slideshow-modern-1/CpchallengeSlideshowModern1';
+import cpchallengeData from './data/cpchallengeSlideshowModern1Data';
+import CpchallengeSlideshowModern2 from './components/cpchallenge-slideshow-modern-2/CpchallengeSlideshowModern2';
+import cpchallenge2Data from './data/cpchallengeSlideshowModern2Data';
+import CreativeFoodCarousel from './components/creative-food-carousel/CreativeFoodCarousel';
+import creativeFoodCarouselData from './data/creativeFoodCarouselData';
+
 
 export default function Home() {
   return (
-    <main >
+    <main>
       {/* <WelcomeIntro /> */}
       
       {/* <CardSlider3D /> */}
@@ -55,14 +72,40 @@ export default function Home() {
 
   <div className="page-centered">
     {/* <CardCarousel /> */}
+    
+    <CreativeFoodCarousel slides={creativeFoodCarouselData} />
+
      {/* <CardsWithInvertedBorderRadius />
       <CarouselWithHoverEffect /> */}
-    <CenterModeProductivitySliderProV5 />
-  </div>
+    {/* <CenterModeProductivitySliderProV5 /> */}
+
+
+  
+    {/* <CleanSliderWithCurvedBackground slides={cleanSliderWithCurvedBackgroundData} /> */}
+
+    {/* <div style={{height: '60px'}} />
+    <ClipPathHoverEffect items={clipPathHoverEffectData} /> */}
+
+    {/* <div style={{height: '60px'}} /> */}
+    {/* <ClipPathRevealingSlider items={clipPathRevealingSliderData} /> */}
+
+  {/* <div style={{height: '60px'}} />
+  <CodepenChallengeReflection data={codepenChallengeReflectionData} /> */}
+
+ 
+
+
+    {/* cpchallenge slideshow (for testing) */}
+
+ {/* <div style={{height: '40px'}} /> */}
+ {/* <CpchallengeSlideshowModern2 slides={cpchallenge2Data} /> */}
 
 
 
+ </div>
 
+
+ 
     </main>
   );
 }

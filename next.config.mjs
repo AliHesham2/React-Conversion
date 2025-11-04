@@ -9,6 +9,13 @@ const nextConfig = {
         port: '',
         pathname: '/**',
       },
+      {
+        // allow original export assets hosted on S3 (used by several converted demos)
+        protocol: 'https',
+        hostname: 's3-us-west-2.amazonaws.com',
+        port: '',
+        pathname: '/**',
+      },
     ],
   },
 };

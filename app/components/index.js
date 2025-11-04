@@ -12,3 +12,5 @@ export { default as CardCarousel } from './CardCarousel/CardCarousel';
 export { default as CardsWithInvertedBorderRadius } from './CardsWithInvertedBorderRadius/CardsWithInvertedBorderRadius';
 export { default as CarouselWithHoverEffect } from './CarouselWithHoverEffect/CarouselWithHoverEffect';
 export { default as CenterModeProductivitySliderProV5 } from './CenterModeProductivitySliderProV5/CenterModeProductivitySliderProV5';
+export { default as CleanSliderWithCurvedBackground } from './CleanSliderWithCurvedBackground/CleanSliderWithCurvedBackground';
+

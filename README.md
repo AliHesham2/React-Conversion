@@ -38,3 +38,16 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 Alright every thing is good now lets move to the 6 .. read the files carfeully and i want exactly convert the html and the css and js to the react component !! exactly !! also add comments and apply to the home page also dont foregt to change status after finishing ..
 
 Everything works, I just want to improve the code quality
+
+when u convert try to align the global css with our css to avoid problems
+
+---------------------------------------------------------------------------------
+oki now mark # 27 as done and lets convert 28 ! first read the original html carefully and only converr the html to react (js) and make sure that html conversion align with react structure also create dummy test data inside data folder
+ also want to test the react.js in so place it in the home page
+
+  oki step 2 read the original css and convert it to react css and it must be alright with react also connect it with react .js
+
+
+step 3 its time for read original js file and convert it to be align with react 
+
+
