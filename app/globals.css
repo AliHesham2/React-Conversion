@@ -8,6 +8,9 @@
 /* Load Roboto for components that expect it (some exports use Roboto) */
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');
 
+/* Load Bebas Neue used by the marquee export */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -72,4 +75,32 @@ a {
   min-height: 100vh;
   flex-direction: column;
   width: 100vw;;
+}
+
+/* Optional background wrapper for exports that used a full-bleed background image.
+   Use this by wrapping the converted component with a div.marquee-bg. This keeps
+   the rule out of CSS Modules while giving us a safe, opt-in global background. */
+.marquee-bg::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url(https://images.unsplash.com/photo-1505356822725-08ad25f3ffe4?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.25);
+  z-index: -1;
+}
+
+/* Global helper to pause marquee-style animations via a custom property.
+   Use by adding the `u-paused` class to a wrapper element (recommended).
+*/
+.u-paused {
+  --marquee-play-state: paused;
+}
+
+/* Utility helpers for converted exports (small, safe, documented globals).
+   These let components toggle visual states without using :global() inside modules.
+*/
+.u-paused {
+  --marquee-play-state: paused;
 }

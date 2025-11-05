@@ -43,6 +43,7 @@ import CssBlockRevealingEffect from './components/css-block-revealing-effect/Css
 import cssBlockRevealingEffectData from './data/cssBlockRevealingEffectData';
 import CssOnlyMarquee from './components/css-only-marquee/CssOnlyMarquee';
 import cssOnlyMarqueeData from './data/cssOnlyMarqueeData';
+import CssCarouselKeyboard from './components/css-carousel-with-keyboard-controls/CssCarouselKeyboard';
 
 
 
@@ -82,13 +83,17 @@ export default function Home() {
     
     {/* <CreativeFoodCarousel slides={creativeFoodCarouselData} /> */}
 
-  {/* <div style={{height: '60px'}} /> */}
+
+  <div style={{height: '60px'}} />
+  <CssCarouselKeyboard />
+
   {/* <Css3dCarouselRoom /* pass test data if needed later */ }
 
   {/* <div style={{height: '60px'}} />
   <CssBlockRevealingEffect  /> */}
-    <div style={{height: '60px'}} />
-    <CssOnlyMarquee items={cssOnlyMarqueeData} />
+  
+    {/* <div style={{height: '60px'}} />
+    <CssOnlyMarquee items={cssOnlyMarqueeData} /> */}
 
 
 

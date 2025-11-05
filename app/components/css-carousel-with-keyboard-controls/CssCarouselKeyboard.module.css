@@ -1,0 +1,114 @@
+/* Original export stylesheet (scoped under .root) for exact parity.
+   Source: exports/css-carousel-with-keyboard-controls/.../dist/style.css
+   Kept minimal modifications: prefixed selectors with .root and removed
+   global body rules that conflict with app-level styling. */
+
+
+.root * { box-sizing: border-box; }
+
+.root {
+  font-family: sans-serif;
+  overflow: hidden;
+}
+
+.root label {
+  background: #444;
+  color: #fff;
+  transition: transform 400ms ease-out;
+  display: inline-block;
+  min-height: 100%;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  line-height: 100vh;
+}
+
+.root form {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  white-space: nowrap;
+}
+
+.root input {
+  position: absolute;
+}
+
+.root .keys {
+  position: fixed;
+  z-index: 10;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  color: #fff;
+  text-align: center;
+  transition: all 300ms linear;
+  opacity: 0;
+}
+
+.root input:focus ~ .keys {
+  opacity: 0.8;
+}
+
+.root input:nth-of-type(1):checked ~ label:nth-of-type(1),
+.root input:nth-of-type(2):checked ~ label:nth-of-type(2),
+.root input:nth-of-type(3):checked ~ label:nth-of-type(3),
+.root input:nth-of-type(4):checked ~ label:nth-of-type(4){
+   z-index: 0;
+}
+
+.root input:nth-of-type(1):checked ~ label { transform: translate3d(0, 0, 0); }
+
+.root input:nth-of-type(2):checked ~ label { transform: translate3d(-100%, 0, 0); }
+
+.root input:nth-of-type(3):checked ~ label { transform: translate3d(-200%, 0, 0); }
+
+.root input:nth-of-type(4):checked ~ label { transform: translate3d(-300%, 0, 0); }
+
+.root label {
+  background: #444;
+  background-size: cover;
+  font-size: 3rem;
+}
+
+.root label[for="diamonds"],
+.root label[for="hearts"] {
+  background: #cc0000;
+}
+
+.root label:before,
+.root label:after {
+  color: white;
+  display: block;
+  background: rgba(255,255,255,0.2);
+  position: absolute;
+  padding: 15;
+  font-size: 3rem;
+  height: 10rem;
+  line-height: 10rem;
+  top: 50%;
+  transform: translate3d(0, -50%, 0);
+  cursor: pointer;
+   z-index: 9999;
+}
+
+.root label:before {
+  content: "\276D";
+  right: 100%;
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+}
+
+.root label:after {
+  content: "\276C";
+  left: 100%;
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+}
+
+
