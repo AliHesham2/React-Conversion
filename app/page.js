@@ -41,6 +41,8 @@ import Css3dCarouselRoom from './components/css-3d-carousel-room/Css3dCarouselRo
 import css3dCarouselRoomData from './data/css3dCarouselRoomData';
 import CssBlockRevealingEffect from './components/css-block-revealing-effect/CssBlockRevealingEffect';
 import cssBlockRevealingEffectData from './data/cssBlockRevealingEffectData';
+import CssOnlyMarquee from './components/css-only-marquee/CssOnlyMarquee';
+import cssOnlyMarqueeData from './data/cssOnlyMarqueeData';
 
 
 
@@ -85,6 +87,8 @@ export default function Home() {
 
   {/* <div style={{height: '60px'}} />
   <CssBlockRevealingEffect  /> */}
+    <div style={{height: '60px'}} />
+    <CssOnlyMarquee items={cssOnlyMarqueeData} />
 
 
 

@@ -1,0 +1,93 @@
+.marquee {
+  --marquee--colour: #f3bb0b;
+  --marquee--repeat-count: 6;
+  --marquee--base-duration: 1s;
+  --marquee--repeat-size: calc(100% / var(--marquee--repeat-count));
+  --marquee--double-size: calc(var(--marquee--repeat-size) * 2);
+  --marquee--duration: calc(
+    var(--marquee--base-duration) * var(--char-count, 20)
+  );
+  overflow: hidden;
+  width: 110%;
+  margin-left: -5%;
+  mix-blend-mode: screen;
+  transform: rotate(-5deg);
+  background: var(--marquee--colour);
+  color: #000;
+}
+.marquee:nth-child(even) {
+  --marquee--direction: -1;
+  transform: rotate(5deg);
+  background: #000;
+  color: var(--marquee--colour);
+}
+.marquee p {
+  transform: translateY(0.07em);
+  font-weight: bold;
+  margin: 0;
+  display: flex;
+  gap: 0.5em;
+  line-height: 1.1;
+  font-size: clamp(2.5rem, 12vw, 6.2rem);
+  font-family: "Bebas Neue", sans-serif;
+}
+.marquee p::after {
+  content: "*";
+  transform: translateY(0.175em);
+}
+.marquee p::before {
+  content: "";
+}
+
+.marquee--inner {
+  width: max-content;
+  display: flex;
+  text-transform: uppercase;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .marquee--inner {
+    animation: marquee var(--marquee--duration) infinite linear, reduce-marquee var(--marquee--duration) infinite linear paused;
+    animation-composition: add;
+  }
+  .marquee--inner:hover {
+    animation-play-state: running;
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(calc(( -1 * var(--marquee--double-size)) - (var(--marquee--double-size) * var(--marquee--direction, 1))));
+  }
+  to {
+    transform: translateX(calc(var(--marquee--double-size) * -1));
+  }
+}
+@keyframes reduce-marquee {
+  from {
+    transform: translateX(calc(var(--marquee--repeat-size) * var(--marquee--direction, 1)));
+  }
+  to {
+    transform: translateX(calc(var(--marquee--double-size) * -1));
+  }
+}
+
+.marquees {
+  align-content: center;
+  height: 100%;
+  display: grid;
+  gap: 5vw;
+  overflow: hidden;
+}
+
+.pauseButton {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 50;
+}
+
+/* When the wrapper has the paused class, stop the inner animations */
+.paused .marquee--inner {
+  animation-play-state: paused !important;
+}
