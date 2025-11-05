@@ -46,6 +46,10 @@ import cssOnlyMarqueeData from './data/cssOnlyMarqueeData';
 import CssCarouselKeyboard from './components/css-carousel-with-keyboard-controls/CssCarouselKeyboard';
 import CssFiltersAdabtiveCards from './components/css-filtersadabtive-cards/CssFiltersAdabtiveCards';
 import cssFiltersAdaptiveCardsData from './data/cssFiltersAdaptiveCardsData';
+import CssInfiniteAutoplayCarousel from './components/css-infinite-autoplay-carousel/CssInfiniteAutoplayCarousel';
+import cssInfiniteAutoplayCarouselData from './data/cssInfiniteAutoplayCarouselData';
+import CssOnlyInkSplashVideoManipulation from './components/css-only-ink-splash-video-manipulation-css-effect/CssOnlyInkSplashVideoManipulation';
+import cssOnlyInkSplashData from './data/cssOnlyInkSplashData';
 
 
 
@@ -86,8 +90,15 @@ export default function Home() {
     {/* <CreativeFoodCarousel slides={creativeFoodCarouselData} /> */}
 
 
-  <div style={{height: '60px'}} />
-  <CssFiltersAdabtiveCards slides={cssFiltersAdaptiveCardsData} />
+  {/* <div style={{height: '60px'}} />
+  <CssFiltersAdabtiveCards slides={cssFiltersAdaptiveCardsData} /> */}
+
+
+  {/* <div style={{height: '60px'}} />
+  <CssInfiniteAutoplayCarousel slides={cssInfiniteAutoplayCarouselData} /> */}
+
+
+
   {/* <CssCarouselKeyboard /> */}
 
   {/* <Css3dCarouselRoom /* pass test data if needed later */ }
@@ -123,7 +134,8 @@ export default function Home() {
     {/* cpchallenge slideshow (for testing) */}
 
  {/* <div style={{height: '40px'}} /> */}
- {/* <CpchallengeSlideshowModern2 slides={cpchallenge2Data} /> */}
+    <div style={{height: '60px'}} />
+    <CssOnlyInkSplashVideoManipulation items={cssOnlyInkSplashData} />
 
 
 

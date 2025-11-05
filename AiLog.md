@@ -160,9 +160,9 @@ npm run dev
 | 31 | css-carousel | ✅ | Done | ms7tha !!
 | 32 | css-carousel-with-keyboard-controls | ✅ | Done
 | 33 | css-filtersadabtive-cards | ✅ | Done
-| 34 | css-infinite-autoplay-carousel | ❌ | Pending |
-| 35 | css-infinite-scroll-gallery | ❌ | Pending |
-| 36 | css-only-image-carousel-no-really | ❌ | Pending |
+| 34 | css-infinite-autoplay-carousel | ✅ | Done
+| 35 | css-infinite-scroll-gallery | ✅ | Done | ms7tha !!
+| 36 | css-only-image-carousel-no-really | ✅ | Done |  ms7tha !!
 | 37 | css-only-ink-splash-video-manipulation-css-effect | ❌ | Pending |
 | 38 | css-only-marquee-with-slow-on-hover | ✅ | Done
 | 39 | css-sliderpure-css10 | ❌ | Pending |
