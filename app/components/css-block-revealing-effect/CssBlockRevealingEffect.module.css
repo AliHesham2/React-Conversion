@@ -1,0 +1,112 @@
+/* Converted from exports/css-block-revealing-effect/dist/style.css
+    - Global resets and body rules are kept inside :global() so they apply app-wide.
+    - Component-specific selectors are defined as module classes and used in the JSX.
+    - CSS variables like --td, --d, --bc are preserved and can be set inline via React style prop.
+*/
+
+/* NOTE: Global resets and body layout have been moved to `app/globals.css`.
+    Keeping this file scoped to component styles avoids using :global() inside modules.
+*/
+
+/* component container */
+.container {
+   padding: 24px;
+   display: flex;
+   flex-direction: column;
+   /* left-align children so stacked reveal blocks start from the same left edge */
+     /* awln dah can center lw enta 3yzhum center  */
+   align-items: flex-start;
+   justify-content: center;
+}
+
+/* info block */
+.info {
+   margin: 20px 0;
+   text-align: center;
+}
+
+.info p {
+   color: #2e2e2e;
+   margin-bottom: 20px;
+}
+
+/* block-effect sizing */
+.blockEffect {
+   /* original used: font-size: calc(8px + 6vw); */
+   font-size: calc(8px + 6vw);
+     /* sanyn lw 3yzhum center dol ytshalo el 3 stor ! */
+   margin: 0;
+   width: 100%;
+   text-align: left;
+}
+
+.blockReveal {
+   /* Using transparent text and overlay pseudo element to perform the reveal */
+   --t: calc(var(--td) + var(--d));
+
+   color: transparent;
+   padding: 4px;
+
+   position: relative;
+   overflow: hidden;
+
+   -webkit-animation: revealBlock 0s var(--t) forwards;
+               animation: revealBlock 0s var(--t) forwards;
+   /* Ensure each reveal block sits on its own line like the original export */
+   display: block;
+   width: 100%;
+}
+
+.blockReveal::after {
+   content: '';
+
+   width: 0%;
+   height: 100%;
+   padding-bottom: 4px;
+
+   position: absolute;
+   top: 0;
+   left: 0;
+
+   background: var(--bc);
+   -webkit-animation: revealingIn var(--td) var(--d) forwards, revealingOut var(--td) var(--t) forwards;
+               animation: revealingIn var(--td) var(--d) forwards, revealingOut var(--td) var(--t) forwards;
+}
+
+/* animations (kept local) */
+@-webkit-keyframes revealBlock {
+   100% {
+      color: #0f0f0f;
+   }
+}
+@keyframes revealBlock {
+   100% {
+      color: #0f0f0f;
+   }
+}
+
+@-webkit-keyframes revealingIn {
+   0% { width: 0; }
+   100% { width: 100%; }
+}
+@keyframes revealingIn {
+   0% { width: 0; }
+   100% { width: 100%; }
+}
+
+@-webkit-keyframes revealingOut {
+   0% { transform: translateX(0); }
+   100% { transform: translateX(100%); }
+}
+@keyframes revealingOut {
+   0% { transform: translateX(0); }
+   100% { transform: translateX(100%); }
+}
+
+.absSiteLink {
+   position: fixed;
+   bottom: 20px;
+   left: 20px;
+   color: hsla(0, 0%, 0%, .6);
+   font-size: 16px;
+}

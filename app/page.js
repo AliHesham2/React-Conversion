@@ -37,6 +37,11 @@ import CpchallengeSlideshowModern2 from './components/cpchallenge-slideshow-mode
 import cpchallenge2Data from './data/cpchallengeSlideshowModern2Data';
 import CreativeFoodCarousel from './components/creative-food-carousel/CreativeFoodCarousel';
 import creativeFoodCarouselData from './data/creativeFoodCarouselData';
+import Css3dCarouselRoom from './components/css-3d-carousel-room/Css3dCarouselRoom';
+import css3dCarouselRoomData from './data/css3dCarouselRoomData';
+import CssBlockRevealingEffect from './components/css-block-revealing-effect/CssBlockRevealingEffect';
+import cssBlockRevealingEffectData from './data/cssBlockRevealingEffectData';
+
 
 
 export default function Home() {
@@ -73,7 +78,15 @@ export default function Home() {
   <div className="page-centered">
     {/* <CardCarousel /> */}
     
-    <CreativeFoodCarousel slides={creativeFoodCarouselData} />
+    {/* <CreativeFoodCarousel slides={creativeFoodCarouselData} /> */}
+
+  {/* <div style={{height: '60px'}} /> */}
+  {/* <Css3dCarouselRoom /* pass test data if needed later */ }
+
+  {/* <div style={{height: '60px'}} />
+  <CssBlockRevealingEffect  /> */}
+
+
 
      {/* <CardsWithInvertedBorderRadius />
       <CarouselWithHoverEffect /> */}

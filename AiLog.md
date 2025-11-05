@@ -112,12 +112,12 @@ npm run dev
 
 ---
 
-## �📊 Progress Tracker
+## 📊 Progress Tracker
 
 ### Total Folders: 132
 ### Completed: 22
-### In Progress: 2
-### Pending: 108
+### In Progress: 3
+### Pending: 107
 
 ---
 
@@ -136,14 +136,14 @@ npm run dev
 | 9 | animated-slider-webpage | ✅ | Done |
 | 10 | anime-js-v3-logo-animation | ✅ | Done |
 | 11 | asian-food-website | ✅ | Done |
-| 12 | autoplay-slider-pause-control-swiper-js | ✅ | Done | issue !!
+| 12 | autoplay-slider-pause-control-swiper-js | ✅ | Done | issue !!❌
 | 13 | blob-carousel-for-the-planet | ✅ | Done | ms7tha !!
 | 14 | card-carousel | ✅ | Done |
 | 15 | cards-with-inverted-border-radius-scss | ✅ | Done - converted and scoped; responsive fixes applied |
 | 16 | carousel-with-hover-effect | ✅ | Done 
 | 17 | center-mode-productivity-slider-pro-v5 | ✅ | Done 
 | 18 | circle-square-triangle-dolphin | ✅ | Done  | ms7tha !!
-| 19 | clean-slider-with-curved-background | ✅ | issue !!
+| 19 | clean-slider-with-curved-background | ✅ | issue !!❌
 | 20 | clip-path-hover-effect | ✅ | Done |
 | 21 | clip-path-revealing-slider | ✅ | Done |
 | 22 | codepen-challenge-reflection | ✅ | Done |
@@ -152,12 +152,12 @@ npm run dev
 | 25 | contrast-text-color-on-image | ✅ | Done | ms7tha !!
 | 26 | cpchallenge-slideshow-modern-1 | ✅ | Done | 
 | 27 | cpchallenge-slideshow-modern-2 | ✅ | Done | Converted and JS ported into component |
-| 28 | creative-food-carousel | ✅ | Done | Converted to React component with Swiper.js, parallax effects, and CSS Module |
-| 29 | css-3d-carousel-room | ❌ | Pending |
+| 28 | creative-food-carousel | ✅ | Done | Converted to React component with Swiper.js, parallax effects, and CSS Module; pagination fixes applied and pushed (commit cc43439) |
+| 29 | css-3d-carousel-room | ✅ | Done
 
 
-| 30 | css-block-revealing-effect | ❌ | Pending |
-| 31 | css-carousel | ❌ | Pending |
+| 30 | css-block-revealing-effect | ✅ | Done
+| 31 | css-carousel | ✅ | Done | ms7tha !!
 | 32 | css-carousel-with-keyboard-controls | ❌ | Pending |
 | 33 | css-filtersadabtive-cards | ❌ | Pending |
 | 34 | css-infinite-autoplay-carousel | ❌ | Pending |
@@ -190,6 +190,8 @@ npm run dev
 | 57 | gsap-slideshow-vertical-zoom-slideshow-n-2 | ❌ | Pending |
 | 58 | gsap-slideshow-vertical-zoom-slideshow-n-3 | ❌ | Pending |
 | 59 | gsap-starter-template | ❌ | Pending |
+
+
 | 60 | hexa-team | ❌ | Pending |
 | 61 | horizontal-parallax-sliding-slider-with-swiper-js | ❌ | Pending |
 | 62 | horizontal-scroll-effect | ❌ | Pending |
@@ -200,6 +202,8 @@ npm run dev
 | 67 | image-zoom-in-with-scrolltrigger | ❌ | Pending |
 | 68 | interactive-project-showcase-slider-with-vertical-navigation-rtl-ltr-support | ❌ | Pending |
 | 69 | interior-design | ❌ | Pending |
+
+
 | 70 | intro-grid-section | ❌ | Pending |
 | 71 | jumping-between-sectionsscrolltrigger | ❌ | Pending |
 | 72 | linear-slider-with-splittext-effect-greensock | ❌ | Pending |
@@ -210,6 +214,8 @@ npm run dev
 | 77 | motion-blur-effect-using-svg-filters | ❌ | Pending |
 | 78 | neuro-noise-glsl-shader | ❌ | Pending |
 | 79 | no-script-accordion-animation | ❌ | Pending |
+
+
 | 80 | only-css-animation-01 | ❌ | Pending |
 | 81 | onscroll-animation-dynamic-content-scroll-with-scrollmagic | ❌ | Pending |
 | 82 | orbital-photo-gallery | ❌ | Pending |
@@ -220,6 +226,7 @@ npm run dev
 | 87 | parallax-headerscrolltrigger | ❌ | Pending |
 | 88 | parallax-photo-carousel | ❌ | Pending |
 | 89 | parallax-scene-on-scrollscrolltrigger | ❌ | Pending |
+
 | 90 | parallax-scroll-animation | ❌ | Pending |
 | 91 | perspective-zoom-effect-on-scroll | ❌ | Pending |
 | 92 | pixel-per-character-scroll-words-with-css-gsap | ❌ | Pending |
@@ -230,6 +237,7 @@ npm run dev
 | 97 | projects-carousel | ❌ | Pending |
 | 98 | pure-css-carousel | ❌ | Pending |
 | 99 | pure-css-slider-with-custom-effects | ❌ | Pending |
+
 | 100 | react-slider-w-hover-effect | ❌ | Pending |
 | 101 | responsive-gsap-slider-with-button-wave-effect | ❌ | Pending |
 | 102 | responsive-image-carousel-animation | ❌ | Pending |
@@ -240,6 +248,8 @@ npm run dev
 | 107 | scrollsmoother-explorationcassie-evans | ❌ | Pending |
 | 108 | scrollsmoother-scrolltriggerclamp | ❌ | Pending |
 | 109 | scrolltrigger-downhill-ski | ❌ | Pending |
+
+
 | 110 | scrolltrigger-image-zoom | ❌ | Pending |
 | 111 | shader-image-transition | ❌ | Pending |
 | 112 | skewed-flexbox-panels | ❌ | Pending |
@@ -250,6 +260,8 @@ npm run dev
 | 117 | slider-with-progress-bar-using-setinterval | ❌ | Pending |
 | 118 | slides | ❌ | Pending |
 | 119 | smooth-3d-perspective-slider | ❌ | Pending |
+
+
 | 120 | split-headercassie-evans | ❌ | Pending |
 | 121 | splittext-words-dancing-in-3d | ❌ | Pending |
 | 122 | svg-filter-text-marquees | ❌ | Pending |
@@ -260,6 +272,8 @@ npm run dev
 | 127 | vertical-image-loop-with-scroll-acceleration-with-gsap | ❌ | Pending |
 | 128 | voyage-slider | ❌ | Pending |
 | 129 | vue-js-responsive-shuffle-image-gallery | ❌ | Pending |
+
+
 | 130 | wave-rgb-image-distortion-with-shader | ❌ | Pending |
 | 131 | weekly-coding-challenge-1double-slider-sign-in-up-formdesktop-only | ❌ | Pending |
 | 132 | yarden-design-by-olya-marchak | ❌ | Pending |
