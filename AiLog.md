@@ -159,7 +159,7 @@ npm run dev
 | 30 | css-block-revealing-effect | ✅ | Done
 | 31 | css-carousel | ✅ | Done | ms7tha !!
 | 32 | css-carousel-with-keyboard-controls | ✅ | Done
-| 33 | css-filtersadabtive-cards | ❌ | Pending |
+| 33 | css-filtersadabtive-cards | ✅ | Done
 | 34 | css-infinite-autoplay-carousel | ❌ | Pending |
 | 35 | css-infinite-scroll-gallery | ❌ | Pending |
 | 36 | css-only-image-carousel-no-really | ❌ | Pending |

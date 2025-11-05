@@ -1,0 +1,181 @@
+.navbar {
+  background-color: black;
+  block-size: var(--nav-block-size);
+  display: grid;
+  gap: 1rem;
+  grid-auto-flow: column;
+  inset-block-start: 0;
+  justify-content: space-between;
+  padding-inline: 0.75rem;
+  place-items: center;
+  position: sticky;
+  z-index: 10;
+}
+
+/* Root helper to allow this component to stretch when placed inside
+   a centered flex container (like .page-centered). */
+.root {
+  width: 100%;
+  align-self: stretch; /* ensures flex parent will let this child expand */
+}
+
+.nav-actions {
+  display: grid;
+  gap: 1rem;
+  grid-auto-flow: column;
+  place-items: center;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font: 500 0.875rem/1.25rem system-ui, sans-serif;
+}
+
+.search-wrap {
+  display: grid;
+  grid-auto-flow: column;
+  place-items: center;
+  gap: 0.25rem;
+}
+
+.search-btn {
+  color: white;
+  inline-size: 1.5rem;
+  block-size: 1.5rem;
+  padding: 2px;
+  cursor: pointer;
+  background-color: inherit;
+  border: none;
+}
+
+.search-input {
+  border: none;
+  background-color: inherit;
+  border-block-end: 1px solid currentColor;
+  color: white;
+  padding-block: 0.25rem;
+  min-inline-size: 5ch;
+  inline-size: 100%;
+  font: 500 0.875rem/1.25rem system-ui, sans-serif;
+}
+
+.search-input::placeholder {
+  color: white;
+}
+
+.search-input:focus {
+  outline: none;
+}
+
+.cart {
+  display: grid;
+  grid-auto-flow: column;
+  place-items: center;
+  gap: 2px;
+}
+
+.cart-icon-wrapper {
+  padding: 2px;
+  inline-size: 1.5rem;
+  block-size: 1.5rem;
+}
+
+.nav-icon-svg {
+  block-size: auto;
+  display: block;
+  max-inline-size: 100%;
+}
+
+.section {
+  background-color: black;
+  display: grid;
+  inline-size: 100%;
+  min-block-size: max(600px, calc(100dvb - var(--nav-block-size)));
+  padding-block-end: 0.75rem;
+  padding-inline: 0.75rem;
+  place-items: center;
+  position: relative;
+}
+
+.cards {
+  background-color: black;
+  block-size: 100%;
+  display: grid;
+  gap: 1rem;
+  inline-size: 100%;
+}
+
+@media (width > 1024px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.card {
+  container-type: size;
+  inline-size: 100%;
+  block-size: 100%;
+  text-decoration: none;
+  min-block-size: 280px;
+  position: relative;
+}
+
+.card:hover::after {
+  opacity: 1;
+}
+
+.card::after {
+  content: '';
+  display: block;
+  inset: 0;
+  mix-blend-mode: multiply;
+  opacity: 0;
+  position: absolute;
+  transition: opacity 0.2s ease;
+}
+
+.card-1::after {
+  background-color: hsl(343, 98%, 52%);
+}
+
+.card-2::after {
+  background-color: hsl(199, 100%, 38%);
+}
+
+.card-3::after {
+  background-color: hsl(119, 59%, 64%);
+}
+
+.card-4::after {
+  background-color: hsl(49, 83%, 69%);
+}
+
+.visual {
+  background-color: black;
+  block-size: 100%;
+  display: grid;
+  inline-size: 100%;
+  overflow: hidden;
+  place-items: center;
+}
+
+.visual > * {
+  grid-area: 1/1;
+}
+
+.card-img {
+  block-size: 100cqb;
+  inline-size: 100cqi;
+  border-radius: inherit;
+  display: block;
+  background: conic-gradient(from 90deg at 50% 0%, #111, 50%, #222, #111);
+  filter: grayscale();
+  object-fit: cover;
+}
+
+.figcaption {
+  z-index: 2;
+  color: white;
+  font: 400 8cqi / normal system-ui, sans-serif;
+}

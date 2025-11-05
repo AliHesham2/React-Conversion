@@ -44,6 +44,8 @@ import cssBlockRevealingEffectData from './data/cssBlockRevealingEffectData';
 import CssOnlyMarquee from './components/css-only-marquee/CssOnlyMarquee';
 import cssOnlyMarqueeData from './data/cssOnlyMarqueeData';
 import CssCarouselKeyboard from './components/css-carousel-with-keyboard-controls/CssCarouselKeyboard';
+import CssFiltersAdabtiveCards from './components/css-filtersadabtive-cards/CssFiltersAdabtiveCards';
+import cssFiltersAdaptiveCardsData from './data/cssFiltersAdaptiveCardsData';
 
 
 
@@ -85,7 +87,8 @@ export default function Home() {
 
 
   <div style={{height: '60px'}} />
-  <CssCarouselKeyboard />
+  <CssFiltersAdabtiveCards slides={cssFiltersAdaptiveCardsData} />
+  {/* <CssCarouselKeyboard /> */}
 
   {/* <Css3dCarouselRoom /* pass test data if needed later */ }
 
