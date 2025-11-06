@@ -174,7 +174,7 @@ npm run dev
 | 43 | dynamic-content-lockups-v2open-props | ✅ | Done | lesa 3leha shwya !!
 | 44 | expandable-animated-card-slider | ✅ | Done  ms7tha !!
 | 45 | expanding-flex-cards | ✅ | Done
-| 46 | eyes-mousemove | ❌ | Pending |
+| 46 | eyes-mousemove | | ✅ | Done
 | 47 | fancy-slider | ❌ | Pending |
 | 48 | food-card-grid-layout | ✅ | Done  ms7tha !!
 | 49 | full-screen-slider-gsap-timeline-1 | ❌ | Pending |

@@ -1,5 +1,18 @@
 /* Converted from exports/eyes-mousemove/dist/style.css */
 
+/* Define custom properties used by the eyelid animation so they can be
+   animated smoothly. These work in modern browsers that support @property. */
+@property --eyelid {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 0%;
+}
+@property --eyelid2 {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 0%;
+}
+
 .wrapper {
   /* Force the wrapper to take the full viewport so the eyes are centered
      and the component occupies the entire page. */

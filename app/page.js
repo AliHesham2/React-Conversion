@@ -63,6 +63,8 @@ import dynamicContentLockupsV2Data from './data/dynamicContentLockupsV2Data';
 import ExpandingFlexCards from './components/expanding-flex-cards/ExpandingFlexCards';
 import expandingFlexCardsData from './data/expandingFlexCardsData';
 import EyesMousemove from './components/eyes-mousemove/EyesMousemove';
+import FancySlider from './components/fancy-slider/FancySlider';
+import fancySliderData from './data/fancySliderData';
 
 
 
@@ -144,8 +146,9 @@ export default function Home() {
     <ExpandingFlexCards slides={expandingFlexCardsData} /> */}
   
     {/* <div style={{height: '40px'}} /> */}
-    
-    <EyesMousemove />
+
+  <div style={{height: '40px'}} />
+  <FancySlider slides={fancySliderData} />
 
   {/* <CodepenChallengeReflection data={codepenChallengeReflectionData} />  */}
 
