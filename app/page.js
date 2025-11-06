@@ -52,17 +52,23 @@ import CssOnlyInkSplashVideoManipulation from './components/css-only-ink-splash-
 import cssOnlyInkSplashData from './data/cssOnlyInkSplashData';
 import CssSliderPureCss10 from './components/css-sliderpure-css10/CssSliderPureCss10';
 import cssSliderPureCss10Data from './data/cssSliderPureCss10Data';
+import CyberScrollGsap from './components/cyber-scrollgsap/CyberScrollGsap';
+import cyberScrollGsapData from './data/cyberScrollGsapData';
+import DraggableMasthead from './components/draggable-masthead/DraggableMasthead';
+import draggableMastheadData from './data/draggableMastheadData';
+import DynamicCarouselSliderWithInfiniteScoll from './components/dynamic-carousel-slider-with-infinite-scoll/DynamicCarouselSliderWithInfiniteScoll';
+import dynamicCarouselSliderData from './data/dynamicCarouselSliderData';
 
 
 
 export default function Home() {
   return (
     <main>
-      {/* <WelcomeIntro /> */}
+    {/* <WelcomeIntro /> */}
       
-      {/* <CardSlider3D /> */}
+    {/* <CardSlider3D /> */}
 
-      {/* <DribbleDesign /> */}
+    {/* <DribbleDesign /> */}
 
       {/* <div style={{padding: '2rem', display: 'flex', gap: '2rem', flexWrap: 'wrap'}}>
         <SimpleFoodCard
@@ -74,10 +80,10 @@ export default function Home() {
 
     {/* <AddToCartAnimation /> */}
 
-    {/* <AnimatedContinuousSections data={animatedContinuousSectionsData} /> */}
+  {/* <AnimatedContinuousSections data={animatedContinuousSectionsData} /> */}
 
   
-    {/* <AnimatedImageSlider data={animatedImageSliderData} /> */}
+  {/* <AnimatedImageSlider data={animatedImageSliderData} /> */}
 
   {/* Anime.js logo animation (converted from exports) */}
 
@@ -86,10 +92,12 @@ export default function Home() {
   {/* <AutoplaySliderPauseControl slides={autoplaySliderPauseControlData} /> */}
     
 
+  {/* <DraggableMasthead slides={draggableMastheadData} /> */}
+
   <div className="page-centered">
-    {/* <CardCarousel /> */}
+  {/* <CardCarousel /> */}
     
-    {/* <CreativeFoodCarousel slides={creativeFoodCarouselData} /> */}
+  {/* <CreativeFoodCarousel slides={creativeFoodCarouselData} /> */}
 
 
   {/* <div style={{height: '60px'}} />
@@ -100,7 +108,6 @@ export default function Home() {
   <CssInfiniteAutoplayCarousel slides={cssInfiniteAutoplayCarouselData} /> */}
 
 
-
   {/* <CssCarouselKeyboard /> */}
 
   {/* <Css3dCarouselRoom /* pass test data if needed later */ }
@@ -108,42 +115,50 @@ export default function Home() {
   {/* <div style={{height: '60px'}} />
   <CssBlockRevealingEffect  /> */}
   
-    {/* <div style={{height: '60px'}} />
-    <CssOnlyMarquee items={cssOnlyMarqueeData} /> */}
+  {/* <div style={{height: '60px'}} />
+   <CssOnlyMarquee items={cssOnlyMarqueeData} /> */}
 
 
 
-     {/* <CardsWithInvertedBorderRadius />
+  {/* <CardsWithInvertedBorderRadius />
       <CarouselWithHoverEffect /> */}
-    {/* <CenterModeProductivitySliderProV5 /> */}
-
+  {/* <CenterModeProductivitySliderProV5 /> */}
 
   
-    {/* <CleanSliderWithCurvedBackground slides={cleanSliderWithCurvedBackgroundData} /> */}
+  {/* <CleanSliderWithCurvedBackground slides={cleanSliderWithCurvedBackgroundData} /> */}
 
-    {/* <div style={{height: '60px'}} />
-    <ClipPathHoverEffect items={clipPathHoverEffectData} /> */}
+  {/* <div style={{height: '60px'}} />
+   <ClipPathHoverEffect items={clipPathHoverEffectData} /> */}
 
-    {/* <div style={{height: '60px'}} /> */}
-    {/* <ClipPathRevealingSlider items={clipPathRevealingSliderData} /> */}
+  {/* <div style={{height: '60px'}} /> */}
+  {/* <ClipPathRevealingSlider items={clipPathRevealingSliderData} /> */}
 
   {/* <div style={{height: '60px'}} />
   <CodepenChallengeReflection data={codepenChallengeReflectionData} /> */}
 
+
+
+  {/* cpchallenge slideshow (for testing) */}
+
+  {/* <div style={{height: '40px'}} /> */}
  
-
-
-    {/* cpchallenge slideshow (for testing) */}
-
- {/* <div style={{height: '40px'}} /> */}
- 
-  <div style={{height: '60px'}} />
-  <CssSliderPureCss10 slides={cssSliderPureCss10Data} />
+  {/* <div style={{height: '60px'}} />
+  <CssSliderPureCss10 slides={cssSliderPureCss10Data} /> */}
 
   {/* <div style={{height: '60px'}} />
   <CssOnlyInkSplashVideoManipulation items={cssOnlyInkSplashData} /> */}
 
 
+
+  {/* <div style={{height: '60px'}} /> */}
+  {/* testing: cyber-scrollgsap (converted item #40) */}
+
+  {/* <div style={{height: '40px'}} /> */}
+  {/* <CyberScrollGsap slides={cyberScrollGsapData} /> */}
+
+
+  {/* <div style={{height: '40px'}} />
+  <DynamicCarouselSliderWithInfiniteScoll slides={dynamicCarouselSliderData} /> */}
 
  </div>
 

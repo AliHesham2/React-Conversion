@@ -2,6 +2,9 @@
    <span class="material-symbols-outlined">name</span> render icons, not text. */
 @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=swap');
 
+/* Montserrat used by some converted exports (added for export #42 compatibility) */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
 /* Load Inter to match original exports (weights 400 and 700 used by demos) */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
@@ -37,12 +40,12 @@
 
 html,
 body {
-  height: 100vh;
+  /* allow the document to grow naturally; using 100vh here can prevent scrolling
+     in some smooth-scroll / scrolltrigger setups because it fixes the viewport height */
+  min-height: 100vh;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  /* don't fix the document height to 100vh — allow natural page height so
-     ScrollTrigger and normal scrolling work correctly */
 }
 
 /* Ensure 1rem == 16px to match original export sizing (many exports use rem units) */
@@ -105,6 +108,51 @@ a {
 .u-paused {
   --marquee-play-state: paused;
 }
+
+
+/* Critical global rules copied from cyber-scrollgsap component so injected SVGs
+   and hyphenated selectors receive the same visual effects as the original export.
+   These must remain global because the SVG markup uses hyphenated class names
+   (e.g. .futuristic-barcode) that live outside CSS Module scope. */
+
+/* barcode pulse and internals */
+.futuristic-barcode { --glow-color: 0, 255, 136; --glow-intensity: 0.3; --pulse-duration: 2s; will-change: filter; filter: drop-shadow(0 0 10px rgba(var(--glow-color), var(--glow-intensity))); animation: barcodePulse var(--pulse-duration) ease-in-out infinite alternate; }
+@keyframes barcodePulse { 0% { filter: drop-shadow(0 0 5px rgba(var(--glow-color), 0.2)); } 100% { filter: drop-shadow(0 0 15px rgba(var(--glow-color), 0.6)); } }
+
+.futuristic-barcode rect { --flicker-duration: calc(0.1s + (var(--bar-index) % 2) * 0.05s); will-change: opacity; animation: barFlicker var(--flicker-duration) ease-in-out infinite alternate; }
+@keyframes barFlicker { 0% { opacity: 0.7; } 100% { opacity: 1; } }
+
+.futuristic-barcode line { --scan-delay: calc((var(--scan-index) - 1) * 0.5s); will-change: transform, opacity; animation: scanMove 3s linear infinite var(--scan-delay); }
+@keyframes scanMove { 0% { transform: translateX(-120px); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateX(120px); opacity: 0; } }
+
+.futuristic-barcode circle[style*="--data-index"] { will-change: transform, opacity; animation: dataPulse 1.5s ease-in-out infinite; }
+@keyframes dataPulse { 0%, 100% { r: 1; opacity: 0.8; } 50% { r: 2; opacity: 1; } }
+
+.futuristic-barcode circle[style*="--particle-index"] { --particle-delay: calc((var(--particle-index) - 1) * 0.8s); will-change: transform, opacity; animation: particleFloat 4s ease-in-out infinite var(--particle-delay); }
+@keyframes particleFloat { 0%, 100% { transform: translateY(0px) scale(1); opacity: 0.7; } 25% { transform: translateY(-10px) scale(1.2); opacity: 1; } 50% { transform: translateY(0px) scale(0.8); opacity: 0.5; } 75% { transform: translateY(10px) scale(1.1); opacity: 0.9; } }
+
+/* hero barcode pulse and internals */
+.hero-barcode { --hero-glow-color: 0, 255, 136; --hero-glow-intensity: 0.5; --hero-pulse-duration: 3s; will-change: filter; filter: drop-shadow(0 0 20px rgba(var(--hero-glow-color), var(--hero-glow-intensity))); animation: heroBarcodePulse var(--hero-pulse-duration) ease-in-out infinite alternate; }
+@keyframes heroBarcodePulse { 0% { filter: drop-shadow(0 0 10px rgba(var(--hero-glow-color), 0.3)); } 100% { filter: drop-shadow(0 0 30px rgba(var(--hero-glow-color), 0.8)); } }
+
+.hero-barcode rect { --hero-flicker-duration: calc(0.08s + (var(--bar-index) % 2) * 0.04s); will-change: opacity; animation: heroBarFlicker var(--hero-flicker-duration) ease-in-out infinite alternate; }
+@keyframes heroBarFlicker { 0% { opacity: 0.6; } 100% { opacity: 1; } }
+
+.hero-barcode line { --hero-scan-delay: calc((var(--scan-index) - 1) * 0.7s); will-change: transform, opacity; animation: heroScanMove 4s linear infinite var(--hero-scan-delay); }
+@keyframes heroScanMove { 0% { transform: translateX(-200px); opacity: 0; } 15% { opacity: 1; } 85% { opacity: 1; } 100% { transform: translateX(200px); opacity: 0; } }
+
+.hero-barcode circle[style*="--data-index"] { will-change: transform, opacity; animation: heroDataPulse 2s ease-in-out infinite; }
+@keyframes heroDataPulse { 0%, 100% { r: 2; opacity: 0.8; } 50% { r: 3; opacity: 1; } }
+
+.hero-barcode circle[style*="--particle-index"] { --hero-particle-delay: calc((var(--particle-index) - 1) * 0.8s); will-change: transform, opacity; animation: heroParticleFloat 5s ease-in-out infinite var(--hero-particle-delay); }
+@keyframes heroParticleFloat { 0%, 100% { transform: translateY(0px) scale(1); opacity: 0.7; } 25% { transform: translateY(-15px) scale(1.3); opacity: 1; } 50% { transform: translateY(0px) scale(0.9); opacity: 0.6; } 75% { transform: translateY(15px) scale(1.1); opacity: 0.9; } }
+
+/* small helpers used by the component script */
+.pixel-loader { will-change: filter, transform; }
+.pixel-overlay { will-change: opacity; }
+.gallery-section { will-change: filter; }
+.wrapper-action { will-change: transform; }
+.main-section { position: relative; width: 100%; margin: 0; }
 
 /* Utility helpers for converted exports (small, safe, documented globals).
    These let components toggle visual states without using :global() inside modules.

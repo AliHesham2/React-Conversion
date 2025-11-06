@@ -165,18 +165,18 @@ npm run dev
 | 36 | css-only-image-carousel-no-really | ✅ | Done |  ms7tha !!
 | 37 | css-only-ink-splash-video-manipulation-css-effect |✅ | Done
 | 38 | css-only-marquee-with-slow-on-hover | ✅ | Done
-| 39 | css-sliderpure-css10 | ❌ | Pending |
+| 39 | css-sliderpure-css10 | ✅ | Done
 
 
-| 40 | cyber-scrollgsap | ❌ | Pending |
-| 41 | draggable-masthead-reveal | ❌ | Pending |
-| 42 | dynamic-carousel-slider-with-infinite-scoll | ❌ | Pending |
+| 40 | cyber-scrollgsap | ✅ | lesa 3leha shwya !!
+| 41 | draggable-masthead-reveal | ✅ | Done
+| 42 | dynamic-carousel-slider-with-infinite-scoll | ✅ | Done
 | 43 | dynamic-content-lockups-v2open-props | ❌ | Pending |
 | 44 | expandable-animated-card-slider | ❌ | Pending |
 | 45 | expanding-flex-cards | ❌ | Pending |
 | 46 | eyes-mousemove | ❌ | Pending |
 | 47 | fancy-slider | ❌ | Pending |
-| 48 | food-card-grid-layout | ❌ | Pending |
+| 48 | food-card-grid-layout | ✅ | Done  ms7tha !!
 | 49 | full-screen-slider-gsap-timeline-1 | ❌ | Pending |
 
 

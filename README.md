@@ -42,7 +42,7 @@ Everything works, I just want to improve the code quality
 when u convert try to align the global css with our css to avoid problems
 
 ---------------------------------------------------------------------------------
- lets convert 31 ! first read the original html carefully and only converr the html to react (js) and make sure that html conversion align with react structure also create dummy test data inside data folder
+ read AiLog.md and lets convert 31 ! first read the original html carefully and only converr the html to react (js) and make sure that html conversion align with react structure also create dummy test data inside data folder
  also want to test the react.js in so place it in the home page
 
   oki step 2 read the original css and convert it to react css and it must be alright with react also connect it with react .js
