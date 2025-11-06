@@ -27,20 +27,20 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900&display=swap');
 
 :root {
-  --background: #171717;
-  --foreground: #171717;
+  --background: #000000;
+  --foreground: #ffffff;
   /* Nav height used by converted exports that expect a sticky navbar */
   --nav-block-size: 74px;
 }
 :root {
-  --background: #171717;
-  --foreground: #171717;
+  --background: #000000;
+  --foreground: #ffffff;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #181d25;
-    --foreground: #171717;
+    --background: #000000;
+    --foreground: #ffffff;
   }
 }
 
@@ -52,6 +52,9 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  /* Force a truly black background for the whole project */
+  background-color: #000 !important;
+  color: #fff !important;
 }
 
 /* Ensure 1rem == 16px to match original export sizing (many exports use rem units) */
@@ -63,6 +66,7 @@ body {
   font-family: 'Inter', Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
 }
 
 * {
@@ -79,19 +83,8 @@ a {
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
+    
   }
-}
-
-/* Page-scoped helper to center a single-page demo without touching body globals.
-   Use this on the homepage wrapper to emulate the original export's centered body
-   layout in a safe, reversible way. */
-.page-centered {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  flex-direction: column;
-  width: 100vw;;
 }
 
 /* Optional background wrapper for exports that used a full-bleed background image.

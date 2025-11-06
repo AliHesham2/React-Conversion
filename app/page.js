@@ -62,6 +62,7 @@ import DynamicContentLockupsV2OpenProps from './components/dynamic-content-locku
 import dynamicContentLockupsV2Data from './data/dynamicContentLockupsV2Data';
 import ExpandingFlexCards from './components/expanding-flex-cards/ExpandingFlexCards';
 import expandingFlexCardsData from './data/expandingFlexCardsData';
+import EyesMousemove from './components/eyes-mousemove/EyesMousemove';
 
 
 
@@ -100,7 +101,7 @@ export default function Home() {
   {/* <DraggableMasthead slides={draggableMastheadData} /> */}
 
 
-  <div className="page-centered">
+
   {/* <CardCarousel /> */}
     
   {/* <CreativeFoodCarousel slides={creativeFoodCarouselData} /> */}
@@ -139,8 +140,14 @@ export default function Home() {
   {/* <div style={{height: '60px'}} /> */}
   {/* <ClipPathRevealingSlider items={clipPathRevealingSliderData} /> */}
 
-  {/* <div style={{height: '60px'}} />
-  <CodepenChallengeReflection data={codepenChallengeReflectionData} /> */}
+    {/* <div style={{height: '40px'}} />
+    <ExpandingFlexCards slides={expandingFlexCardsData} /> */}
+  
+    {/* <div style={{height: '40px'}} /> */}
+    
+    <EyesMousemove />
+
+  {/* <CodepenChallengeReflection data={codepenChallengeReflectionData} />  */}
 
 
 
@@ -162,16 +169,15 @@ export default function Home() {
   {/* <div style={{height: '40px'}} /> */}
   {/* <CyberScrollGsap slides={cyberScrollGsapData} /> */}
 
-  <div style={{height: '40px'}} />
-  {/* Test: export #45 — Expanding Flex Cards (HTML-only pass) */}
-  <ExpandingFlexCards slides={expandingFlexCardsData} />
+  {/* <div style={{height: '40px'}} />
+  <ExpandingFlexCards slides={expandingFlexCardsData} /> */}
 
 
   {/* <div style={{height: '40px'}} />
   <DynamicCarouselSliderWithInfiniteScoll slides={dynamicCarouselSliderData} /> */}
 
 
-  </div>
+
 
 
   {/* <DynamicContentLockupsV2OpenProps items={dynamicContentLockupsV2Data} /> */}

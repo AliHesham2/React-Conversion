@@ -1,0 +1,73 @@
+/* Converted from exports/eyes-mousemove/dist/style.css */
+
+.wrapper {
+  /* Force the wrapper to take the full viewport so the eyes are centered
+     and the component occupies the entire page. */
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  z-index: 0;
+}
+
+.eyes {
+  width: 250px;
+  padding-block: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.eye {
+  position: relative;
+  width: 90px;
+  aspect-ratio: 1;
+  background: white;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.eye::before,
+.eye::after {
+  content: '';
+  position: absolute;
+  width: 116%;
+  height: 165%;
+  left: 50%;
+  z-index: 1;
+  animation: eyelid 5s ease-in-out infinite;
+}
+.eye::before {
+  top: 0;
+  border-radius: 0% 0% 40% 40%;
+  transform: translateY(var(--eyelid, 0%)) translateX(-50%);
+  border-bottom: 40px solid black;
+}
+.eye::after {
+  bottom: 0;
+  border-radius: 40% 40% 0% 0%;
+  transform: translateY(var(--eyelid2, 0%)) translateX(-50%);
+  border-top: 40px solid black;
+}
+
+.pupil {
+  position: absolute;
+  width: 60px;
+  aspect-ratio: inherit;
+  background: black;
+  border-radius: inherit;
+  transform: translate(0, 0);
+}
+
+@keyframes eyelid {
+  0% { --eyelid: -50%; --eyelid2: 50%; }
+  3% { --eyelid: 0%; --eyelid2: 0%; }
+  6% { --eyelid: -50%; --eyelid2: 50%; }
+  9%, 100% { --eyelid: 0%; --eyelid2: 0%; }
+}
