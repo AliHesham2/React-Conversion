@@ -163,7 +163,7 @@ npm run dev
 | 34 | css-infinite-autoplay-carousel | ✅ | Done
 | 35 | css-infinite-scroll-gallery | ✅ | Done | ms7tha !!
 | 36 | css-only-image-carousel-no-really | ✅ | Done |  ms7tha !!
-| 37 | css-only-ink-splash-video-manipulation-css-effect | ❌ | Pending |
+| 37 | css-only-ink-splash-video-manipulation-css-effect |✅ | Done
 | 38 | css-only-marquee-with-slow-on-hover | ✅ | Done
 | 39 | css-sliderpure-css10 | ❌ | Pending |
 

@@ -50,6 +50,8 @@ import CssInfiniteAutoplayCarousel from './components/css-infinite-autoplay-caro
 import cssInfiniteAutoplayCarouselData from './data/cssInfiniteAutoplayCarouselData';
 import CssOnlyInkSplashVideoManipulation from './components/css-only-ink-splash-video-manipulation-css-effect/CssOnlyInkSplashVideoManipulation';
 import cssOnlyInkSplashData from './data/cssOnlyInkSplashData';
+import CssSliderPureCss10 from './components/css-sliderpure-css10/CssSliderPureCss10';
+import cssSliderPureCss10Data from './data/cssSliderPureCss10Data';
 
 
 
@@ -134,8 +136,12 @@ export default function Home() {
     {/* cpchallenge slideshow (for testing) */}
 
  {/* <div style={{height: '40px'}} /> */}
-    <div style={{height: '60px'}} />
-    <CssOnlyInkSplashVideoManipulation items={cssOnlyInkSplashData} />
+ 
+  <div style={{height: '60px'}} />
+  <CssSliderPureCss10 slides={cssSliderPureCss10Data} />
+
+  {/* <div style={{height: '60px'}} />
+  <CssOnlyInkSplashVideoManipulation items={cssOnlyInkSplashData} /> */}
 
 
 

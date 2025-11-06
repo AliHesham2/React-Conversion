@@ -14,6 +14,9 @@
 /* Fonts used by css-infinite-scroll-gallery export */
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Saira:ital@0;1&family=Sour+Gummy:wdth,wght@125,300&display=swap');
 
+/* Poppins used by css-sliderpure-css10 export */
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900&display=swap');
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
