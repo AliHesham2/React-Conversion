@@ -58,6 +58,11 @@ import DraggableMasthead from './components/draggable-masthead/DraggableMasthead
 import draggableMastheadData from './data/draggableMastheadData';
 import DynamicCarouselSliderWithInfiniteScoll from './components/dynamic-carousel-slider-with-infinite-scoll/DynamicCarouselSliderWithInfiniteScoll';
 import dynamicCarouselSliderData from './data/dynamicCarouselSliderData';
+import DynamicContentLockupsV2OpenProps from './components/dynamic-content-lockups-v2open-props/DynamicContentLockupsV2OpenProps';
+import dynamicContentLockupsV2Data from './data/dynamicContentLockupsV2Data';
+import ExpandingFlexCards from './components/expanding-flex-cards/ExpandingFlexCards';
+import expandingFlexCardsData from './data/expandingFlexCardsData';
+
 
 
 
@@ -93,6 +98,7 @@ export default function Home() {
     
 
   {/* <DraggableMasthead slides={draggableMastheadData} /> */}
+
 
   <div className="page-centered">
   {/* <CardCarousel /> */}
@@ -156,11 +162,19 @@ export default function Home() {
   {/* <div style={{height: '40px'}} /> */}
   {/* <CyberScrollGsap slides={cyberScrollGsapData} /> */}
 
+  <div style={{height: '40px'}} />
+  {/* Test: export #45 — Expanding Flex Cards (HTML-only pass) */}
+  <ExpandingFlexCards slides={expandingFlexCardsData} />
+
 
   {/* <div style={{height: '40px'}} />
   <DynamicCarouselSliderWithInfiniteScoll slides={dynamicCarouselSliderData} /> */}
 
- </div>
+
+  </div>
+
+
+  {/* <DynamicContentLockupsV2OpenProps items={dynamicContentLockupsV2Data} /> */}
 
 
  

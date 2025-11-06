@@ -1,0 +1,162 @@
+.navbar {
+  min-block-size: 74px;
+  display: grid;
+  position: fixed;
+  inset-block-start: 0;
+  inset-inline: 0;
+  background-color: white;
+  z-index: 3;
+  place-items: center end;
+  padding-block: var(--size-3);
+  padding-inline: var(--size-5);
+}
+
+/* component root: force viewport-width spanning to avoid being pushed off-screen */
+.root {
+  position: relative;
+  left: 0;
+  inline-size: 100vw;
+  margin: 0;
+}
+
+/* TEMP DEBUG: force the component into view by overlaying it at the top-left
+   of the viewport. This helps verify visuals and animation while tracking down
+   layout shifts caused by parent containers. Remove when layout is stable. */
+.root.debug-overlay {
+  position: fixed !important;
+  inset: 0 0 0 0 !important;
+  inline-size: 100vw !important;
+  block-size: 100vh !important;
+  z-index: 9999 !important;
+  background: transparent !important;
+}
+
+.nav-cta-btn {
+  font-size: var(--font-size-1);
+  font-weight: 700;
+  inline-size: max-content;
+  white-space: nowrap;
+  text-decoration: none;
+  padding-block: var(--size-3);
+  padding-inline: var(--size-7);
+  border: 2px solid transparent;
+  color: black;
+  position: relative;
+  isolation: isolate;
+  background: linear-gradient(white, white) padding-box,
+    linear-gradient(227deg,#1400c7 0%,#00bbff 100%) border-box;
+  border-radius: var(--radius-6);
+  overflow: hidden;
+}
+
+.nav-cta-btn::before {
+  content: '';
+  display: block;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(227deg,#1400c7 0%,#00bbff 100%);
+  mix-blend-mode: screen;
+}
+
+.section {
+  --section-block-size: max(400px, 100dvb);
+  display: grid;
+  /* make transparent so the underlying video / gradients can show through */
+  background-color: transparent;
+  /* fallback for browsers where dvb units behave oddly */
+  min-block-size: var(--section-block-size, 80vh);
+  position: relative;
+  /* ensure section occupies the full viewport width so its columns are visible */
+  inline-size: 100vw;
+  margin-inline: 0;
+}
+
+.section > * { grid-area: 1/1; }
+
+.section-wrapper {
+  position: relative;
+  display: grid;
+  /* constrain inner content and center it in the viewport */
+  max-inline-size: 1200px;
+  margin-inline: auto;
+}
+
+@media (min-width: 960px) {
+  .section-wrapper { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 959px) {
+  .section-wrapper { padding-block-start: calc(74px + var(--size-7)); padding-block-end: var(--size-7); }
+}
+
+.video { display: block; inline-size: 100%; block-size: 100%; object-fit: cover; position: relative; z-index: 0; }
+
+.content-wrapper { display: grid; }
+
+@media (max-width: 959px) {
+  .content-wrapper { gap: var(--size-7); }
+}
+
+.meta { display: grid; gap: var(--size-3); }
+
+.content { display: grid; inline-size: 100%; place-items: center; padding-block: var(--size-7); padding-inline: var(--size-5); position: relative; z-index: 3; color: var(--foreground); }
+
+@media (min-width: 960px) {
+  .content { padding: var(--size-10); min-block-size: 100cqb; place-items: center end; }
+}
+
+@media (max-width: 959px) {
+  .content { gap: var(--size-5); }
+}
+
+.mobile-visual { inline-size: 100%; aspect-ratio: var(--ratio-square); }
+
+@media (min-width: 960px) { .mobile-visual { display: none; } }
+
+.headline { font-size: var(--font-size-7); font-weight: 400; max-inline-size: var(--size-content-1); }
+
+@media (max-width: 959px) { .headline { font-size: var(--font-size-6); } }
+
+.desc { font-size: var(--font-size-4); line-height: 1.5; max-inline-size: 40ch; }
+
+@media (max-width: 959px) { .desc { font-size: var(--font-size-3); } }
+
+.visual { display: grid; position: sticky; block-size: var(--section-block-size); inset-block-start: 0; z-index: 1; align-items: center; justify-items: end; }
+
+@media (max-width: 959px) { .visual { display: none; } }
+
+.video-visual { inline-size: 100%; block-size: var(--section-block-size); display: block; position: sticky; inset-block-start: 0; isolation: isolate; filter: hue-rotate(210deg); }
+
+.card-wrapper { display: grid; place-items: center; overflow: clip; }
+.card-wrapper > * { grid-area: 1/1; }
+
+.card { aspect-ratio: var(--ratio-square); inline-size: 70cqi; border-radius: var(--radius-3); /* start untransformed for clarity */ }
+.card-img { display: block; inline-size: 60%; max-inline-size: 40rem; block-size: auto; object-fit: contain; margin: 0 auto; }
+
+.card-1 { transform: scale(1); }
+.card-2 { transform: translate(-35cqi, 30cqb); opacity: 0.3; }
+.card-3 { transform: translate(0cqi,50cqb); opacity: 0.5; }
+.card-4 { transform: translate(45cqi,40cqb); opacity: 0.5; }
+
+.content-1 { --_text-gradient: linear-gradient(227deg,#1400c7 0%,#00bbff 100%); }
+.content-2 { --_text-gradient: linear-gradient(227deg,#28dc28 0%,#00bbff 100%); }
+.content-3 { --_text-gradient: linear-gradient(227deg,#1400c7 0%,#b800b1 100%); }
+.content-4 { --_text-gradient: linear-gradient(227deg,#b800b1 0%,#f50000 100%); }
+
+.text-highlight { background: var(--_text-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+/* Minimal support for the container animation features is preserved via CSS-only keyframes
+   but full scroll-timeline behavior requires the browser feature. We keep these rules global */
+@supports (animation-timeline: scroll()) {
+  :global(.video-visual) { animation-name: update-hue; animation-timing-function: step-end; animation-fill-mode: forwards; }
+}
+
+/* DEBUG: temporary visible highlights to locate elements. Remove after troubleshooting. */
+.section.debug-highlight { background: rgba(255, 230, 230, 0.9) !important; border: 3px solid rgba(255,0,0,0.6) !important; }
+.video-visual.debug-highlight { background: rgba(230, 255, 230, 0.9) !important; border: 3px dashed rgba(0,128,0,0.6) !important; }
+.content-wrapper.debug-highlight { background: rgba(230, 230, 255, 0.9) !important; border: 3px solid rgba(0,0,255,0.35) !important; }
+.card-wrapper.debug-highlight { background: rgba(255, 255, 200, 0.9) !important; border: 3px dashed rgba(200,150,0,0.6) !important; }
+.card.debug-highlight { background: rgba(255,255,255,1) !important; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+
+/* Force visibility for text during debug */
+.headline.debug-highlight, .desc.debug-highlight { color: #111 !important; background: rgba(255,255,255,0.0); }

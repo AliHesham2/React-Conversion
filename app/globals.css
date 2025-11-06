@@ -2,11 +2,17 @@
    <span class="material-symbols-outlined">name</span> render icons, not text. */
 @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=swap');
 
+/* Font Awesome (free) for icons used by several converted exports */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+
 /* Montserrat used by some converted exports (added for export #42 compatibility) */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 /* Load Inter to match original exports (weights 400 and 700 used by demos) */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+/* Open Props (design tokens used by many exports) */
+@import 'https://unpkg.com/open-props@2.0.0-beta.5';
 
 /* Load Roboto for components that expect it (some exports use Roboto) */
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');
@@ -21,20 +27,20 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900&display=swap');
 
 :root {
-  --background: #ffffff;
+  --background: #171717;
   --foreground: #171717;
   /* Nav height used by converted exports that expect a sticky navbar */
   --nav-block-size: 74px;
 }
 :root {
-  --background: #ffffff;
+  --background: #171717;
   --foreground: #171717;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #181d25;
-    --foreground: #ffffff;
+    --foreground: #171717;
   }
 }
 
