@@ -1,0 +1,76 @@
+/* Full Slider Prototype - CSS Module (scoped) */
+.content {
+	/* make the wrapper fill the viewport */
+	position: relative;
+	width: 100vw;
+	height: 100vh;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	overflow: hidden;
+	font-family: 'Lato', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+	background: #000;
+}
+
+.slider {
+	/* full-bleed stacking container */
+	position: absolute;
+	inset: 0; /* top:0; right:0; bottom:0; left:0 */
+	width: 100%;
+	height: 100%;
+}
+
+.miImg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+}
+
+.backgroundImages {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.biImgCont { position: absolute; bottom: 0; left: 0; overflow: hidden; width:100%; height:100%; }
+.biImgContImg { width:100%; height:100%; background-size: cover; background-position: center top; }
+
+.mainImages { position: relative; z-index: 1; width:100%; height:100%; }
+
+.navigation { position: absolute; bottom: 0; left: 0; color: white; z-index: 2; width:100%; }
+.navigation ul { margin: 90px auto; display:flex; gap:30px; justify-content:center; align-items:flex-end; padding:0; }
+.navItem { display:flex; position:relative; align-items:center; }
+.navItem a { position: absolute; top:0; left:0; z-index:1; display:block; width:100%; height:100%; }
+.liInfo, .liInfoMask .maskInfoContainer { overflow: hidden; opacity: 0.7; }
+.liInfo h5, .liInfoMask .maskInfoContainer h5 { font-size: 12px; font-weight:300; color:white; transform: rotate(-90deg); padding:4px 0 5px 0; margin:0; }
+.liInfo h4, .liInfoMask .maskInfoContainer h4 { font-size:18px; font-weight:400; color:white; padding-left:6px; text-transform:uppercase; margin:0; }
+.liInfoMask { width: 0%; position:absolute; top:0; left:0; opacity:1; overflow:hidden; }
+.liHoverLine { height:1px; margin-top:8px; }
+.liHoverLine .l { width:0%; height:1px; background:#cccccc; margin:0 auto; transition-duration:1s; }
+
+.c {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	bottom: 1rem;
+	color: #fff;
+	font-size: 0.9rem;
+	background: rgba(0,0,0,0.45);
+	padding: 0.35rem 0.75rem;
+	border-radius: 6px;
+	margin: 0;
+	z-index: 99999;
+}
+
+.c a { color: #fff; text-decoration: underline; }
+
+.maskInfoContainer { display:flex; align-items:center; }
+

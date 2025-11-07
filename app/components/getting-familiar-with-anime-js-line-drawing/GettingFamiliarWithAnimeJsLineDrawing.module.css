@@ -1,0 +1,17 @@
+/* Module-scoped styles for the SVG line-drawing export (structural-only pass). */
+.lineDrawing {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background: #050505;
+}
+
+.lines { display: block; }
+
+.myPath {
+  fill: none;
+  stroke: #cfc33a;
+  stroke-width: 4;
+}

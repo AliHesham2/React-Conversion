@@ -65,6 +65,20 @@ import expandingFlexCardsData from './data/expandingFlexCardsData';
 import EyesMousemove from './components/eyes-mousemove/EyesMousemove';
 import FancySlider from './components/fancy-slider/FancySlider';
 import fancySliderData from './data/fancySliderData';
+import FullSliderPrototype from './components/full-slider-prototype/FullSliderPrototype';
+import fullSliderPrototypeData from './data/fullSliderPrototypeData';
+import Gallery3dCssInfiniteHover from './components/gallery-3dcssinfinitehover/Gallery3dCssInfiniteHover';
+import gallery3dCssInfiniteHoverData from './data/gallery3dCssInfiniteHoverData';
+import GettingFamiliarWithAnimeJsLineDrawing from './components/getting-familiar-with-anime-js-line-drawing/GettingFamiliarWithAnimeJsLineDrawing';
+import gettingFamiliarWithAnimeJsLineDrawingData from './data/gettingFamiliarWithAnimeJsLineDrawingData';
+import GsapLandingPage from './components/gsap-landing-page/GsapLandingPage';
+import gsapLandingPageData from './data/gsapLandingPageData';
+import GsapSlideshowVerticalWarp from './components/gsap-slideshow-vertical-warp/GsapSlideshowVerticalWarp';
+import gsapSlideshowVerticalWarpData from './data/gsapSlideshowVerticalWarpData';
+import GsapSlideshowVerticalZoom2 from './components/gsap-slideshow-vertical-zoom-2/GsapSlideshowVerticalZoom2';
+import gsapSlideshowVerticalZoom2Data from './data/gsapSlideshowVerticalZoom2Data';
+import GsapSlideshowVerticalZoom3 from './components/gsap-slideshow-vertical-zoom-3/GsapSlideshowVerticalZoom3';
+import gsapSlideshowVerticalZoom3Data from './data/gsapSlideshowVerticalZoom3Data';
 
 
 
@@ -72,6 +86,18 @@ import fancySliderData from './data/fancySliderData';
 export default function Home() {
   return (
     <main>
+      
+  <GsapSlideshowVerticalZoom3 slides={gsapSlideshowVerticalZoom3Data.slides} />
+
+  {/* <GsapSlideshowVerticalZoom2 slides={gsapSlideshowVerticalZoom2Data.slides} /> */}
+
+  {/* <GsapSlideshowVerticalWarp slides={gsapSlideshowVerticalWarpData.slides} /> */}
+
+  {/* <GsapLandingPage slides={gsapLandingPageData} /> */}
+
+      {/* <Gallery3dCssInfiniteHover slides={gallery3dCssInfiniteHoverData} /> */}
+      {/* <FullSliderPrototype slides={fullSliderPrototypeData} /> */}
+
     {/* <WelcomeIntro /> */}
       
     {/* <CardSlider3D /> */}
@@ -147,8 +173,8 @@ export default function Home() {
   
     {/* <div style={{height: '40px'}} /> */}
 
-  <div style={{height: '40px'}} />
-  <FancySlider slides={fancySliderData} />
+  {/* <div style={{height: '40px'}} />
+  <FancySlider slides={fancySliderData} /> */}
 
   {/* <CodepenChallengeReflection data={codepenChallengeReflectionData} />  */}
 
@@ -181,9 +207,7 @@ export default function Home() {
 
 
 
-
-
-  {/* <DynamicContentLockupsV2OpenProps items={dynamicContentLockupsV2Data} /> */}
+   {/* <DynamicContentLockupsV2OpenProps items={dynamicContentLockupsV2Data} />  */}
 
 
  

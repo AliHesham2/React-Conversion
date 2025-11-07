@@ -42,14 +42,11 @@ Everything works, I just want to improve the code quality
 when u convert try to align the global css with our css to avoid problems
 
 ---------------------------------------------------------------------------------
- read AiLog.md and lets convert 46 ! first read the original html carefully and only converr the html to react (js) and make sure that html conversion align with react structure also create dummy test data inside data folder
- also want to test the react.js in so place it in the home page
+ read AiLog.md and lets convert 46 ! first read the original html carefully and only convert the html to react (js) and make sure that html conversion align with react structure also create dummy test data inside data folder
+ also want to test the react.js in so place it in the home page then read original script.js and convert it .. dont convert css now !! again dont convert css again !! first html then script.js
+ 
 
-  oki step 2 read the original css and convert it to react css and it must be alright with react also connect it with react .js
 
+step 2 its time for read original js file and convert it to be align with react and make sure that every thing fit with global css so height and width can be exactly perfect 
 
-step 3 its time for read original js file and convert it to be align with react and make sure that every thing fit with global css so height and width can be exactly perfect 
-
-can we connect our css with better way with out react java script file ? and also :global feels like not working well
-and i dont mean by global is the global css
-
+now its time to convert css !!

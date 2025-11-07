@@ -31,6 +31,8 @@
   --foreground: #ffffff;
   /* Nav height used by converted exports that expect a sticky navbar */
   --nav-block-size: 74px;
+  /* container width used by some converted exports */
+  --container-width: 1320px;
 }
 :root {
   --background: #000000;
@@ -106,6 +108,16 @@ a {
 */
 .u-paused {
   --marquee-play-state: paused;
+}
+
+/* If any component uses CSS animation-timeline, expose the timeline-scope
+   from the global stylesheet so components don't need to use :global() inside
+   CSS Modules. This keeps timeline-scope site-wide while view-timeline-name
+   remains component-scoped in each module. */
+@supports (animation-timeline: scroll()) {
+  body {
+    timeline-scope: --content-1, --content-2, --content-3, --content-4;
+  }
 }
 
 

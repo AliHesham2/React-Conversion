@@ -174,22 +174,22 @@ npm run dev
 | 43 | dynamic-content-lockups-v2open-props | ✅ | Done | lesa 3leha shwya !!
 | 44 | expandable-animated-card-slider | ✅ | Done  ms7tha !!
 | 45 | expanding-flex-cards | ✅ | Done
-| 46 | eyes-mousemove | | ✅ | Done
-| 47 | fancy-slider | ❌ | Pending |
+| 46 | eyes-mousemove |  ✅ | Done
+| 47 | fancy-slider | ✅ | Done
 | 48 | food-card-grid-layout | ✅ | Done  ms7tha !!
-| 49 | full-screen-slider-gsap-timeline-1 | ❌ | Pending |
+| 49 | full-screen-slider-gsap-timeline-1 | ✅ | Done  ms7tha !!
 
 
-| 50 | full-slider-prototype | ❌ | Pending |
-| 51 | gallery-3dcssinfinitehover | ❌ | Pending |
-| 52 | getting-familiar-with-anime-js-line-drawing | ❌ | Pending |
-| 53 | greensock-animated-slideshow-wip | ❌ | Pending |
-| 54 | gsap-infinite-draggable-image-gallery | ❌ | Pending |
-| 55 | gsap-landing-page | ❌ | Pending |
-| 56 | gsap-slideshow-vertical-warp-slideshow-n-1 | ❌ | Pending |
-| 57 | gsap-slideshow-vertical-zoom-slideshow-n-2 | ❌ | Pending |
+| 50 | full-slider-prototype | ✅ | Done
+| 51 | gallery-3dcssinfinitehover | ✅ | Done
+| 52 | getting-familiar-with-anime-js-line-drawing | ✅ | Done
+| 53 | greensock-animated-slideshow-wip | ✅ | Done | bayza wa mas7tha !!
+| 54 | gsap-infinite-draggable-image-gallery | ✅ | Done | bayza wa mas7tha !!
+| 55 | gsap-landing-page | ✅ | lesa 3leha shwya !!
+| 56 | gsap-slideshow-vertical-warp-slideshow-n-1 | ✅ | Done
+| 57 | gsap-slideshow-vertical-zoom-slideshow-n-2 | ✅ | Done
 | 58 | gsap-slideshow-vertical-zoom-slideshow-n-3 | ❌ | Pending |
-| 59 | gsap-starter-template | ❌ | Pending |
+| 59 | gsap-starter-template | ✅ | Done | bayza wa mas7tha !!
 
 
 | 60 | hexa-team | ❌ | Pending |
