@@ -2,6 +2,9 @@
    <span class="material-symbols-outlined">name</span> render icons, not text. */
 @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=swap');
 
+/* Fonts used by the hexa-team export */
+@import url('https://fonts.googleapis.com/css2?family=Rock+Salt&family=Permanent+Marker&display=swap');
+
 /* Font Awesome (free) for icons used by several converted exports */
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
 
@@ -102,6 +105,13 @@ a {
   filter: brightness(0.25);
   z-index: -1;
 }
+
+/* Background helper specific to the hexa-team export. Wrap the HexaTeam
+   component with a div.hexa-bg to restore the beige background and svg
+   hexagon pattern from the original export without touching body styles. */
+/* The hexa-team background is scoped into the component's CSS module
+   (HexaTeam.module.css). We removed the global helper to avoid polluting
+   global styles; use the component wrapper to get the same background. */
 
 /* Global helper to pause marquee-style animations via a custom property.
    Use by adding the `u-paused` class to a wrapper element (recommended).

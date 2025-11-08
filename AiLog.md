@@ -188,20 +188,20 @@ npm run dev
 | 55 | gsap-landing-page | ✅ | lesa 3leha shwya !!
 | 56 | gsap-slideshow-vertical-warp-slideshow-n-1 | ✅ | Done
 | 57 | gsap-slideshow-vertical-zoom-slideshow-n-2 | ✅ | Done
-| 58 | gsap-slideshow-vertical-zoom-slideshow-n-3 | ❌ | Pending |
+| 58 | gsap-slideshow-vertical-zoom-slideshow-n-3 | ✅ | Done
 | 59 | gsap-starter-template | ✅ | Done | bayza wa mas7tha !!
 
 
 | 60 | hexa-team | ❌ | Pending |
 | 61 | horizontal-parallax-sliding-slider-with-swiper-js | ❌ | Pending |
-| 62 | horizontal-scroll-effect | ❌ | Pending |
-| 63 | how-to-animate-a-coffee-drinking-sprite-with-scrolltrigger | ❌ | Pending |
-| 64 | image-overlay-slider | ❌ | Pending |
-| 65 | image-parallax | ❌ | Pending |
-| 66 | image-slider-ripple-effect | ❌ | Pending |
+| 62 | horizontal-scroll-effect | ✅ | Done | gsap ! mesh btt3ml sa7 
+| 63 | how-to-animate-a-coffee-drinking-sprite-with-scrolltrigger | ✅ | Done | bayza wa mas7tha !!
+| 64 | image-overlay-slider | ✅ | Done
+| 65 | image-parallax | ✅ | Done | bayza wa mas7tha !!
+| 66 | image-slider-ripple-effect | ✅ | Done | bayza wa mas7tha !!
 | 67 | image-zoom-in-with-scrolltrigger | ❌ | Pending |
-| 68 | interactive-project-showcase-slider-with-vertical-navigation-rtl-ltr-support | ❌ | Pending |
-| 69 | interior-design | ❌ | Pending |
+| 68 | interactive-project-showcase-slider-with-vertical-navigation-rtl-ltr-support | ✅ | Done | bayza wa mas7tha !!
+| 69 | interior-design | ✅ | Done | bayza wa mas7tha !!
 
 
 | 70 | intro-grid-section | ❌ | Pending |

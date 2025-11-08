@@ -80,14 +80,25 @@ import gsapSlideshowVerticalZoom2Data from './data/gsapSlideshowVerticalZoom2Dat
 import GsapSlideshowVerticalZoom3 from './components/gsap-slideshow-vertical-zoom-3/GsapSlideshowVerticalZoom3';
 import gsapSlideshowVerticalZoom3Data from './data/gsapSlideshowVerticalZoom3Data';
 
+import ImageOverlaySlider from './components/image-overlay-slider/ImageOverlaySlider';
+import imageOverlaySliderData from './data/imageOverlaySliderData';
 
+
+
+
+
+
+  
 
 
 export default function Home() {
   return (
     <main>
-      
-  <GsapSlideshowVerticalZoom3 slides={gsapSlideshowVerticalZoom3Data.slides} />
+
+      {/* Image Overlay Slider (export 64) - HTML-only conversion for testing */}
+      <ImageOverlaySlider slides={imageOverlaySliderData.slides} />
+
+  {/* <HexaTeam members={hexaTeamData.members} /> */}
 
   {/* <GsapSlideshowVerticalZoom2 slides={gsapSlideshowVerticalZoom2Data.slides} /> */}
 
