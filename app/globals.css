@@ -113,6 +113,24 @@ a {
    (HexaTeam.module.css). We removed the global helper to avoid polluting
    global styles; use the component wrapper to get the same background. */
 
+/* Optional wrapper to restore the original HexaTeam page background and
+  container sizing. Wrap the component in a div.hexa-bg to apply these
+  globals without changing the site-wide body styles. */
+.hexa-bg {
+  /* Make HexaTeam area cover the full viewport for a full-bleed effect */
+  --wrp: 100vw; /* used by HexaTeam math to size hexes */
+  width: 100vw;
+  min-height: 100vh; /* ensure it fills vertical space */
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* avoid accidental scrollbars from scaled content */
+  /* background svg and fallback color from original export */
+  background: center/1.6% #f5f5f5 url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="28" height="49" viewBox="0 0 28 49"%3E%3Cg fill-rule="evenodd"%3E%3Cg id="hexagons" fill="%23e5e5e5" fill-opacity="0.4" fill-rule="evenodd"%3E%3Cpath d="M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+  background-color: #faf2e8;
+}
+
 /* Global helper to pause marquee-style animations via a custom property.
    Use by adding the `u-paused` class to a wrapper element (recommended).
 */

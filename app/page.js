@@ -79,26 +79,34 @@ import GsapSlideshowVerticalZoom2 from './components/gsap-slideshow-vertical-zoo
 import gsapSlideshowVerticalZoom2Data from './data/gsapSlideshowVerticalZoom2Data';
 import GsapSlideshowVerticalZoom3 from './components/gsap-slideshow-vertical-zoom-3/GsapSlideshowVerticalZoom3';
 import gsapSlideshowVerticalZoom3Data from './data/gsapSlideshowVerticalZoom3Data';
-
 import ImageOverlaySlider from './components/image-overlay-slider/ImageOverlaySlider';
 import imageOverlaySliderData from './data/imageOverlaySliderData';
+import HexaTeam from './components/hexa-team/HexaTeam';
+import hexaTeamData from './data/hexaTeamData';
+import HorizontalParallaxSlidingSliderWithSwiperJs from './components/horizontal-parallax-sliding-slider-with-swiper-js/HorizontalParallaxSlidingSliderWithSwiperJs';
+import horizontalParallaxSlidingSliderData from './data/horizontalParallaxSlidingSliderData';
+import IntroGridSection from './components/intro-grid-section/IntroGridSection';
+import introGridSectionData from './data/introGridSectionData';
+import MarqueeLikeContentScrolling from './components/marquee-like-content-scrolling/MarqueeLikeContentScrolling';
+import marqueeLikeContentScrollingData from './data/marqueeLikeContentScrollingData';
+import MothersDaySvgAnimationResponsive from './components/mother-s-day-svg-animation-responsive/MothersDaySvgAnimationResponsive';
+import mothersDaySvgAnimationResponsiveData from './data/mothersDaySvgAnimationResponsiveData';
+import OnscrollAnimationDynamicContentScrollWithScrollmagic from './components/onscroll-animation-dynamic-content-scroll-with-scrollmagic/OnscrollAnimationDynamicContentScrollWithScrollmagic';
+import PageIntroAnimation from './components/page-intro-animation/PageIntroAnimation';
 
 
-
-
-
-
-  
 
 
 export default function Home() {
   return (
     <main>
 
-      {/* Image Overlay Slider (export 64) - HTML-only conversion for testing */}
-      <ImageOverlaySlider slides={imageOverlaySliderData.slides} />
+     
+    {/* <ImageOverlaySlider slides={imageOverlaySliderData.slides} /> */}
 
-  {/* <HexaTeam members={hexaTeamData.members} /> */}
+  {/* <div className="hexa-bg">
+    <HexaTeam members={hexaTeamData.members} />
+  </div> */}
 
   {/* <GsapSlideshowVerticalZoom2 slides={gsapSlideshowVerticalZoom2Data.slides} /> */}
 
@@ -128,6 +136,7 @@ export default function Home() {
   {/* <AnimatedContinuousSections data={animatedContinuousSectionsData} /> */}
 
   
+        <PageIntroAnimation />
   {/* <AnimatedImageSlider data={animatedImageSliderData} /> */}
 
   {/* Anime.js logo animation (converted from exports) */}
@@ -221,7 +230,27 @@ export default function Home() {
    {/* <DynamicContentLockupsV2OpenProps items={dynamicContentLockupsV2Data} />  */}
 
 
- 
+
+
+  {/* Intro grid section (converted HTML-only) */}
+
+  {/* <div style={{height: '40px'}} />
+  <IntroGridSection data={introGridSectionData} /> */}
+
+  {/* Marquee-like content scrolling (HTML-only conversion for testing) */}
+
+  {/* <div style={{height: '40px'}} />
+  <MarqueeLikeContentScrolling items={marqueeLikeContentScrollingData.items} /> */}
+
+  {/* <div style={{height: '40px'}} />
+  <MothersDaySvgAnimationResponsive data={mothersDaySvgAnimationResponsiveData} /> */}
+
+  {/* <div style={{height: '60px'}} />
+  <HorizontalParallaxSlidingSliderWithSwiperJs slides={horizontalParallaxSlidingSliderData.slides} /> */}
+  
+  {/* <div style={{height: '60px'}} />
+  <OnscrollAnimationDynamicContentScrollWithScrollmagic  /> */}
+
     </main>
   );
 }

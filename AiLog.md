@@ -1,116 +1,4 @@
-# 🤖 AI Conversion Guide
 
-## ⚙️ Standardized Conversion Process (single repeatable flow)
-
-Follow this exact procedure for every export to guarantee consistency and maintainability.
-
-Pre-flight checks
-- Verify the target folder in `exports/` exists and contains the original `index.html`/`.html`, `style.css`/`.css`, and `script.js`/`.js` files.
-- Do not edit anything inside `exports/` — treat it as the canonical source.
-- Make sure the next item in the checklist is `Pending` and not already being worked on by someone else.
-
-Conversion contract (what you must produce)
-- A React component file: `app/components/<export-name>/<ExportName>.js` (JavaScript-only React component; no JSX extension required).
-- A scoped CSS Module in the same folder: `ComponentName.module.css` (use CSS Modules; no global selectors except deliberate, documented exceptions).
-- Optional: a data file in `app/data/<export>-data.js` used only for local testing (never ship static data inside the component itself).
-- No runtime scripts loaded from `exports/` — port behavior into the React component (useEffect + refs).
-
-Step-by-step conversion
-
-1) Read and understand the original files
-- Open the original HTML, CSS and JS. Trace selectors used in JS and CSS. Note any external libraries (GSAP, Anime.js, etc.).
-- Identify the root container (the top-level element wrapper) and all interactive elements (nav, dots, arrows, images).
-
-2) Create component folder & files
-- Create `app/components/<export-name>/` (kebab-case folder name matches `exports/<export-name>`).
-- Create the React file: `app/components/<export-name>/<ExportName>.js`.
-  - The component must be data-free: accept a `slides` prop (or appropriate props) and render only from props/state.
-  - Do NOT hardcode images, text arrays, or demo data inside the component.
-  - Keep markup identical to original (class names can be converted to CSS Module keys).
-
-3) Convert HTML → JSX/React (HTML-only pass)
-- Render the original DOM structure using React elements and the `slides` prop.
-- DO NOT add behavior or data in this pass — this file is purely structural.
-- Use plain `<img>` tags if you must match the original markup (suppress lint rule if needed). We can optimize with `next/image` later if desired.
-
-4) Convert CSS → CSS Module (scoped)
-- Create `ComponentName.module.css` in the same folder.
-- Convert selectors to local class names (remove :global wrappers). Example: `.slide` remains `.slide` in the module, and JS references it as `styles.slide`.
-- Avoid universal selectors (`*`) and global resets inside modules — put global resets only in `app/globals.css` if necessary.
-- Respect Turbopack/Next.js rules: CSS Modules require at least one local class per selector (no pure `*`, no ambiguous selectors).
-
-5) Wire CSS Module into component
-- Import styles: `import styles from './ComponentName.module.css'`.
-- Replace class strings with module mappings: `className={styles.slide}` or `className={
-  
-
-}` (use template or classnames helper).
-
-6) Port JavaScript behavior (if required)
-- Move original JS logic into the component using `useEffect`, `useRef`, and `useState` as appropriate.
-- Scope DOM queries to the component: use a `containerRef` and `containerRef.current.querySelectorAll(...)` instead of document-level selectors.
-- Prefer state-driven class application (`setState` → render `className`) rather than manual `classList` toggles when possible. When imperative DOM mutation is necessary (performance/complex animation), use refs and guard accesses with defensive checks.
-- Keep timing logic (intervals/timeouts) in refs so you can clear them on unmount.
-
-7) Data & testing harness
-- For local testing only, add a small test data file in `app/data/<export>-data.js` and import it into `app/page.js` to render the component during development. Do NOT keep that test data inside the component file.
-
-8) Accessibility & performance checks
-- Ensure images have alt text, interactive elements are keyboard-accessible, and focus styles are preserved.
-- Avoid blocking the main thread on mount; prefer CSS transitions or requestAnimationFrame for paint-sensitive updates.
-
-9) Validation (quality gates)
-- Build: `npm run dev` — must compile without errors.
-- Lint/typecheck: run `npm run lint` (or your project's linter); fix reported issues unless false positives.
-- Quick visual test: open page, inspect `.slide-content` computed styles (verify owner file is the component module file).
-
-10) Cleanup & commit
-- Remove console.logs, debug CSS overrides, or temporary inline style hacks.
-- Ensure the CSS Module contains only rules used by the component.
-- Update `AiLog.md` conversion checklist: mark item `Done`, add notes (what changed, any deviations, libraries used).
-
-Failure policy
-- If the build or visual checks fail, iterate up to 3 quick fixes (CSS scoping, index of affected selectors, or timing adjustments). If unresolved after 3 attempts, create a short issue in the repo and move to the next item.
-
-Commands (dev/test)
-```powershell
-npm run dev
-# open http://localhost:3000
-```
-
-     * Same colors
-     * Same fonts
-     * Same animations
-     * Same structure and layout
-     * Same or improved **responsiveness**
-
-9. After completing the conversion:
-
-   * Go to the **Home** page and `import` the new component for testing.
-   * Make sure the component looks and behaves the same across different screen sizes (mobile, tablet, desktop).
-   * Once confirmed, open **`AiLog.md`** again and change the status from `Pending` → `Done`.
-
----
-
-## 🎞️ Animation & UI Rules
-
-* Follow the **exact same animation method** used in the original files.
-* If animations are done with **CSS**, keep them as CSS keyframes or transitions.
-* If animations are done with **JavaScript**, move that logic into a `useEffect` in React with the same timing and easing.
-* If the original uses libraries like **GSAP**, **Anime.js**, or **Three.js**, use the **same ones** in React.
-
-
-
-## 📦 Data & Props Rules
-
-* 🧱 All data must be **dynamic via props**, not hardcoded.
-* 🚫 Never include static text, arrays, or images directly inside the component (unless they are part of the layout itself).
-* ✅ Test data should be stored inside **`/app/data/`** folder.
-* ✅ Everything displayed on the UI should be controlled via props or state.
-* ✅ No fetch calls, APIs, or local storage logic allowed.
-
-
----
 
 ## 📊 Progress Tracker
 
@@ -192,40 +80,40 @@ npm run dev
 | 59 | gsap-starter-template | ✅ | Done | bayza wa mas7tha !!
 
 
-| 60 | hexa-team | ❌ | Pending |
-| 61 | horizontal-parallax-sliding-slider-with-swiper-js | ❌ | Pending |
+| 60 | hexa-team | ✅ | Done |  mesh btt3ml sa7 
+| 61 | horizontal-parallax-sliding-slider-with-swiper-js | ✅ | Done |  mesh btt3ml sa7 
 | 62 | horizontal-scroll-effect | ✅ | Done | gsap ! mesh btt3ml sa7 
 | 63 | how-to-animate-a-coffee-drinking-sprite-with-scrolltrigger | ✅ | Done | bayza wa mas7tha !!
 | 64 | image-overlay-slider | ✅ | Done
 | 65 | image-parallax | ✅ | Done | bayza wa mas7tha !!
 | 66 | image-slider-ripple-effect | ✅ | Done | bayza wa mas7tha !!
-| 67 | image-zoom-in-with-scrolltrigger | ❌ | Pending |
+| 67 | image-zoom-in-with-scrolltrigger | ✅ | Done | gsap ! mesh btt3ml sa7 
 | 68 | interactive-project-showcase-slider-with-vertical-navigation-rtl-ltr-support | ✅ | Done | bayza wa mas7tha !!
 | 69 | interior-design | ✅ | Done | bayza wa mas7tha !!
 
 
-| 70 | intro-grid-section | ❌ | Pending |
-| 71 | jumping-between-sectionsscrolltrigger | ❌ | Pending |
-| 72 | linear-slider-with-splittext-effect-greensock | ❌ | Pending |
-| 73 | liquid-gallerylightbox | ❌ | Pending |
-| 74 | marketing-hero-sectionopen-props-v2 | ❌ | Pending |
-| 75 | marquee-like-content-scrolling | ❌ | Pending |
-| 76 | mother-s-day-svg-animation-responsive | ❌ | Pending |
-| 77 | motion-blur-effect-using-svg-filters | ❌ | Pending |
-| 78 | neuro-noise-glsl-shader | ❌ | Pending |
-| 79 | no-script-accordion-animation | ❌ | Pending |
+| 70 | intro-grid-section | ✅ | Done
+| 71 | jumping-between-sectionsscrolltrigger | ✅ | Done | bayza wa mas7tha !!
+| 72 | linear-slider-with-splittext-effect-greensock | ✅ | Done | bayza wa mas7tha !!
+| 73 | liquid-gallerylightbox | ✅ | Done | bayza wa mas7tha !!
+| 74 | marketing-hero-sectionopen-props-v2 | ✅ | Done | bayza wa mas7tha !!
+| 75 | marquee-like-content-scrolling | ✅ | Done
+| 76 | mother-s-day-svg-animation-responsive | ✅ | Done
+| 77 | motion-blur-effect-using-svg-filters | ✅ | Done | bayza wa mas7tha !!
+| 78 | neuro-noise-glsl-shader | ✅ | Done | bayza wa mas7tha !!
+| 79 | no-script-accordion-animation | ✅ | Done | bayza wa mas7tha !!
 
 
-| 80 | only-css-animation-01 | ❌ | Pending |
-| 81 | onscroll-animation-dynamic-content-scroll-with-scrollmagic | ❌ | Pending |
-| 82 | orbital-photo-gallery | ❌ | Pending |
-| 83 | page-intro-animation | ❌ | Pending |
-| 84 | pair-with-css-scroll-snappingscrolltrigger | ❌ | Pending |
-| 85 | parallax-bake-shop-card | ❌ | Pending |
+| 80 | only-css-animation-01 | ✅ | Done | bayza wa mas7tha !!
+| 81 | onscroll-animation-dynamic-content-scroll-with-scrollmagic | ❌ | Pending | (et3mlt bs m7taga tsle7!!)
+| 82 | orbital-photo-gallery | ✅ | Done | bayza wa mas7tha !!
+| 83 | page-intro-animation | ✅ | Done 
+| 84 | pair-with-css-scroll-snappingscrolltrigger | ✅ | Done | bayza wa mas7tha !!
+| 85 | parallax-bake-shop-card | ✅ | Done | bayza wa mas7tha !!
 | 86 | parallax-carousel-no-libraries | ❌ | Pending |
-| 87 | parallax-headerscrolltrigger | ❌ | Pending |
-| 88 | parallax-photo-carousel | ❌ | Pending |
-| 89 | parallax-scene-on-scrollscrolltrigger | ❌ | Pending |
+| 87 | parallax-headerscrolltrigger | ✅ | Done | bayza wa mas7tha !!
+| 88 | parallax-photo-carousel | ✅ | Done | bayza wa mas7tha !!
+| 89 | parallax-scene-on-scrollscrolltrigger | ✅ | Done | bayza wa mas7tha !!
 
 | 90 | parallax-scroll-animation | ❌ | Pending |
 | 91 | perspective-zoom-effect-on-scroll | ❌ | Pending |
