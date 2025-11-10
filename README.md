@@ -46,6 +46,9 @@ when u convert try to align the global css with our css to avoid problems
  also  place the created react  in the home page  dont convert css or script.js now !! again dont convert css or script.js  !! first html only 
  
 
-step 2 its time for read original script.js file and convert it to align with created react  .
+step 2 its time for read original script.js file and convert it to align with created react 
 
-step 3 read original css file and convert it to be align with react file ..  !!
+step 3 read original css file and convert it to be align with react file .. and apply it on converted (html and script.js files)
+
+
+i dont want :global inside the ... also i dont want it in global.css

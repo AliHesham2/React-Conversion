@@ -1,33 +1,5 @@
-/* Load Material Symbols (outlined) so components using
-   <span class="material-symbols-outlined">name</span> render icons, not text. */
-@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=swap');
 
-/* Fonts used by the hexa-team export */
-@import url('https://fonts.googleapis.com/css2?family=Rock+Salt&family=Permanent+Marker&display=swap');
 
-/* Font Awesome (free) for icons used by several converted exports */
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
-
-/* Montserrat used by some converted exports (added for export #42 compatibility) */
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
-
-/* Load Inter to match original exports (weights 400 and 700 used by demos) */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
-
-/* Open Props (design tokens used by many exports) */
-@import 'https://unpkg.com/open-props@2.0.0-beta.5';
-
-/* Load Roboto for components that expect it (some exports use Roboto) */
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');
-
-/* Load Bebas Neue used by the marquee export */
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-
-/* Fonts used by css-infinite-scroll-gallery export */
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Saira:ital@0;1&family=Sour+Gummy:wdth,wght@125,300&display=swap');
-
-/* Poppins used by css-sliderpure-css10 export */
-@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900&display=swap');
 
 :root {
   --background: #000000;
@@ -136,6 +108,73 @@ a {
 */
 .u-paused {
   --marquee-play-state: paused;
+}
+
+
+/* View transition helpers used by several converted exports. Moved here from
+   component CSS modules to avoid :global() usage inside modules. */
+::view-transition-group(root) {
+  -webkit-animation-duration: 1.25s;
+  animation-duration: 1.25s;
+}
+::view-transition-new(root), ::view-transition-old(root) {
+  mix-blend-mode: normal;
+}
+::view-transition-new(root) {
+  -webkit-animation-name: reveal-light;
+  animation-name: reveal-light;
+}
+::view-transition-old(root), .dark::view-transition-old(root) {
+  -webkit-animation: none;
+  animation: none;
+}
+.dark::view-transition-new(root) {
+  -webkit-animation-name: reveal-dark;
+  animation-name: reveal-dark;
+}
+
+@-webkit-keyframes reveal-dark {
+  from {
+    -webkit-clip-path: polygon(-30% 0, -30% 0, -15% 100%, -10% 115%);
+    clip-path: polygon(-30% 0, -30% 0, -15% 100%, -10% 115%);
+  }
+  to {
+    -webkit-clip-path: polygon(-30% 0, 130% 0, 115% 100%, -10% 115%);
+    clip-path: polygon(-30% 0, 130% 0, 115% 100%, -10% 115%);
+  }
+}
+
+@keyframes reveal-dark {
+  from {
+    -webkit-clip-path: polygon(-30% 0, -30% 0, -15% 100%, -10% 115%);
+    clip-path: polygon(-30% 0, -30% 0, -15% 100%, -10% 115%);
+  }
+  to {
+    -webkit-clip-path: polygon(-30% 0, 130% 0, 115% 100%, -10% 115%);
+    clip-path: polygon(-30% 0, 130% 0, 115% 100%, -10% 115%);
+  }
+}
+
+@-webkit-keyframes reveal-light {
+  from {
+    -webkit-clip-path: polygon(130% 0, 130% 0, 115% 100%, 110% 115%);
+    clip-path: polygon(130% 0, 130% 0, 115% 100%, 110% 115%);
+  }
+  to {
+    -webkit-clip-path: polygon(130% 0, -30% 0, -15% 100%, 110% 115%);
+    clip-path: polygon(130% 0, -30% 0, -15% 100%, 110% 115%);
+  }
+}
+
+@keyframes reveal-light {
+  from {
+    -webkit-clip-path: polygon(130% 0, 130% 0, 115% 100%, 110% 115%);
+    clip-path: polygon(130% 0, 130% 0, 115% 100%, 110% 115%);
+  }
+  to {
+    -webkit-clip-path: polygon(130% 0, -30% 0, -15% 100%, 110% 115%);
+    clip-path: polygon(130% 0, -30% 0, -15% 100%, 110% 115%);
+  }
 }
 
 /* If any component uses CSS animation-timeline, expose the timeline-scope

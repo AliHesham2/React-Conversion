@@ -93,6 +93,12 @@ import MothersDaySvgAnimationResponsive from './components/mother-s-day-svg-anim
 import mothersDaySvgAnimationResponsiveData from './data/mothersDaySvgAnimationResponsiveData';
 import OnscrollAnimationDynamicContentScrollWithScrollmagic from './components/onscroll-animation-dynamic-content-scroll-with-scrollmagic/OnscrollAnimationDynamicContentScrollWithScrollmagic';
 import PageIntroAnimation from './components/page-intro-animation/PageIntroAnimation';
+import ParallaxCarouselNoLibraries from './components/parallax-carousel-no-libraries/ParallaxCarouselNoLibraries';
+import PixelPerCharacterScrollWords from './components/pixel-per-character-scroll-words-with-css-gsap/PixelPerCharacterScrollWords';
+import PricingPureCss16 from './components/pricingpure-css16/PricingPureCss16';
+import ProductSwiper from './components/product-swiper/ProductSwiper';
+import ProjectsCarousel from './components/ProjectsCarousel/ProjectsCarousel';
+import PureCssCarousel from './components/PureCssCarousel/PureCssCarousel';
 
 
 
@@ -101,8 +107,7 @@ export default function Home() {
   return (
     <main>
 
-     
-    {/* <ImageOverlaySlider slides={imageOverlaySliderData.slides} /> */}
+  {/* <ImageOverlaySlider slides={imageOverlaySliderData.slides} /> */}
 
   {/* <div className="hexa-bg">
     <HexaTeam members={hexaTeamData.members} />
@@ -134,9 +139,13 @@ export default function Home() {
     {/* <AddToCartAnimation /> */}
 
   {/* <AnimatedContinuousSections data={animatedContinuousSectionsData} /> */}
-
   
-        <PageIntroAnimation />
+  {/* <PageIntroAnimation /> */}
+  {/* <PixelPerCharacterScrollWords /> */}
+
+  {/* <PricingPureCss16 /> */}
+  {/* <ProductSwiper /> */}
+
   {/* <AnimatedImageSlider data={animatedImageSliderData} /> */}
 
   {/* Anime.js logo animation (converted from exports) */}
@@ -148,20 +157,15 @@ export default function Home() {
 
   {/* <DraggableMasthead slides={draggableMastheadData} /> */}
 
-
-
   {/* <CardCarousel /> */}
     
   {/* <CreativeFoodCarousel slides={creativeFoodCarouselData} /> */}
 
-
   {/* <div style={{height: '60px'}} />
   <CssFiltersAdabtiveCards slides={cssFiltersAdaptiveCardsData} /> */}
 
-
   {/* <div style={{height: '60px'}} />
   <CssInfiniteAutoplayCarousel slides={cssInfiniteAutoplayCarouselData} /> */}
-
 
   {/* <CssCarouselKeyboard /> */}
 
@@ -173,17 +177,22 @@ export default function Home() {
   {/* <div style={{height: '60px'}} />
    <CssOnlyMarquee items={cssOnlyMarqueeData} /> */}
 
-
-
   {/* <CardsWithInvertedBorderRadius />
       <CarouselWithHoverEffect /> */}
   {/* <CenterModeProductivitySliderProV5 /> */}
-
   
   {/* <CleanSliderWithCurvedBackground slides={cleanSliderWithCurvedBackgroundData} /> */}
 
   {/* <div style={{height: '60px'}} />
    <ClipPathHoverEffect items={clipPathHoverEffectData} /> */}
+
+
+
+    {/* <div style={{ height: '40px' }} />
+    <ProjectsCarousel /> */}
+
+  {/* <div style={{ height: '40px' }} />
+  <PureCssCarousel /> */}
 
   {/* <div style={{height: '60px'}} /> */}
   {/* <ClipPathRevealingSlider items={clipPathRevealingSliderData} /> */}
@@ -198,8 +207,6 @@ export default function Home() {
 
   {/* <CodepenChallengeReflection data={codepenChallengeReflectionData} />  */}
 
-
-
   {/* cpchallenge slideshow (for testing) */}
 
   {/* <div style={{height: '40px'}} /> */}
@@ -210,8 +217,6 @@ export default function Home() {
   {/* <div style={{height: '60px'}} />
   <CssOnlyInkSplashVideoManipulation items={cssOnlyInkSplashData} /> */}
 
-
-
   {/* <div style={{height: '60px'}} /> */}
   {/* testing: cyber-scrollgsap (converted item #40) */}
 
@@ -221,16 +226,10 @@ export default function Home() {
   {/* <div style={{height: '40px'}} />
   <ExpandingFlexCards slides={expandingFlexCardsData} /> */}
 
-
   {/* <div style={{height: '40px'}} />
   <DynamicCarouselSliderWithInfiniteScoll slides={dynamicCarouselSliderData} /> */}
 
-
-
    {/* <DynamicContentLockupsV2OpenProps items={dynamicContentLockupsV2Data} />  */}
-
-
-
 
   {/* Intro grid section (converted HTML-only) */}
 

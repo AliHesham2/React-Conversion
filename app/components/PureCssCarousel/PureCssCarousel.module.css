@@ -1,0 +1,271 @@
+@-webkit-keyframes slidein {
+  0% {
+    top: -400px;
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    top: 0px;
+  }
+}
+@keyframes slidein {
+  0% {
+    top: -400px;
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    top: 0px;
+  }
+}
+@-webkit-keyframes slideout {
+  0% {
+    top: 0;
+    opacity: 1;
+  }
+  100% {
+    top: -400px;
+    opacity: 0;
+  }
+}
+@keyframes slideout {
+  0% {
+    top: 0;
+    opacity: 1;
+  }
+  100% {
+    top: -400px;
+    opacity: 0;
+  }
+}
+
+/* Scoped pure-css-carousel styles (converted from original export)
+   All selectors are class-based so this module does not use :global()
+*/
+.scene {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  width: 1000px;
+  height: 400px;
+  position: relative;
+  margin: 0 auto;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  overflow: hidden;
+}
+
+.leftZone {
+  background: #fff;
+  height: 75%;
+  flex-grow: 0;
+  display: flex;
+  width: 350px;
+  align-items: center;
+  justify-content: left;
+  position: relative;
+}
+
+.list {
+  display: flex;
+  list-style: none;
+  align-content: stretch;
+  flex-direction: column;
+  flex-grow: 1;
+  margin: 0;
+  padding: 0;
+}
+
+.item input[type="radio"] {
+  display: none;
+}
+
+.item input[type="radio"] ~ label {
+  display: block;
+  opacity: 0.5;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  position: relative;
+}
+
+.item input[type="radio"] ~ label:first-letter {
+  text-transform: uppercase;
+}
+
+.item input[type="radio"] ~ label:hover {
+  opacity: 0.75;
+  cursor: pointer;
+}
+
+.label_strawberry:before,
+.label_banana:before,
+.label_apple:before,
+.label_orange:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  margin-left: 15px;
+  background-position: center;
+  background-size: 75% 75%;
+  background-repeat: no-repeat;
+}
+
+.label_strawberry:before { background-image: url("https://d30y9cdsu7xlg0.cloudfront.net/png/83067-200.png"); }
+.label_banana:before { background-image: url("https://d30y9cdsu7xlg0.cloudfront.net/png/53209-200.png"); }
+.label_apple:before  { background-image: url("https://d30y9cdsu7xlg0.cloudfront.net/png/14333-200.png"); }
+.label_orange:before { background-image: url("https://d30y9cdsu7xlg0.cloudfront.net/png/9636-200.png"); }
+
+.item input[type="radio"] ~ .content {
+  position: absolute;
+  left: 350px;
+  top: -400px;
+  width: 650px;
+  height: 400px;
+  animation-duration: 0.75s;
+  animation-name: slideout;
+  animation-timing-function: ease-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.content_strawberry .picto,
+.content_banana .picto,
+.content_apple .picto,
+.content_orange .picto {
+  height: 100px;
+  width: 100px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.content_strawberry .picto { background-image: url("https://d30y9cdsu7xlg0.cloudfront.net/png/83067-200.png"); }
+.content_banana .picto   { background-image: url("https://d30y9cdsu7xlg0.cloudfront.net/png/53209-200.png"); }
+.content_apple .picto    { background-image: url("https://d30y9cdsu7xlg0.cloudfront.net/png/14333-200.png"); }
+.content_orange .picto   { background-image: url("https://d30y9cdsu7xlg0.cloudfront.net/png/9636-200.png"); }
+
+.content_strawberry h1 { color: #D64541; }
+.content_banana h1     { color: #F5D76E; }
+.content_apple h1      { color: #00B16A; }
+.content_orange h1     { color: #F27935; }
+
+.item input[type="radio"] ~ .content h1:first-letter { text-transform: uppercase; }
+.item input[type="radio"] ~ .content p { max-width: 50%; text-align: center; }
+
+.item input[type="radio"]:checked ~ label {
+  opacity: 1;
+  animation: all 1s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+.item input[type="radio"] ~ label {
+  display: block;
+  opacity: 0.5;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  position: relative;
+  /* ensure label text is visible even if a global color rule exists */
+  color: #6b6b6b !important;
+}
+
+.item input[type="radio"]:checked ~ .label_strawberry { color: #D64541 !important; border-right: solid 4px #D64541; }
+.item input[type="radio"]:checked ~ .label_banana     { color: #F5D76E !important; border-right: solid 4px #F5D76E; }
+.item input[type="radio"]:checked ~ .label_apple      { color: #00B16A !important; border-right: solid 4px #00B16A; }
+.item input[type="radio"]:checked ~ .label_orange     { color: #F27935 !important; border-right: solid 4px #F27935; }
+
+/* Color the content title only when the corresponding radio is checked */
+.item input[type="radio"]:checked ~ .content_strawberry h1 { color: #D64541 !important; }
+.item input[type="radio"]:checked ~ .content_banana h1     { color: #F5D76E !important; }
+.item input[type="radio"]:checked ~ .content_apple h1      { color: #00B16A !important; }
+.item input[type="radio"]:checked ~ .content_orange h1     { color: #F27935 !important; }
+
+/* Ensure content text (title and paragraph) is readable regardless of globals */
+.content { color: #000 !important; }
+.content h1 { color: inherit !important; }
+.content p { color: #000 !important; }
+
+.item input[type="radio"]:checked ~ .content {
+  animation-duration: 0.75s;
+  animation-name: slidein;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+.middleBorder {
+  background-color: #eee;
+  height: 75%;
+  flex-grow: 1;
+  max-width: 2px;
+  z-index: 0;
+}
+
+.rightZone {
+  background: #fff;
+  height: 100%;
+  flex-grow: 3;
+}
+
+/* Basic page-level neutral defaults scoped to the component (kept minimal) */
+.wrapperRoot {
+  /* Force the carousel wrapper to cover the full viewport */
+  width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background: #eee;
+  font-family: Tahoma, sans-serif;
+}
+
+/* ------------------------------------------------------------------
+   Targeted reset for this component only
+
+   Problem: a global stylesheet was imposing aggressive rules (large
+   font-sizes / transforms / !important color) which made the content
+   render as overlapping oversized text. We keep the reset strictly
+   scoped to the component to avoid editing global files.
+------------------------------------------------------------------- */
+.wrapperRoot,
+.wrapperRoot .scene,
+.wrapperRoot .scene *,
+.wrapperRoot .content,
+.wrapperRoot .content * {
+  /* Concrete local defaults to override problematic globals */
+  font-family: Tahoma, 'Helvetica Neue', Arial, sans-serif !important;
+  font-size: 16px !important;
+  line-height: 1.45 !important;
+  letter-spacing: normal !important;
+  text-transform: none !important;
+  transform: none !important;
+  white-space: normal !important;
+  color: #222 !important;
+}
+
+/* Tighten specific content elements (title and paragraph) */
+.wrapperRoot .content h1,
+.wrapperRoot .content h2 {
+  font-size: 34px !important;
+  margin: 0.4rem 0 !important;
+  line-height: 1.1 !important;
+}
+
+.wrapperRoot .content p {
+  font-size: 16px !important;
+  max-width: 520px !important;
+  margin: 0.5rem auto 0 !important;
+  text-align: center !important;
+}
+
+/* Keep the animation transforms but ensure they don't inherit a
+   stray global transform that scales text unexpectedly. */
+.wrapperRoot .content {
+  transform: none !important;
+}
+

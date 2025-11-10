@@ -1,0 +1,393 @@
+:root {
+  /* Document-level variables kept global so theme toggling works */
+}
+
+/* Keep global root variables and body styles global so other parts of the app
+   inherit the same theme tokens. These mirror the original demo. */
+/* Component-scoped variables and base styles. We avoid :global by attaching
+   tokens and the decorative background to the component root so the demo is
+   self-contained and doesn't rely on document-level :root styles. */
+.ppcRoot {
+  --font-size: clamp(2rem, 8vmin + 1rem, 4rem);
+  --line: color-mix(in lch, canvasText 15%, transparent);
+  --base: 0.4;
+  --accent: hsl(8 100% 55%);
+  --header-height: 100vh;
+  --overlay: color-mix(in lch, canvas 70%, transparent);
+  color-scheme: dark only;
+  min-height: 100vh;
+  font-family: 'SF Pro Text', 'SF Pro Icons', 'AOS Icons', 'Helvetica Neue',
+    Helvetica, Arial, sans-serif, system-ui;
+.ppcRoot .sr-only {
+  position: relative;
+}
+
+.ppcRoot[data-theme='light'] {
+  --base: 0.3;
+  --line: color-mix(in lch, canvasText 35%, transparent);
+  --overlay: color-mix(in lch, canvas 70%, transparent);
+  color-scheme: light only;
+}
+
+.ppcRoot::before {
+  /* decorative halftone background from original demo, scoped to component */
+  --size: 60px;
+  content: '';
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(
+      90deg,
+      var(--line) 1px,
+      transparent 1px var(--size)
+    )
+    50% 50% / var(--size) var(--size),
+    linear-gradient(var(--line) 1px, transparent 1px var(--size)) 50% 50% /
+      var(--size) var(--size);
+  -webkit-mask: linear-gradient(-15deg, transparent 40%, white);
+  mask: linear-gradient(-15deg, transparent 40%, white);
+  top: 0;
+  transform-style: flat;
+  pointer-events: none;
+  .ppcRoot .content span {
+    opacity: calc(var(--base) + (var(--active)));
+    transition: opacity 0.5s;
+  }
+  z-index: -1;
+}
+
+/* Root wrapper for the component. All demo styles are scoped under this
+  class so they don't leak into the rest of the app. */
+
+.ppcRoot :where(h1, h2) {
+  font-size: clamp(2rem, 3vw + 1rem, 6rem);
+}
+
+.ppcRoot [href='#read'] {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 48px;
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  color: canvasText;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  .ppcRoot .bear-link svg {
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.ppcRoot [data-split] {
+  font-size: var(--font-size);
+  font-weight: 600;
+}
+
+.ppcRoot header {
+  min-height: var(--header-height);
+  .ppcRoot .sig :is(.eye, .nose) {
+    fill: transparent;
+  }
+  display: grid;
+  place-items: center;
+  position: relative;
+  transform-origin: 50% 0%;
+}
+
+.ppcRoot h1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.ppcRoot h1 > span:first-of-type {
+  font-size: 0.35em;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+
+.ppcRoot header > section {
+  position: relative;
+  top: 0;
+  min-height: var(--header-height);
+  width: 100%;
+  transform: translateY(-100%);
+  display: grid;
+  place-items: center;
+  background: var(--overlay);
+}
+
+.ppcRoot header > section::before {
+  content: '';
+  background: var(--overlay);
+  position: absolute;
+  inset: 0;
+  transform: translateY(100%);
+}
+
+  .ppcRoot .theme-toggle {
+    color: var(--color);
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    width: 48px;
+    aspect-ratio: 1;
+    padding: 0;
+    border: 0;
+    display: grid;
+    place-items: center;
+    border-radius: 12px;
+    background: transparent;
+    transition: background 0.2s;
+    cursor: pointer;
+    z-index: 10;
+  }
+.ppcRoot video {
+  position: sticky;
+  top: 0;
+  height: var(--header-height);
+  width: 100vw;
+  object-fit: cover;
+  background: canvas;
+}
+
+.ppcRoot footer {
+  text-align: center;
+  padding: 2rem;
+  opacity: 0.875;
+}
+
+.ppcRoot section:not(.reader) {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.content {
+  position: sticky;
+  top: 0;
+  min-height: 100vh;
+  width: 100ch;
+  padding: 2rem 0;
+  max-width: calc(100% - 4rem);
+  display: grid;
+  place-items: center;
+  margin: 0 auto;
+  line-height: 1;
+}
+
+.content span {
+  opacity: calc(var(--base) + (var(--active)));
+  transition: opacity 0.5s;
+}
+
+.reader {
+  --thick: 0px;
+  outline: var(--thick) dashed var(--accent);
+  outline-offset: calc(var(--thick) * -1);
+
+  /* The trick here is that --ppc could be dynamic */
+  height: calc(
+    ((var(--ppc) * var(--content-length) + (var(--pad) * var(--buffer))) * 1px) + 100vh
+  );
+}
+
+.bear-link {
+  color: canvasText;
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  width: 48px;
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  border-radius: 6px;
+  z-index: 2;
+}
+
+.ppcRoot :where(.x-link, .bear-link):is(:hover, :focus-visible) {
+  opacity: 1;
+}
+.bear-link svg {
+  opacity: 0.8;
+  width: 75%;
+}
+
+.sig path {
+  --draw: 1.025;
+  --end: 1.025;
+  stroke-dasharray: var(--end);
+  stroke-dashoffset: var(--draw);
+}
+
+.sig :is(.eye, .nose) {
+  fill: transparent;
+}
+
+.sig {
+  width: max(100px, 25vmin);
+  color: canvasText;
+  position: fixed;
+  bottom: 4rem;
+  right: 2rem;
+  z-index: 10;
+  transform: translate(-20%, -20%) rotate(-15deg);
+  pointer-events: none;
+}
+
+.ppcRoot h2 span {
+  color: var(--accent);
+}
+
+@supports (animation-timeline: scroll()) {
+  @property --active {
+    inherits: true;
+    initial-value: 0;
+    syntax: '<number>';
+  }
+
+  .ppcRoot .reader {
+    view-timeline: --reader block;
+  }
+
+  .ppcRoot .content span {
+    -webkit-animation: activate both steps(1);
+    animation: activate both steps(1);
+    animation-timeline: --reader;
+    animation-range: contain calc(((var(--start, 0) * var(--ppc)) * 1px))
+      contain calc(((var(--end, 0) * var(--ppc)) * 1px));
+  }
+
+  @-webkit-keyframes activate {
+    to {
+      --active: 1;
+    }
+  }
+
+  @keyframes activate {
+    to {
+      --active: 1;
+    }
+  }
+
+  .ppcRoot header {
+    -webkit-animation: scale-down both ease-in;
+    animation: scale-down both ease-in;
+    animation-timeline: view();
+    animation-range: exit-crossing;
+    view-timeline: --header;
+  }
+
+  @-webkit-keyframes scale-down {
+    to {
+      scale: 0.8 0.8;
+    }
+  }
+
+  @keyframes scale-down {
+    to {
+      scale: 0.8 0.8;
+    }
+  }
+
+  .ppcRoot > section:last-of-type {
+    view-timeline-name: --sign-off;
+  }
+
+  .ppcRoot .sig path {
+    -webkit-animation: draw both linear;
+    animation: draw both linear;
+    animation-timeline: --sign-off;
+    animation-range: entry 20% entry 80%;
+  }
+  .ppcRoot .sig :is(.eye, .nose) {
+    -webkit-animation: draw both linear, fill both linear;
+    animation: draw both linear, fill both linear;
+    animation-timeline: --sign-off;
+  }
+  .ppcRoot .sig :is(.ear, .eye) {
+    animation-range: entry 30% entry 90%;
+  }
+  .ppcRoot .sig .nose {
+    animation-range: entry 40% entry 100%;
+  }
+  @-webkit-keyframes draw {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  @keyframes draw {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  @-webkit-keyframes fill {
+    to {
+      fill: currentColor;
+    }
+  }
+  @keyframes fill {
+    to {
+      fill: currentColor;
+    }
+  }
+}
+
+.theme-toggle {
+  color: var(--color);
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  width: 48px;
+  aspect-ratio: 1;
+  padding: 0;
+  border: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: transparent;
+  transition: background 0.2s;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.theme-toggle::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  background: hsl(0 0% 50% / calc(var(--intent, 0) * 0.25));
+}
+
+.theme-toggle:is(:hover, :focus-visible) {
+  --intent: 1;
+}
+
+.theme-toggle[aria-pressed='true'] svg path:last-of-type {
+  display: block;
+}
+
+.theme-toggle svg {
+  color: currentColor;
+  width: 50%;
+}
+
+.theme-toggle[aria-pressed='true'] svg path:first-of-type,
+.theme-toggle svg path:last-of-type {
+  display: none;
+}
+
+}
+
+}

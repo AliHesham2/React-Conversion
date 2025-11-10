@@ -105,25 +105,25 @@
 
 
 | 80 | only-css-animation-01 | ✅ | Done | bayza wa mas7tha !!
-| 81 | onscroll-animation-dynamic-content-scroll-with-scrollmagic | ❌ | Pending | (et3mlt bs m7taga tsle7!!)
+| 81 | onscroll-animation-dynamic-content-scroll-with-scrollmagic | ❌ | Pending | (et3mlt bs m7taga tsle7 el scroll!!)
 | 82 | orbital-photo-gallery | ✅ | Done | bayza wa mas7tha !!
 | 83 | page-intro-animation | ✅ | Done 
 | 84 | pair-with-css-scroll-snappingscrolltrigger | ✅ | Done | bayza wa mas7tha !!
 | 85 | parallax-bake-shop-card | ✅ | Done | bayza wa mas7tha !!
-| 86 | parallax-carousel-no-libraries | ❌ | Pending |
+| 86 | parallax-carousel-no-libraries | ✅ | Done 
 | 87 | parallax-headerscrolltrigger | ✅ | Done | bayza wa mas7tha !!
 | 88 | parallax-photo-carousel | ✅ | Done | bayza wa mas7tha !!
 | 89 | parallax-scene-on-scrollscrolltrigger | ✅ | Done | bayza wa mas7tha !!
-
-| 90 | parallax-scroll-animation | ❌ | Pending |
-| 91 | perspective-zoom-effect-on-scroll | ❌ | Pending |
-| 92 | pixel-per-character-scroll-words-with-css-gsap | ❌ | Pending |
-| 93 | pixel-scan-effect-with-vfx-js | ❌ | Pending |
-| 94 | premium-portfolio-archivepro-v2-0 | ❌ | Pending |
-| 95 | pricingpure-css16 | ❌ | Pending |
-| 96 | product-swiper | ❌ | Pending |
-| 97 | projects-carousel | ❌ | Pending |
-| 98 | pure-css-carousel | ❌ | Pending |
+------------------------------------------------------------------------------------------------------------
+| 90 | parallax-scroll-animation | ✅ | Done | bayza wa mas7tha !!
+| 91 | perspective-zoom-effect-on-scroll | ✅ | Done | bayza wa mas7tha !!
+| 92 | pixel-per-character-scroll-words-with-css-gsap |  ✅ | Done | bayza wa mas7tha !!
+| 93 | pixel-scan-effect-with-vfx-js | ✅ | Done | bayza wa mas7tha !!
+| 94 | premium-portfolio-archivepro-v2-0 | ✅ | Done | bayza wa mas7tha !!
+| 95 | pricingpure-css16 | ✅ | Done
+| 96 | product-swiper | ✅ | Done | bayza wa mas7tha !!
+| 97 | projects-carousel | ✅ | Done
+| 98 | pure-css-carousel | ✅ | Done
 | 99 | pure-css-slider-with-custom-effects | ❌ | Pending |
 
 | 100 | react-slider-w-hover-effect | ❌ | Pending |
@@ -132,16 +132,16 @@
 | 103 | responsive-image-slider | ❌ | Pending |
 | 104 | responsive-parallax-drag-slider-with-transparent-letters | ❌ | Pending |
 | 105 | rotating-3d-gallery-image-filters | ❌ | Pending |
-| 106 | scroll-to-view-galleryscrolltrigger | ❌ | Pending |
-| 107 | scrollsmoother-explorationcassie-evans | ❌ | Pending |
-| 108 | scrollsmoother-scrolltriggerclamp | ❌ | Pending |
+| 106 | scroll-to-view-galleryscrolltrigger | ✅ | Done | bayza wa mas7tha !!
+| 107 | scrollsmoother-explorationcassie-evans | ✅ | Done | bayza wa mas7tha !!
+| 108 | scrollsmoother-scrolltriggerclamp | ✅ | Done | bayza wa mas7tha !!
 | 109 | scrolltrigger-downhill-ski | ❌ | Pending |
 
 
 | 110 | scrolltrigger-image-zoom | ❌ | Pending |
 | 111 | shader-image-transition | ❌ | Pending |
 | 112 | skewed-flexbox-panels | ❌ | Pending |
-| 113 | slider-gsap-virsion-02 | ❌ | Pending |
+| 113 | slider-gsap-virsion-02 | ✅ | Done | bayza wa mas7tha !!
 | 114 | slider-transition-wip | ❌ | Pending |
 | 115 | slider-transitions | ❌ | Pending |
 | 116 | slider-with-complex-animation-and-half-collored-angled-text | ❌ | Pending |
@@ -150,19 +150,19 @@
 | 119 | smooth-3d-perspective-slider | ❌ | Pending |
 
 
-| 120 | split-headercassie-evans | ❌ | Pending |
+| 120 | split-headercassie-evans | ✅ | Done | bayza wa mas7tha !!
 | 121 | splittext-words-dancing-in-3d | ❌ | Pending |
 | 122 | svg-filter-text-marquees | ❌ | Pending |
 | 123 | svg-text-mask-w-video-fill | ❌ | Pending |
-| 124 | three-js-3d-model-animation-with-gsap-scrolltriggeruntitled | ❌ | Pending |
+| 124 | three-js-3d-model-animation-with-gsap-scrolltriggeruntitled | ✅ | Done | bayza wa mas7tha !!
 | 125 | timed-cards-opening | ❌ | Pending |
-| 126 | velo-sliderwith-borders | ❌ | Pending |
+| 126 | velo-sliderwith-borders | ✅ | Done | bayza wa mas7tha !!
 | 127 | vertical-image-loop-with-scroll-acceleration-with-gsap | ❌ | Pending |
-| 128 | voyage-slider | ❌ | Pending |
+| 128 | voyage-slider | ✅ | Done | bayza wa mas7tha !!
 | 129 | vue-js-responsive-shuffle-image-gallery | ❌ | Pending |
 
 
-| 130 | wave-rgb-image-distortion-with-shader | ❌ | Pending |
+| 130 | wave-rgb-image-distortion-with-shader | ✅ | Done | bayza wa mas7tha !!
 | 131 | weekly-coding-challenge-1double-slider-sign-in-up-formdesktop-only | ❌ | Pending |
-| 132 | yarden-design-by-olya-marchak | ❌ | Pending |
+| 132 | yarden-design-by-olya-marchak | ✅ | Done | bayza wa mas7tha !!
 
