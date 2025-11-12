@@ -156,9 +156,9 @@
 | 122 | svg-filter-text-marquees | ✅ | Done
 | 123 | svg-text-mask-w-video-fill | ❌ | Pending |
 | 124 | three-js-3d-model-animation-with-gsap-scrolltriggeruntitled | ✅ | Done | mesh 3yzha 
-| 125 | timed-cards-opening | ❌ | Pending |
+| 125 | timed-cards-opening | ✅ | Done
 | 126 | velo-sliderwith-borders | ✅ | Done | mesh 3yzha 
-| 127 | vertical-image-loop-with-scroll-acceleration-with-gsap | ❌ | Pending |
+| 127 | vertical-image-loop-with-scroll-acceleration-with-gsap | ✅ | Done | mesh 3yzha 
 | 128 | voyage-slider | ✅ | Done | mesh 3yzha 
 | 129 | vue-js-responsive-shuffle-image-gallery | ❌ | Pending |
 

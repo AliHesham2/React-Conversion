@@ -116,7 +116,7 @@ import SliderWithProgressBar from './components/SliderWithProgressBar/SliderWith
 import Slides from './components/Slides/Slides';
 import SplittextWordsDancingIn3d from './components/splittext-words-dancing-in-3d/SplittextWordsDancingIn3d';
 import SvgFilterTextMarquees from './components/svg-filter-text-marquees/SvgFilterTextMarquees';
-import SvgTextMaskWithVideo from './components/svg-text-mask-w-video-fill/SvgTextMaskWithVideo';
+import TimedCardsOpening from './components/TimedCardsOpening/TimedCardsOpening';
 
 
 
@@ -325,8 +325,7 @@ export default function Home() {
 
   {/* <SplittextWordsDancingIn3d /> */}
 
-
-  {/* <SvgTextMaskWithVideo /> */}
+{/* <TimedCardsOpening /> */}
 
   </main>
   );
