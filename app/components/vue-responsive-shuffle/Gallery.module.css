@@ -1,0 +1,57 @@
+:root {
+  --width: min(1000px, 90vw);
+}
+
+
+.root {
+  /* span the full available width but keep the gallery width constrained by --width
+     so translate calculations (which use --width) remain stable */
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: grid;
+  place-items: center;
+}
+
+.gallery {
+  /* use the computed --width directly; earlier `min(var(--width))` was invalid */
+  width: var(--width);
+  list-style-type: none;
+  display: grid;
+  padding: 0;
+  margin: 0 auto; /* center the gallery horizontally */
+}
+
+.item {
+  position: relative;
+  grid-column: 1;
+  grid-row: 1;
+  width: calc(var(--width) / 5);
+  aspect-ratio: 1;
+  cursor: pointer;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 0 2px 7px rgba(0,0,0,0.6);
+  transition: transform 0.8s;
+  will-change: transform;
+}
+
+.item::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0,0,0,0.6);
+}
+
+.item[data-pos='0'] { z-index: 1; }
+.item[data-pos='1'] { z-index: 5; }
+.item[data-pos='2'] { z-index: 10; }
+.item[data-pos='3'] { z-index: 5; }
+.item[data-pos='4'] { z-index: 1; }
+
+.item[data-pos='1']::after { background-color: rgba(0,0,0,0.4); }
+.item[data-pos='2']::after { background-color: transparent; }
+.item[data-pos='3']::after { background-color: rgba(0,0,0,0.4); }

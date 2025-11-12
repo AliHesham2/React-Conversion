@@ -149,21 +149,20 @@
 | 118 | slides | ✅ | Done |mesh 3yzha 
 | 119 | smooth-3d-perspective-slider | ✅ | Done |mesh 3yzha 
 
-------------------------------------------------------------------------------------------------------------
-
 | 120 | split-headercassie-evans | ✅ | Done |mesh 3yzha 
 | 121 | splittext-words-dancing-in-3d | ✅ | Done
 | 122 | svg-filter-text-marquees | ✅ | Done
-| 123 | svg-text-mask-w-video-fill | ❌ | Pending |
+| 123 | svg-text-mask-w-video-fill | ✅ | Done
 | 124 | three-js-3d-model-animation-with-gsap-scrolltriggeruntitled | ✅ | Done | mesh 3yzha 
 | 125 | timed-cards-opening | ✅ | Done
 | 126 | velo-sliderwith-borders | ✅ | Done | mesh 3yzha 
 | 127 | vertical-image-loop-with-scroll-acceleration-with-gsap | ✅ | Done | mesh 3yzha 
 | 128 | voyage-slider | ✅ | Done | mesh 3yzha 
-| 129 | vue-js-responsive-shuffle-image-gallery | ❌ | Pending |
-
-
+| 129 | vue-js-responsive-shuffle-image-gallery | ✅ | Done
 | 130 | wave-rgb-image-distortion-with-shader | ✅ | Done | mesh 3yzha 
-| 131 | weekly-coding-challenge-1double-slider-sign-in-up-formdesktop-only | ❌ | Pending |
+| 131 | weekly-coding-challenge-1double-slider-sign-in-up-formdesktop-only | ✅ | Done
 | 132 | yarden-design-by-olya-marchak | ✅ | Done | mesh 3yzha 
+
+------------------------------------------------------------------------------------------------------------
+
 | 101 | responsive-gsap-slider-with-button-wave-effect | ❌ | Pending | deh moheeeeeeeem trg3lha  ✅

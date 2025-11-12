@@ -1,0 +1,46 @@
+@font-face {
+  font-family: Biko;
+  src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/biko-black.woff");
+}
+
+.header {
+  /* Make the header full-bleed so the SVG mask aligns with the viewport
+     (prevents the text-mask being visually cropped/offset by a surrounding
+     centered container or sidebar). */
+  position: relative;
+  width: 100vw;
+  max-width: none;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.video {
+  width: 100%;
+  display: block;
+}
+
+.svg {
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 100%;
+  pointer-events: none; /* keep SVG decorative and let clicks pass to video if needed */
+}
+
+.svg text {
+  font-family: Biko, sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 36px;
+}
+
+.svg rect {
+  fill: white;
+}
+
+.svg > rect {
+  -webkit-mask: url(#mask);
+  mask: url(#mask);
+}

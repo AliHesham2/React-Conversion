@@ -117,6 +117,8 @@ import Slides from './components/Slides/Slides';
 import SplittextWordsDancingIn3d from './components/splittext-words-dancing-in-3d/SplittextWordsDancingIn3d';
 import SvgFilterTextMarquees from './components/svg-filter-text-marquees/SvgFilterTextMarquees';
 import TimedCardsOpening from './components/TimedCardsOpening/TimedCardsOpening';
+import VueResponsiveShuffleGallery from './components/vue-responsive-shuffle/Gallery';
+import SvgTextMaskWithVideo from './components/svg-text-mask-w-video-fill/SvgTextMaskWithVideo';
 
 
 
@@ -326,6 +328,14 @@ export default function Home() {
   {/* <SplittextWordsDancingIn3d /> */}
 
 {/* <TimedCardsOpening /> */}
+
+  {/* <div style={{height: '40px'}} />
+  <SvgTextMaskWithVideo /> */}
+
+
+
+
+
 
   </main>
   );
