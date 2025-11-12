@@ -1,6 +1,11 @@
 "use client";
 
 import React from 'react';
+import ResponsiveImageSlider from './components/ResponsiveImageSlider/ResponsiveImageSlider';
+import ResponsiveImageCarouselAnimation from './components/ResponsiveImageCarouselAnimation/ResponsiveImageCarouselAnimation';
+import ResponsiveParallaxDragSlider from './components/ResponsiveParallaxDragSlider/ResponsiveParallaxDragSlider';
+import Rotating3dGalleryImageFilters from './components/Rotating3dGalleryImageFilters/Rotating3dGalleryImageFilters';
+import ScrolltriggerImageZoom from './components/ScrolltriggerImageZoom/ScrolltriggerImageZoom';
 import { 
   WelcomeIntro, 
   AnimatedContinuousSections,
@@ -99,13 +104,32 @@ import PricingPureCss16 from './components/pricingpure-css16/PricingPureCss16';
 import ProductSwiper from './components/product-swiper/ProductSwiper';
 import ProjectsCarousel from './components/ProjectsCarousel/ProjectsCarousel';
 import PureCssCarousel from './components/PureCssCarousel/PureCssCarousel';
-
+import PureCssSliderWithCustomEffects from './components/PureCssSliderWithCustomEffects/PureCssSliderWithCustomEffects';
+import ReactSliderWithHoverEffect from './components/ReactSliderWithHoverEffect/ReactSliderWithHoverEffect';
+import ScrolltriggerDownhillSki from './components/ScrolltriggerDownhillSki/ScrolltriggerDownhillSki';
+import ShaderImageTransition from './components/ShaderImageTransition/ShaderImageTransition';
+import SkewedFlexboxPanels from './components/SkewedFlexboxPanels/SkewedFlexboxPanels';
+import SliderTransitionWip from './components/SliderTransitionWip/SliderTransitionWip';
+import SliderTransitions from './components/SliderTransitions/SliderTransitions';
+import SliderWithComplexAnimation from './components/SliderWithComplexAnimation/SliderWithComplexAnimation';
+import SliderWithProgressBar from './components/SliderWithProgressBar/SliderWithProgressBar';
+import Slides from './components/Slides/Slides';
+import SplittextWordsDancingIn3d from './components/splittext-words-dancing-in-3d/SplittextWordsDancingIn3d';
+import SvgFilterTextMarquees from './components/svg-filter-text-marquees/SvgFilterTextMarquees';
+import SvgTextMaskWithVideo from './components/svg-text-mask-w-video-fill/SvgTextMaskWithVideo';
 
 
 
 export default function Home() {
   return (
     <main>
+
+      {/* <div style={{height: '40px'}} />
+      <Slides /> */}
+
+  {/* <div style={{height: '40px'}} />
+  <SliderWithProgressBar /> */}
+
 
   {/* <ImageOverlaySlider slides={imageOverlaySliderData.slides} /> */}
 
@@ -139,6 +163,11 @@ export default function Home() {
     {/* <AddToCartAnimation /> */}
 
   {/* <AnimatedContinuousSections data={animatedContinuousSectionsData} /> */}
+
+  {/* <div style={{height: '40px'}} />
+  <SliderWithComplexAnimation /> */}
+
+  {/* <SliderTransitions /> */}
   
   {/* <PageIntroAnimation /> */}
   {/* <PixelPerCharacterScrollWords /> */}
@@ -161,10 +190,14 @@ export default function Home() {
     
   {/* <CreativeFoodCarousel slides={creativeFoodCarouselData} /> */}
 
-  {/* <div style={{height: '60px'}} />
-  <CssFiltersAdabtiveCards slides={cssFiltersAdaptiveCardsData} /> */}
+  {/* <div style={{height: '40px'}} />
+  <ReactSliderWithButtonWaveEffect /> */}
 
+
+  {/* <CssInfiniteAutoplayCarousel slides={cssInfiniteAutoplayCarouselData} /> */}
   {/* <div style={{height: '60px'}} />
+  <div style={{height: '40px'}} />
+  <ReactSliderWithButtonWaveEffect />
   <CssInfiniteAutoplayCarousel slides={cssInfiniteAutoplayCarouselData} /> */}
 
   {/* <CssCarouselKeyboard /> */}
@@ -197,8 +230,15 @@ export default function Home() {
   {/* <div style={{height: '60px'}} /> */}
   {/* <ClipPathRevealingSlider items={clipPathRevealingSliderData} /> */}
 
-    {/* <div style={{height: '40px'}} />
-    <ExpandingFlexCards slides={expandingFlexCardsData} /> */}
+  {/* <ScrolltriggerImageZoom /> */}
+
+  {/* <div style={{height: '40px'}} />
+  <PureCssSliderWithCustomEffects /> */}
+
+  {/* <div style={{height: '40px'}} />
+  <ReactSliderWithHoverEffect /> */}
+
+  {/* <ExpandingFlexCards slides={expandingFlexCardsData} /> */}
   
     {/* <div style={{height: '40px'}} /> */}
 
@@ -250,6 +290,44 @@ export default function Home() {
   {/* <div style={{height: '60px'}} />
   <OnscrollAnimationDynamicContentScrollWithScrollmagic  /> */}
 
-    </main>
+      {/* <div style={{height: '40px'}} />
+      <ResponsiveImageCarouselAnimation /> */}
+
+  {/* <div style={{height: '40px'}} />
+  <ResponsiveParallaxDragSlider /> */}
+
+
+  {/* <div style={{height: '40px'}} />
+  <Rotating3dGalleryImageFilters /> */}
+
+    {/* <div style={{height: '40px'}} />
+    <ScrolltriggerDownhillSki /> */}
+
+  {/* <div style={{height: '40px'}} />
+  <ShaderImageTransition /> */}
+
+  {/* <div style={{height: '40px'}} />
+  <SkewedFlexboxPanels /> */}
+
+    {/* <div style={{height: '40px'}} />
+    <ShaderImageTransition />
+
+    <div style={{height: '40px'}} />
+    <SkewedFlexboxPanels /> */}
+
+{/*  <div style={{height: '40px'}} />
+    <SliderTransitionWip /> */}
+
+  {/* <div style={{height: '40px'}} />
+  <SliderTransitions /> */}
+
+{/* <SvgFilterTextMarquees /> */}
+
+  {/* <SplittextWordsDancingIn3d /> */}
+
+
+  {/* <SvgTextMaskWithVideo /> */}
+
+  </main>
   );
 }

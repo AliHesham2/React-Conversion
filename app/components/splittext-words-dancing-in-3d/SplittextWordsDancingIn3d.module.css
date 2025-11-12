@@ -1,0 +1,37 @@
+/* Converted and scoped CSS for the SplitText component.
+   This file intentionally avoids using :global and does not modify global.css.
+   It scopes the original export's styles to a wrapper so the rest of the app
+   won't be affected. */
+
+.wrapper {
+  /* Fill the viewport but don't use grid/flex layout — just take full size */
+  width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
+  position: relative; /* allow absolutely positioned child centering */
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.quote {
+  transform: translate3d(0, 0, 0);
+  color: #dfdcff;
+  /* Reduced and more reasonable responsive font sizing */
+  font-size: clamp(1rem, 2.8vw, 2.2rem);
+  line-height: 1.2;
+  /* center using absolute positioning inside full-size wrapper */
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  width: min(800px, 90%);
+  visibility: visible;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.quote div {
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+}

@@ -1,0 +1,392 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap");
+/* Slides.module.css
+   - Uses original hyphenated class names so the module keys map clearly
+   - Scoped under `.root` wrapper in the JSX (we still import as a module)
+   - No :global() usage
+*/
+
+.root {
+  font-family: "Exo 2", sans-serif;
+  width: 100%;
+  height: 100vh;
+  min-height: 100vh;
+  position: relative;
+}
+
+.slideshow-container {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  left: 0;
+}
+
+.slideshow-container::after {
+  content: "";
+  z-index: 10;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+  background: #000000;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.6) 0%,
+    rgba(0, 0, 0, 0.2) 20px,
+    rgba(0, 0, 0, 0) 50px,
+    rgba(0, 0, 0, 0) calc(100% - 50px),
+    rgba(0, 0, 0, 0.2) calc(100% - 20px),
+    rgba(0, 0, 0, 0.6) 100%
+  );
+}
+
+.image-box {
+  flex-shrink: 0;
+  aspect-ratio: 16/9;
+  width: 40%;
+  border-radius: 10px;
+  overflow: hidden;
+  position: absolute;
+  transition: left 3s ease, transform 3s ease;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  z-index: 30;
+}
+
+.image-box img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.image-desc {
+  position: absolute;
+  width: 100%;
+  bottom: 0px;
+  left: 0px;
+  padding: 16px;
+  transition: opacity 1s ease-out, padding 5s ease-out;
+  opacity: 0;
+  background: linear-gradient(
+    0deg,
+    rgba(10, 87, 85, 1) 0%,
+    rgba(10, 87, 85, 0.4) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  color: white;
+}
+
+.image-desc h3 {
+  margin-bottom: 4px;
+  margin-top: 64px;
+}
+
+.image-desc p {
+  font-style: italic;
+}
+
+.image-box.main:hover .image-desc {
+  padding: 32px;
+  opacity: 1;
+}
+
+.background-img {
+  width: 90%;
+  aspect-ratio: 16/9;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  object-fit: cover;
+  filter: blur(200px);
+  opacity: 0;
+  transition: 3s ease;
+  z-index: 2;
+}
+
+.background-img.main {
+  opacity: 1;
+}
+
+.slideshow-controls {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  bottom: 20px;
+  left: 50%;
+  display: flex;
+  gap: 10px;
+  z-index: 40;
+}
+
+.slideshow-controls button {
+  background: grey;
+  border: none;
+  height: 10px;
+  width: 10px;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: background 1s ease;
+}
+
+.slideshow-controls button:hover {
+  background: white;
+}
+
+.slideshow-controls button.main {
+  background: white;
+}
+
+.control-dot {
+  background: grey;
+  border: none;
+  height: 10px;
+  width: 10px;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: background 1s ease;
+}
+
+.control-dot:hover {
+  background: white;
+}
+
+.control-arrow {
+  background: rgba(40, 40, 40, 0.3);
+  border: 2px solid rgba(10, 10, 10, 0.5);
+  color: white;
+  font-weight: bold;
+  height: 50px;
+  width: 50px;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: background 500ms ease;
+  backdrop-filter: blur(30px);
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  z-index: 40;
+}
+
+.control-arrow:hover {
+  background: rgba(10, 10, 10, 0.5);
+}
+
+.arrow-left {
+  left: 20px;
+}
+
+.arrow-right {
+  right: 20px;
+}
+
+.slide {
+  z-index: 40;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.main {
+  /* marker class toggled by the script; no visual rules required here */
+  --is-main: 1;
+}
+
+/*
+  CSS Module for Slides component
+  - Scoped under the `.root` wrapper class to avoid leaking globals
+  - Class names are applied in addition to the original class names so
+    the existing script (which queries by the original class names) keeps working.
+*/
+
+.root {
+  font-family: "Exo 2", sans-serif;
+  /* Force the root wrapper to take the full viewport so the slideshow can size correctly */
+  display: block;
+  width: 100%;
+  height: 100vh;
+  min-height: 100vh;
+  position: relative;
+}
+
+.slideshowContainer {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  left: 0;
+  
+}
+
+.slideshowContainer::after {
+  content: "";
+  z-index: 10;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+  background: #000000;
+  /* overlay gradient to darken edges */
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.6) 0%,
+    rgba(0, 0, 0, 0.2) 20px,
+    rgba(0, 0, 0, 0) 50px,
+    rgba(0, 0, 0, 0) calc(100% - 50px),
+    rgba(0, 0, 0, 0.2) calc(100% - 20px),
+    rgba(0, 0, 0, 0.6) 100%
+  );
+}
+
+.imageBox {
+  flex-shrink: 0;
+  aspect-ratio: 16/9;
+  width: 40%;
+  border-radius: 10px;
+  overflow: hidden;
+  position: absolute;
+  transition: left 3s ease, transform 3s ease;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  z-index: 30; /* sit above overlay */
+}
+
+.imageBox img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.imageDesc {
+  position: absolute;
+  width: 100%;
+  bottom: 0px;
+  left: 0px;
+  z-index: 30; /* ensure image boxes sit above the overlay */
+  padding: 16px;
+  transition: opacity 1s ease-out, padding 5s ease-out;
+  opacity: 0;
+  background: linear-gradient(
+    0deg,
+    rgba(10, 87, 85, 1) 0%,
+    rgba(10, 87, 85, 0.4) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  color: white;
+}
+
+.imageDesc h3 {
+  margin-bottom: 4px;
+  margin-top: 64px;
+}
+
+.imageDesc p {
+  font-style: italic;
+}
+
+
+.backgroundImg {
+  width: 90%;
+  aspect-ratio: 16/9;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  object-fit: cover;
+  filter: blur(200px);
+  opacity: 0;
+  transition: 3s ease;
+  z-index: 2; /* behind overlay and image boxes */
+}
+
+.backgroundImg.main {
+  opacity: 1;
+}
+
+.slideshowControls {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  bottom: 20px;
+  left: 50%;
+  display: flex;
+  gap: 10px;
+  z-index: 40;
+}
+
+.slideshowControls button {
+  background: grey;
+  border: none;
+  height: 10px;
+  width: 10px;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: background 1s ease;
+}
+
+.slideshowControls button:hover {
+  background: white;
+}
+
+.slideshowControls button.main {
+  background: white;
+}
+
+.controlDot {
+  background: grey;
+  border: none;
+  height: 10px;
+  width: 10px;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: background 1s ease;
+}
+
+.controlDot:hover {
+  background: white;
+}
+
+.controlArrow {
+  background: rgba(40, 40, 40, 0.3);
+  border: 2px solid rgba(10, 10, 10, 0.5);
+  color: white;
+  font-weight: bold;
+  height: 50px;
+  width: 50px;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: background 500ms ease;
+  backdrop-filter: blur(30px);
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.controlArrow:hover {
+  background: rgba(10, 10, 10, 0.5);
+}
+
+.arrowLeft {
+  left: 20px;
+}
+
+.arrowRight {
+  right: 20px;
+}
+
+/* Small helpers to mirror original .main modifiers in CSS module naming */
+.slide {
+  z-index: 40;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.imageBox.main:hover .imageDesc {
+  padding: 32px;
+  opacity: 1;
+}
+
+.main {
+  /* marker class toggled by the script; no visual rules required here */
+  --is-main: 1;
+}

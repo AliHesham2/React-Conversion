@@ -1,0 +1,90 @@
+.root {
+    margin: 0;
+    padding: 0;
+    width: 100vw; /* ensure full viewport width */
+    height: 100vh; /* ensure full viewport height */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    background-color: black;
+    overflow: hidden;
+    position: relative; /* allow absolutely-positioned buttons inside */
+}
+
+.root .image-container {
+    width: 200px;
+    height: 200px;
+    transform-style: preserve-3d;
+    transform: perspective(1000px) rotateY(0deg);
+    transition: transform .7s;
+}
+
+.root .image-container span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transform: rotateY(calc(var(--i) * 90deg)) translateZ(400px);
+}
+
+.root .image-container span img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    aspect-ratio: 1/1;
+    -o-object-fit: cover;
+       object-fit: cover;
+    filter: grayscale(100%);
+}
+
+/* place both buttons in a centered flex row so they're always visible */
+.root .btn-container {
+    position: absolute;
+    left: 50%;
+    /* top is set dynamically in JS to sit directly under the image container */
+    transform: translateX(-50%);
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 180px; /* distance between prev and next */
+    pointer-events: auto;
+}
+
+
+/* Buttons: anchor relative to center so they stay beside central face */
+.root .btn {
+    position: relative;
+    pointer-events: auto;
+    background-color: slateblue;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.root .btn:hover {
+    filter: brightness(1.2);
+}
+
+/* Position prev/next by translating from center; keeps them symmetric regardless of container width */
+/* no per-button absolute transforms needed when using flex container */
+
+@media (max-width: 700px) {
+    .root .btn { font-size: 16px; }
+    .root .btn-container { top: 0; }
+}
+
+.root .image-container span img:hover {
+  filter: none;
+}
+
+/* removed legacy left/right overrides to avoid conflicts */

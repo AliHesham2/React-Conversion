@@ -42,7 +42,7 @@ Everything works, I just want to improve the code quality
 when u convert try to align the global css with our css to avoid problems
 
 ---------------------------------------------------------------------------------
- read AiLog.md and from Conversion Checklist lets  convert #70 ! first read the original html and css and script.js carefully and then only convert the html to react (js) 
+ read AiLog.md and from Conversion Checklist lets  convert #111 ! first read the original html and css and script.js carefully and then only convert the html to react (js) 
  also  place the created react  in the home page  dont convert css or script.js now !! again dont convert css or script.js  !! first html only 
  
 

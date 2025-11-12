@@ -39,8 +39,8 @@
 | 24 | codepenchallenge-card-carousel | ✅ | Done | ms7tha !!
 | 25 | contrast-text-color-on-image | ✅ | Done | ms7tha !!
 | 26 | cpchallenge-slideshow-modern-1 | ✅ | Done | 
-| 27 | cpchallenge-slideshow-modern-2 | ✅ | Done | Converted and JS ported into component |
-| 28 | creative-food-carousel | ✅ | Done | Converted to React component with Swiper.js, parallax effects, and CSS Module; pagination fixes applied and pushed (commit cc43439) |
+| 27 | cpchallenge-slideshow-modern-2 | ✅ | Done | 
+| 28 | creative-food-carousel | ✅ | Done | 
 | 29 | css-3d-carousel-room | ✅ | Done
 
 
@@ -56,10 +56,10 @@
 | 39 | css-sliderpure-css10 | ✅ | Done
 
 
-| 40 | cyber-scrollgsap | ✅ | lesa 3leha shwya !!
+| 40 | cyber-scrollgsap | ❌ | lesa 3leha shwya !!
 | 41 | draggable-masthead-reveal | ✅ | Done
 | 42 | dynamic-carousel-slider-with-infinite-scoll | ✅ | Done
-| 43 | dynamic-content-lockups-v2open-props | ✅ | Done | lesa 3leha shwya !!
+| 43 | dynamic-content-lockups-v2open-props | ❌ | Done | lesa 3leha shwya !!
 | 44 | expandable-animated-card-slider | ✅ | Done  ms7tha !!
 | 45 | expanding-flex-cards | ✅ | Done
 | 46 | eyes-mousemove |  ✅ | Done
@@ -73,7 +73,7 @@
 | 52 | getting-familiar-with-anime-js-line-drawing | ✅ | Done
 | 53 | greensock-animated-slideshow-wip | ✅ | Done | bayza wa mas7tha !!
 | 54 | gsap-infinite-draggable-image-gallery | ✅ | Done | bayza wa mas7tha !!
-| 55 | gsap-landing-page | ✅ | lesa 3leha shwya !!
+| 55 | gsap-landing-page | ❌ | lesa 3leha shwya !!
 | 56 | gsap-slideshow-vertical-warp-slideshow-n-1 | ✅ | Done
 | 57 | gsap-slideshow-vertical-zoom-slideshow-n-2 | ✅ | Done
 | 58 | gsap-slideshow-vertical-zoom-slideshow-n-3 | ✅ | Done
@@ -81,13 +81,13 @@
 
 
 | 60 | hexa-team | ✅ | Done |  mesh btt3ml sa7 
-| 61 | horizontal-parallax-sliding-slider-with-swiper-js | ✅ | Done |  mesh btt3ml sa7 
-| 62 | horizontal-scroll-effect | ✅ | Done | gsap ! mesh btt3ml sa7 
+| 61 | horizontal-parallax-sliding-slider-with-swiper-js | ❌ | Done |  mesh btt3ml sa7 
+| 62 | horizontal-scroll-effect | ❌ | Done | gsap ! mesh btt3ml sa7 
 | 63 | how-to-animate-a-coffee-drinking-sprite-with-scrolltrigger | ✅ | Done | bayza wa mas7tha !!
 | 64 | image-overlay-slider | ✅ | Done
 | 65 | image-parallax | ✅ | Done | bayza wa mas7tha !!
 | 66 | image-slider-ripple-effect | ✅ | Done | bayza wa mas7tha !!
-| 67 | image-zoom-in-with-scrolltrigger | ✅ | Done | gsap ! mesh btt3ml sa7 
+| 67 | image-zoom-in-with-scrolltrigger | ❌ | Done | gsap ! mesh btt3ml sa7 
 | 68 | interactive-project-showcase-slider-with-vertical-navigation-rtl-ltr-support | ✅ | Done | bayza wa mas7tha !!
 | 69 | interior-design | ✅ | Done | bayza wa mas7tha !!
 
@@ -114,7 +114,6 @@
 | 87 | parallax-headerscrolltrigger | ✅ | Done | bayza wa mas7tha !!
 | 88 | parallax-photo-carousel | ✅ | Done | bayza wa mas7tha !!
 | 89 | parallax-scene-on-scrollscrolltrigger | ✅ | Done | bayza wa mas7tha !!
-------------------------------------------------------------------------------------------------------------
 | 90 | parallax-scroll-animation | ✅ | Done | bayza wa mas7tha !!
 | 91 | perspective-zoom-effect-on-scroll | ✅ | Done | bayza wa mas7tha !!
 | 92 | pixel-per-character-scroll-words-with-css-gsap |  ✅ | Done | bayza wa mas7tha !!
@@ -124,45 +123,47 @@
 | 96 | product-swiper | ✅ | Done | bayza wa mas7tha !!
 | 97 | projects-carousel | ✅ | Done
 | 98 | pure-css-carousel | ✅ | Done
-| 99 | pure-css-slider-with-custom-effects | ❌ | Pending |
-
-| 100 | react-slider-w-hover-effect | ❌ | Pending |
-| 101 | responsive-gsap-slider-with-button-wave-effect | ❌ | Pending |
-| 102 | responsive-image-carousel-animation | ❌ | Pending |
-| 103 | responsive-image-slider | ❌ | Pending |
-| 104 | responsive-parallax-drag-slider-with-transparent-letters | ❌ | Pending |
-| 105 | rotating-3d-gallery-image-filters | ❌ | Pending |
-| 106 | scroll-to-view-galleryscrolltrigger | ✅ | Done | bayza wa mas7tha !!
-| 107 | scrollsmoother-explorationcassie-evans | ✅ | Done | bayza wa mas7tha !!
-| 108 | scrollsmoother-scrolltriggerclamp | ✅ | Done | bayza wa mas7tha !!
-| 109 | scrolltrigger-downhill-ski | ❌ | Pending |
+| 99 | pure-css-slider-with-custom-effects | ✅ | Done
 
 
-| 110 | scrolltrigger-image-zoom | ❌ | Pending |
-| 111 | shader-image-transition | ❌ | Pending |
-| 112 | skewed-flexbox-panels | ❌ | Pending |
-| 113 | slider-gsap-virsion-02 | ✅ | Done | bayza wa mas7tha !!
-| 114 | slider-transition-wip | ❌ | Pending |
-| 115 | slider-transitions | ❌ | Pending |
-| 116 | slider-with-complex-animation-and-half-collored-angled-text | ❌ | Pending |
-| 117 | slider-with-progress-bar-using-setinterval | ❌ | Pending |
-| 118 | slides | ❌ | Pending |
-| 119 | smooth-3d-perspective-slider | ❌ | Pending |
+
+| 100 | react-slider-w-hover-effect | ✅ | Done
+| 102 | responsive-image-carousel-animation | ✅ | Done
+| 103 | responsive-image-slider | ✅ | Done
+| 104 | responsive-parallax-drag-slider-with-transparent-letters | ✅ | Done
+| 105 | rotating-3d-gallery-image-filters | ✅ | Done
+| 106 | scroll-to-view-galleryscrolltrigger | ✅ | Done | mesh 3yzha 
+| 107 | scrollsmoother-explorationcassie-evans | ✅ | Done | mesh 3yzha 
+| 108 | scrollsmoother-scrolltriggerclamp | ✅ | Done | mesh 3yzha 
+| 109 | scrolltrigger-downhill-ski | ✅ | Done
 
 
-| 120 | split-headercassie-evans | ✅ | Done | bayza wa mas7tha !!
-| 121 | splittext-words-dancing-in-3d | ❌ | Pending |
-| 122 | svg-filter-text-marquees | ❌ | Pending |
+| 110 | scrolltrigger-image-zoom | ✅ | Done
+| 111 | shader-image-transition | ✅ | Done
+| 112 | skewed-flexbox-panels | ✅ | Done
+| 113 | slider-gsap-virsion-02 | ✅ | Done | mesh 3yzha 
+| 114 | slider-transition-wip | ✅ | Done
+| 115 | slider-transitions | ✅ | Done | mesh 3yzha 
+| 116 | slider-with-complex-animation-and-half-collored-angled-text | ✅ | Done | mesh rdya tt3ml sa7 !! ❌
+| 117 | slider-with-progress-bar-using-setinterval | ✅ | Done | mesh rdya tt3ml sa7 !! ❌
+| 118 | slides | ✅ | Done |mesh 3yzha 
+| 119 | smooth-3d-perspective-slider | ✅ | Done |mesh 3yzha 
+
+------------------------------------------------------------------------------------------------------------
+
+| 120 | split-headercassie-evans | ✅ | Done |mesh 3yzha 
+| 121 | splittext-words-dancing-in-3d | ✅ | Done
+| 122 | svg-filter-text-marquees | ✅ | Done
 | 123 | svg-text-mask-w-video-fill | ❌ | Pending |
-| 124 | three-js-3d-model-animation-with-gsap-scrolltriggeruntitled | ✅ | Done | bayza wa mas7tha !!
+| 124 | three-js-3d-model-animation-with-gsap-scrolltriggeruntitled | ✅ | Done | mesh 3yzha 
 | 125 | timed-cards-opening | ❌ | Pending |
-| 126 | velo-sliderwith-borders | ✅ | Done | bayza wa mas7tha !!
+| 126 | velo-sliderwith-borders | ✅ | Done | mesh 3yzha 
 | 127 | vertical-image-loop-with-scroll-acceleration-with-gsap | ❌ | Pending |
-| 128 | voyage-slider | ✅ | Done | bayza wa mas7tha !!
+| 128 | voyage-slider | ✅ | Done | mesh 3yzha 
 | 129 | vue-js-responsive-shuffle-image-gallery | ❌ | Pending |
 
 
-| 130 | wave-rgb-image-distortion-with-shader | ✅ | Done | bayza wa mas7tha !!
+| 130 | wave-rgb-image-distortion-with-shader | ✅ | Done | mesh 3yzha 
 | 131 | weekly-coding-challenge-1double-slider-sign-in-up-formdesktop-only | ❌ | Pending |
-| 132 | yarden-design-by-olya-marchak | ✅ | Done | bayza wa mas7tha !!
-
+| 132 | yarden-design-by-olya-marchak | ✅ | Done | mesh 3yzha 
+| 101 | responsive-gsap-slider-with-button-wave-effect | ❌ | Pending | deh moheeeeeeeem trg3lha  ✅

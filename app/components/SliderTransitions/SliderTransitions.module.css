@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond:400,500,500i,600,600i,700,700i |Cormorant+SC:400,500,600,700');
+
+/* Scoped under .root so styles only apply inside the component */
+.root {
+  background-color: #fff;
+  /* Force the component root to occupy the full viewport.
+     This explicitly sets the area to 100vw x 100vh while keeping
+     content overflow hidden so slides don't cause scrollbars. */
+  position: relative;
+  width: 100vw;
+  min-width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+ .page-wrap {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right bottom, #2a1f30 50%, #383d44 50%);
+}
+
+ #home-slider {
+  height: 80vh;
+  width: 90vw;
+  position: relative;
+}
+ .swiper-container {
+  height: 100%;
+  width: 100%;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+ .swiper-image-one { background-image: url(https://zoric.studio/codepen/swiper-1.jpg); }
+ .swiper-image-two { background-image: url(https://zoric.studio/codepen/swiper-2.jpg); }
+ .swiper-image-three { background-image: url(https://zoric.studio/codepen/swiper-3.jpg); }
+ .swiper-image-four { background-image: url(https://zoric.studio/codepen/swiper-4.jpg); }
+ .swiper-image-five { background-image: url(https://zoric.studio/codepen/swiper-5.jpg); }
+ .swiper-image-six { background-image: url(https://zoric.studio/codepen/swiper-6.jpg); }
+
+ .swiper-image {
+  width: 50%;
+  height: 100%;
+}
+ .swiper-image-inner {
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: hsla(0, 0%, 0%, 0.2);
+  background-blend-mode: overlay;
+}
+ .swiper-image-inner.swiper-image-left { padding: 4rem; }
+ .swiper-image-left { filter: sepia(100%); transition: all 1s linear; transition-delay: 1s; }
+ .swiper-slide.swiper-slide-active .swiper-image-left { filter: sepia(0%); }
+ .swiper-image-inner.swiper-image-right { filter: hue-rotate(-60deg); transition: all 1s linear; transition-delay: 1s; background-color: hsla(0, 0%, 0%, 0.5); background-blend-mode: multiply; }
+
+.root h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+  color: #fff;
+  align-self: flex-start;
+  margin: 0 0 auto 0;
+  font-size: 4.5rem;
+  line-height: 1;
+  transition: all .8s cubic-bezier(0.215, 0.61, 0.355, 1) 1.1s;
+  transform: translate3d(-20%, 0, 0);
+  opacity: 0;
+}
+.root h1 span.emphasis { font-weight: 700; font-style: italic; opacity: 0; transition: all .8s cubic-bezier(0.215, 0.61, 0.355, 1) 1.2s; transform: translate3d(-20%, 0, 0); display: inline-block; }
+.root h1 span:not(.emphasis) { font-size: 3.5rem; }
+.root h1 + p {
+  font-family: 'Cormorant SC';
+  font-size: 14px;
+  letter-spacing: 2px;
+  margin: 0;
+  line-height: 1;
+  margin-bottom: auto;
+  align-self: flex-end;
+  text-transform: uppercase;
+  transition: all .8s cubic-bezier(0.215, 0.61, 0.355, 1) 1.3s;
+  transform: translate3d(-20%, 0, 0);
+  opacity: 0;
+  font-weight: 500;
+  color: #fff;
+  padding-right: 8rem;
+}
+.root p.paragraph {
+  margin: 0;
+  font-family: 'Cormorant Garamond', serif;
+  color: #fff;
+  width: 100%;
+  max-width: 350px;
+  text-align: justify;
+  font-size: 1.2rem;
+  font-weight: 500;
+  opacity: 0;
+  transition: all .6s cubic-bezier(0.215, 0.61, 0.355, 1) 1.4s;
+  transform: translate3d(-20%, 0, 0);
+}
+.root .swiper-slide.swiper-slide-active .swiper-image-right { filter: hue-rotate(90deg); }
+
+.root .swiper-slide.swiper-slide-active h1,
+.root .swiper-slide.swiper-slide-active p.paragraph,
+.root .swiper-slide.swiper-slide-active h1 span.emphasis,
+.root .swiper-slide.swiper-slide-active h1 + p {
+  transform: translate3d(0, 0, 0);
+  opacity: 1;
+}
+
+@media screen and (max-width: 1280px) {
+  .root h1 { font-size: 3.9rem; }
+  .root h1 span:not(.emphasis) { font-size: 2.9rem; }
+  .root h1 + p { font-size: 13px; }
+  .root p.paragraph { font-size: 1rem; line-height: 1.3; }
+}
+@media screen and (max-width: 960px) {
+  .root h1 { font-size: 3.5rem; }
+  .root h1 span:not(.emphasis) { font-size: 2.5rem; }
+  .root p.paragraph { max-width: 90%; }
+}
+@media screen and (max-width: 640px) {
+  .root #home-slider{ height: 86vh; width: 96vw; }
+  .root h1 { font-size: 3.2rem; align-self: center; }
+  .root h1 span:not(.emphasis) { font-size: 2.1rem; }
+  .root p.paragraph { max-width: 94%; }
+}
+
+/* Swiper core styles (scoped via .root wrapper) */
+/* NOTE: removed the old Swiper core rules that were copied from the export.
+  We now rely on the official Swiper package CSS (imported in the component)
+  to provide the core layout and pagination styles for the installed Swiper
+  version. The module keeps only the visual overrides above.
+*/
+
+/* Module-mapped class equivalents so we can attach module classes in JSX
+   while preserving the original runtime class names used by Swiper. */
+.swiperContainer { margin-left: auto; margin-right: auto; position: relative; overflow: hidden; z-index: 1; }
+.swiperWrapper { position: relative; width: 100%; height: 100%; z-index: 1; display: flex; transition-property: transform; box-sizing: content-box; }
+.swiperSlide { flex-shrink: 0; width: 100%; height: 100%; position: relative; background-color: #fff; overflow: hidden; display: flex; }
+.swiperPagination { position: absolute; text-align: center; transition: 300ms; transform: translate3d(0, 0, 0); z-index: 10; }
+.swiperPaginationBullet { width: 14px; height: 14px; display: inline-block; background: #fff; opacity: 0.4; }
+.swiperPaginationBulletActive { opacity: 1; background: #fff; }
+.swiperContainerVerticalPagination { right: 15px; bottom: 15px; }
+.swiperContainerVerticalBullet { margin: 5px 0; display: block; }
+.swiperPaginationProgress { background: rgba(0, 0, 0, 0.25); position: absolute; }
+.swiperPaginationProgressbar { background: #007aff; position: absolute; left: 0; top: 0; width: 100%; height: 100%; transform: scale(0); transform-origin: left top; }
+
+/* Image and inner image module classes */
+.swiperImage { width: 50%; height: 100%; }
+.swiperImageInner { background-size: cover; background-position: center center; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: 100%; background-color: hsla(0, 0%, 0%, 0.2); background-blend-mode: overlay; }
+.swiperImageInnerLeft { padding: 4rem; }
+.swiperImageLeft { filter: sepia(100%); transition: all 1s linear; transition-delay: 1s; }
+.swiperImageLeftActive { filter: sepia(0%); }
+.swiperImageInnerRight { filter: hue-rotate(-60deg); transition: all 1s linear; transition-delay: 1s; background-color: hsla(0, 0%, 0%, 0.5); background-blend-mode: multiply; }
+
+/* Active-state selectors combining module class with Swiper runtime class */
+.swiperSlide.swiper-slide-active h1,
+.swiperSlide.swiper-slide-active p.paragraph,
+.swiperSlide.swiper-slide-active h1 span.emphasis,
+.swiperSlide.swiper-slide-active h1 + p {
+  transform: translate3d(0, 0, 0);
+  opacity: 1;
+}

@@ -199,4 +199,10 @@ class Slider extends React.Component {
 
 
 
-ReactDOM.render( /*#__PURE__*/React.createElement(Slider, { heading: "Example Slider", slides: slideData }), document.getElementById('app'));
+// Use the modern createRoot API when available (React 18+). Fall back to
+// ReactDOM.render for older environments.
+const _container = document.getElementById('app');
+if (_container) {
+  // Project uses React 18+, so use createRoot unconditionally.
+  ReactDOM.createRoot(_container).render( /*#__PURE__*/React.createElement(Slider, { heading: "Example Slider", slides: slideData }));
+}
