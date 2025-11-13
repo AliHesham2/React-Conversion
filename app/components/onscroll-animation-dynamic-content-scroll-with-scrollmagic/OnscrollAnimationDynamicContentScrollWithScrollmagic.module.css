@@ -123,17 +123,19 @@
   background-color: rgb(120 115 103 / 58%);
 }
 
+
+
 :global(#section1) {
-  background-image: url("https://www.yudiz.com/codepen/studio-r/bg-living.jpg");
+  background-image: none; /* originally: url("https://www.yudiz.com/codepen/studio-r/bg-living.jpg") */
 }
 :global(#section2) {
-  background-image: url("https://www.yudiz.com/codepen/studio-r/bg-kitchen.jpg");
+  background-image: none; /* originally: url("https://www.yudiz.com/codepen/studio-r/bg-kitchen.jpg") */
 }
 :global(#section3) {
-  background-image: url("https://www.yudiz.com/codepen/studio-r/bg-badroom.jpg");
+  background-image: none; /* originally: url("https://www.yudiz.com/codepen/studio-r/bg-badroom.jpg") */
 }
 :global(#section4) {
-  background-image: url("https://www.yudiz.com/codepen/studio-r/bg-office.jpg");
+  background-image: none; /* originally: url("https://www.yudiz.com/codepen/studio-r/bg-office.jpg") */
 }
 
 .image {
@@ -178,13 +180,13 @@
 }
 
 :global(#section2 .image) {
-  background-image: url("https://www.yudiz.com/codepen/studio-r/bg-kitchen.jpg");
+  background-image: none; /* originally: url("https://www.yudiz.com/codepen/studio-r/bg-kitchen.jpg") */
 }
 :global(#section3 .image) {
-  background-image: url("https://www.yudiz.com/codepen/studio-r/bg-badroom.jpg");
+  background-image: none; /* originally: url("https://www.yudiz.com/codepen/studio-r/bg-badroom.jpg") */
 }
 :global(#section4 .image) {
-  background-image: url("https://www.yudiz.com/codepen/studio-r/bg-office.jpg");
+  background-image: none; /* originally: url("https://www.yudiz.com/codepen/studio-r/bg-office.jpg") */
 }
 
 .text {

@@ -13,7 +13,7 @@ export default function CssOnlyMarquee({ items = [] }) {
     // Toggle the small global helper `.u-paused` on the background wrapper so
     // we do not need :global() inside the CSS Module; the module reads the
     // --marquee-play-state custom property to control animation play state.
-    <div className={`marquee-bg ${paused ? 'u-paused' : ''}`}>
+    <div className={`marquee-bg marquee-bg--active ${paused ? 'u-paused' : ''}`}>
       <div className={styles.wrapper}>
         <button
           type="button"

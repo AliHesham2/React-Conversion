@@ -119,6 +119,8 @@ import SvgFilterTextMarquees from './components/svg-filter-text-marquees/SvgFilt
 import TimedCardsOpening from './components/TimedCardsOpening/TimedCardsOpening';
 import VueResponsiveShuffleGallery from './components/vue-responsive-shuffle/Gallery';
 import SvgTextMaskWithVideo from './components/svg-text-mask-w-video-fill/SvgTextMaskWithVideo';
+// Using the cleaned component implementation (converted JS -> React)
+import ReactSliderWithButtonWaveEffect from './components/ReactSliderWithButtonWaveEffect/ReactSliderWithButtonWaveEffectClean';
 
 
 
@@ -197,10 +199,12 @@ export default function Home() {
 
 
   {/* <CssInfiniteAutoplayCarousel slides={cssInfiniteAutoplayCarouselData} /> */}
-  {/* <div style={{height: '60px'}} />
-  <div style={{height: '40px'}} />
-  <ReactSliderWithButtonWaveEffect />
-  <CssInfiniteAutoplayCarousel slides={cssInfiniteAutoplayCarouselData} /> */}
+
+
+
+
+
+  {/* <CssInfiniteAutoplayCarousel slides={cssInfiniteAutoplayCarouselData} /> */}
 
   {/* <CssCarouselKeyboard /> */}
 
@@ -334,7 +338,8 @@ export default function Home() {
 
 
 
-
+ <div style={{height: '40px'}} />
+  <ReactSliderWithButtonWaveEffect />
 
 
   </main>

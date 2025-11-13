@@ -1,0 +1,303 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap");
+
+/* Full scoped port of the original style.css for this component.
+   All top-level selectors are provided as local classnames (camelCase)
+   and used from the component. The component also keeps the original
+   plain class names for JS selectors, but styling is applied via the
+   module classes to avoid global leakage. */
+
+.root {
+  /* scoped CSS variables (moved from :root) */
+  --pear-can: #e6ffde;
+  --pear-logo: #03403f;
+  --apple-can: #f2675a;
+  --apple-logo: #ec4458;
+  --exotic-can: #9590f1;
+  --black-color: #000000;
+  --white-color: #ffffff;
+  --exotic-logo: #6464ff;
+  --pear-background: #c9e78a;
+  --apple-background: #ffb2b2;
+  --exotic-background: #c1bff2;
+
+  font-family: "Lexend", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  box-sizing: border-box;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* common reset inside component */
+.root * { box-sizing: inherit; }
+.root img { width: 100%; height: auto; }
+.root body { overflow: hidden; }
+
+/* Typography (scoped) */
+.h1 {
+  font-family: "Lexend";
+  font-size: 449px !important;
+  line-height: normal !important;
+  color: var(--white-color) !important;
+  margin: 0 !important;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+.h2 {
+  font-family: "Lexend";
+  font-size: 40px;
+  line-height: normal;
+  margin: 0;
+  font-weight: 900;
+}
+
+/* Header wrapper and logo */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 22px 28px 0;
+  z-index: 300;
+  text-align: center;
+}
+.logo {
+  color: var(--pear-logo);
+  display: inline-block;
+}
+
+/* Cane image / labels */
+.caneImage {
+  max-width: 265px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* Apply the cane SVG mask to the wrapper so the labels are clipped
+     to the can shape while keeping the can image visible. This matches
+     the original export. The local `cane.svg` file should be placed in
+     `public/fruity/cane.svg` to avoid CORS issues. */
+  -webkit-mask-image: url('/fruity/cane.svg');
+  mask-image: url('/fruity/cane.svg');
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center center;
+  mask-position: center center;
+  -webkit-mask-size: 100% auto;
+  mask-size: 100% auto;
+  overflow: hidden;
+  z-index: 60;
+}
+.caneImage img { width: 100%; }
+.caneLabels {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300% !important;
+  transition: left ease-in-out 0.35s;
+  will-change: left;
+  height: 100%;
+  z-index: 80;
+  pointer-events: none;
+}
+
+.caneLabelsWrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300%;
+  height: 100%;
+}
+.caneLabelsImg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Ensure the actual label image blends with the underlying cane texture
+   so droplets from the cane artwork appear to lie on top of the label.
+   The JSX uses a wrapper (.cane-labels-wrap) and an inner image
+   (styles.caneLabelsImg), so apply mix-blend-mode to the image itself. */
+.caneLabelsImg {
+  mix-blend-mode: multiply;
+}
+
+/* Make sure the wrapper has a higher stacking context than the base cane
+   image so blend operates as expected. */
+.caneLabelsWrap {
+  z-index: 80;
+}
+
+/* Fine-tuning to make droplets from the cane artwork show clearly
+   on top of the label without changing markup. */
+.caneImage img {
+  position: relative; /* allow z-index to take effect */
+  z-index: 60;        /* base cane artwork */
+}
+.caneLabelsWrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300%;
+  height: 100%;
+  z-index: 80; /* ensure labels sit above the cane artwork */
+}
+.caneLabelsImg {
+  position: relative;
+  z-index: 81; /* above wrapper so blend applies correctly */
+  mix-blend-mode: multiply; /* show texture (droplets) through the label */
+  opacity: 0.98; /* slight transparency helps texture show */
+  filter: contrast(1.03) saturate(0.98); /* subtle boost to reveal droplets */
+  will-change: opacity, filter;
+}
+
+/* If multiply is too strong on some backgrounds, dev can try overlay/screen */
+/* .caneLabelsImg { mix-blend-mode: overlay; } */
+
+/* Fruit images */
+.fruitImage {
+  opacity: 1;
+  position: absolute;
+}
+.imageOne { max-width: 282px; bottom: 100px; }
+.imageTwo { max-width: 247px; top: 23%; left: 25%; }
+.imageThree { max-width: 211px; top: 23%; right: 25%; }
+.imageFour { max-width: 294px; bottom: 100px; right: 0; }
+.fruitImage::after {
+  content: "";
+  position: absolute;
+  background: linear-gradient(90deg, #000 3.66%, rgba(0, 0, 0, 0) 92.35%);
+  opacity: 0.43;
+  filter: blur(7.5px);
+  transform: rotate(-6.941deg);
+  right: 0;
+  width: 173px;
+  height: 30px;
+}
+.imageOne::after { bottom: -50px; }
+.imageTwo::after { bottom: -200px; height: 22px; }
+.imageThree::after { bottom: -280px; width: 103px; }
+.imageFour::after { bottom: -50px; }
+
+/* Sections and layout */
+.sectionContainerMain {
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+  z-index: 0; /* ensure section backgrounds are visible in app context */
+}
+.sectionContainer {
+  width: 300vw;
+  display: flex;
+  position: relative;
+  transition: all ease-in-out 0.5s;
+  align-items: center;
+  left: 0; /* controlled by JS */
+}
+.section {
+  min-width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+  background: var(--pear-background);
+}
+.section:nth-child(2) { background-color: var(--apple-background); }
+.section:nth-child(3) { background-color: var(--exotic-background); }
+
+/* Buttons */
+.buttonBase {
+  position: fixed;
+  top: 50%;
+  right: 30px;
+  z-index: 99;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  height: 80px;
+  width: 80px;
+  background-color: var(--white-color);
+  border: none;
+  font-size: 40px;
+  color: var(--apple-logo);
+  transition: all ease-in-out 0.3s;
+  cursor: pointer;
+}
+.prevButton { left: 30px; right: unset; display: none; }
+
+/* wave base class (scoped) */
+.wave {
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+/* Local keyframe animations (component-scoped) */
+@keyframes wavePearEffect {
+  0% { box-shadow: 0 0 0 0px var(--pear-background), 0 0 0 0px var(--pear-background); }
+  40% { box-shadow: 0 0 0 50px rgba(60, 41, 188, 0), 0 0 0 0px var(--pear-background); }
+  80% { box-shadow: 0 0 0 50px rgba(60, 41, 188, 0), 0 0 0 30px rgba(0, 0, 0, 0); }
+  100% { box-shadow: 0 0 0 0px rgba(60, 41, 188, 0), 0 0 0 30px rgba(0, 230, 118, 0); }
+}
+@keyframes waveAppleEffect {
+  0% { box-shadow: 0 0 0 0px var(--apple-background), 0 0 0 0px var(--apple-background); }
+  40% { box-shadow: 0 0 0 50px rgba(60, 41, 188, 0), 0 0 0 0px var(--apple-background); }
+  80% { box-shadow: 0 0 0 50px rgba(60, 41, 188, 0), 0 0 0 30px rgba(0, 0, 0, 0); }
+  100% { box-shadow: 0 0 0 0px rgba(60, 41, 188, 0), 0 0 0 30px rgba(0, 230, 118, 0); }
+}
+@keyframes waveExoticEffect {
+  0% { box-shadow: 0 0 0 0px var(--exotic-background), 0 0 0 0px var(--exotic-background); }
+  40% { box-shadow: 0 0 0 50px rgba(60, 41, 188, 0), 0 0 0 0px var(--exotic-background); }
+  80% { box-shadow: 0 0 0 50px rgba(60, 41, 188, 0), 0 0 0 30px rgba(0, 0, 0, 0); }
+  100% { box-shadow: 0 0 0 0px rgba(60, 41, 188, 0), 0 0 0 30px rgba(0, 230, 118, 0); }
+}
+
+/* animation helper classes to be toggled from JS */
+.wavePear { animation-name: wavePearEffect; }
+.waveApple { animation-name: waveAppleEffect; }
+.waveExotic { animation-name: waveExoticEffect; }
+
+/* Responsive rules copied from original */
+@media screen and (max-width: 1550px) {
+  .h1 { font-size: 350px !important; }
+  .caneImage { max-width: 280px; }
+  .imageOne { max-width: 250px; }
+  .imageTwo { max-width: 215px; left: 22%; top: 10%; }
+  .imageThree { max-width: 180px; }
+  .imageFour { max-width: 260px; right: 40px; }
+}
+@media screen and (max-width: 1199px) {
+  .h1 { font-size: 300px !important; }
+  .caneImage::after { width: 150%; }
+  .imageOne { max-width: 220px; }
+  .imageTwo { max-width: 185px; left: 18%; top: 10%; }
+  .imageThree { max-width: 180px; right: 18%; }
+  .imageFour { max-width: 230px; }
+}
+@media screen and (max-width: 991px) {
+  .h1 { font-size: 240px !important; }
+  .caneImage { max-width: 250px; }
+  .buttonBase { height: 80px; width: 80px; top: 90%; }
+  .imageOne { max-width: 180px; }
+  .imageTwo { max-width: 165px; left: 12%; top: 12%; }
+  .imageThree { max-width: 150px; right: 12%; }
+  .imageFour { max-width: 200px; }
+}
+@media screen and (max-width: 767px) {
+  .h1 { font-size: 180px !important; }
+  .h2 { font-size: 30px; }
+  .caneImage { max-width: 180px; }
+  .buttonBase { height: 60px; width: 60px; font-size: 20px; }
+  .imageOne { max-width: 180px; bottom: 150px; }
+  .imageTwo { max-width: 145px; left: 12%; top: 15%; }
+  .imageThree { max-width: 130px; right: 10%; }
+  .imageFour { max-width: 180px; bottom: 150px; }
+}
+@media screen and (max-width: 575px) {
+  .h1 { font-size: 100px !important; }
+  .caneImage::after { width: 100%; }
+  .imageOne { max-width: 150px; }
+  .imageTwo { max-width: 115px; left: 4%; top: 18%; }
+  .imageThree { max-width: 100px; right: 4%; }
+  .imageFour { max-width: 150px; right: 0; }
+}

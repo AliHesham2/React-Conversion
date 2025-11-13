@@ -165,4 +165,4 @@
 
 ------------------------------------------------------------------------------------------------------------
 
-| 101 | responsive-gsap-slider-with-button-wave-effect | ❌ | Pending | deh moheeeeeeeem trg3lha  ✅
+| 101 | responsive-gsap-slider-with-button-wave-effect | ✅ | Done | Converted HTML, JS (to React) and CSS (scoped module) and mounted on home page |
